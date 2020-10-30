@@ -11,7 +11,7 @@ public class ClientMain {
         client.setName(scanner.nextLine());
         System.out.println("Év?");
         client.setYear(scanner.nextInt());
-        client.setAddress(scanner.nextLine());
+        scanner.nextLine();
         System.out.println("Cím?");
         client.setAddress(scanner.nextLine());
         System.out.println("Név: " + client.getName() + " Év: " + client.getYear() + " Cím: " + client.getAddress());
