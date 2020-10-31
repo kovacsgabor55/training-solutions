@@ -16,4 +16,12 @@ public class Store {
     public void dispatch(int amount) {
         this.stock -= amount;
     }
+
+    @Override
+    public String toString() {
+        return "Store{" +
+                "product='" + product + '\'' +
+                ", stock=" + stock +
+                '}';
+    }
 }
