@@ -16,7 +16,7 @@ public class Time {
     }
 
     public int getInSeconds() {
-        return getInMinutes() * 60 + second;
+        return (getInMinutes() * 60) + second;
     }
 
     public boolean earlierThan(Time other) {
