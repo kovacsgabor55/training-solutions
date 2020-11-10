@@ -44,7 +44,7 @@ public class Position {
 
         for (Position item : positions) {
             if (item.getBonus() > 150000) {
-                System.out.println(item.getBonus());
+                System.out.println(item);
             }
         }
     }
