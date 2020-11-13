@@ -1,7 +1,7 @@
 package arrayofarrays;
 
 public class ArrayOfArraysMain {
-    int[][] multiplicationTable(int size) {
+    public int[][] multiplicationTable(int size) {
         int[][] returns = new int[size][size];
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
@@ -11,16 +11,17 @@ public class ArrayOfArraysMain {
         return returns;
     }
 
-
-
-    public static void main(String[] args) {
-        ArrayOfArraysMain arrayOfArraysMain = new ArrayOfArraysMain();
-        int[][] ma = arrayOfArraysMain.multiplicationTable(4);
-        for (int i = 0; i < 4; i++) {
-            for (int j = 0; j < 4; j++) {
-                System.out.print(ma[i][j] + " ");
+    public void printArrayOfArrays(int[][] a) {
+        for (int i = 0; i < a.length; i++) {
+            for (int j = 0; j < a.length; j++) {
+                System.out.print(a[i][j] + " ");
             }
             System.out.println();
         }
+    }
+
+    public static void main(String[] args) {
+        ArrayOfArraysMain arrayOfArraysMain = new ArrayOfArraysMain();
+        arrayOfArraysMain.printArrayOfArrays(arrayOfArraysMain.multiplicationTable(4));
     }
 }
