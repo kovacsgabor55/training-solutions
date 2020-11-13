@@ -5,11 +5,11 @@ public class Operation {
     private int rightValue;
 
     public Operation(String str) {
-        this.leftValue = Integer.parseInt(str.substring(0, str.indexOf("+")));
-        this.rightValue = Integer.parseInt(str.substring(str.indexOf("+") + 1));
+        this.leftValue = Integer.parseInt(str.substring(0, str.indexOf("+")).trim());
+        this.rightValue = Integer.parseInt(str.substring(str.indexOf("+") + 1).trim());
     }
 
-    public int getResoult() {
+    public int getResult() {
         return leftValue + rightValue;
     }
 }
