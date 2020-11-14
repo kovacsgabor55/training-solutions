@@ -1,5 +1,7 @@
 package arrayofarrays;
 
+import java.util.TreeMap;
+
 public class ArrayOfArraysMain {
     public int[][] multiplicationTable(int size) {
         int[][] returns = new int[size][size];
@@ -12,16 +14,51 @@ public class ArrayOfArraysMain {
     }
 
     public void printArrayOfArrays(int[][] a) {
-        for (int i = 0; i < a.length; i++) {
+        /*for (int i = 0; i < a.length; i++) {
             for (int j = 0; j < a.length; j++) {
                 System.out.print(a[i][j] + " ");
+            }
+            System.out.println();
+        }*/
+        for (int i[] : a) {
+            for (int j : i) {
+                if (j < 10) {
+                    System.out.print("  ");
+                } else if (j < 100) {
+                    System.out.print(" ");
+                }
+                System.out.print(j);
+                System.out.print(" ");
             }
             System.out.println();
         }
     }
 
+    public int[][] triangularMatrix(int size) {
+        int[][] triangle = new int[size][];
+        for (int i = 0; i < triangle.length; i++) {
+            triangle[i] = new int[i + 1];
+            for (int j = 0; j < i + 1; j++) {
+                triangle[i][j] = i;
+            }
+        }
+        return triangle;
+    }
+
+    public int[][] getValues() {
+        int[][] values = new int[12][];
+        int[] numberOfDays = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+        for (int i = 0; i < numberOfDays.length; i++) {
+            values[i] = new int[numberOfDays[i]];
+        }
+        return values;
+    }
+
+
     public static void main(String[] args) {
         ArrayOfArraysMain arrayOfArraysMain = new ArrayOfArraysMain();
-        arrayOfArraysMain.printArrayOfArrays(arrayOfArraysMain.multiplicationTable(4));
+        arrayOfArraysMain.printArrayOfArrays(arrayOfArraysMain.multiplicationTable(8));
+        arrayOfArraysMain.printArrayOfArrays(arrayOfArraysMain.triangularMatrix(10));
+        arrayOfArraysMain.printArrayOfArrays(arrayOfArraysMain.getValues());
     }
 }
