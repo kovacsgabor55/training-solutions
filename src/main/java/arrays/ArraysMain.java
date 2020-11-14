@@ -1,6 +1,7 @@
 package arrays;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class ArraysMain {
     String numberOfDaysAsString() {
@@ -8,4 +9,7 @@ public class ArraysMain {
         return Arrays.toString(numberOfDays);
     }
 
+    public List<String> daysOfWeek() {
+        return Arrays.asList("Hétfő", "Kedd", "Szerda", "Csütörtök", "Péntek", "Szombat", "Vasárnap");
+    }
 }
