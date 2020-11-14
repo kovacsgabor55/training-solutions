@@ -26,4 +26,12 @@ public class ArraysMain {
     public boolean sameTempValues(double[] day, double[] anotherDay) {
         return Arrays.equals(day, anotherDay);
     }
+
+    public boolean wonLottery(int[] winner, int[] stake) {
+        int[] copyOfWinner = Arrays.copyOf(winner, winner.length);
+        int[] copyOfStake = Arrays.copyOf(stake, stake.length);
+        Arrays.sort(copyOfWinner);
+        Arrays.sort(copyOfStake);
+        return Arrays.equals(copyOfWinner, copyOfStake);
+    }
 }
