@@ -51,9 +51,8 @@ public class Student {
     public Student(String name) {
         if (isEmpty(name)) {
             throw new IllegalArgumentException("Student name must not be empty!");
-        } else {
-            this.name = name;
         }
+        this.name = name;
     }
 
     @Override

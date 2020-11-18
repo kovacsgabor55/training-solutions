@@ -18,12 +18,11 @@ public class Mark {
     }
 
     public Mark(MarkType markType, Subject subject, Tutor tutor) {
-        this.markType = markType;
         if (subject == null) {
             throw new NullPointerException("Both subject and tutor must be provided!");
-        } else {
-            this.subject = subject;
         }
+        this.markType = markType;
+        this.subject = subject;
         this.tutor = tutor;
     }
 

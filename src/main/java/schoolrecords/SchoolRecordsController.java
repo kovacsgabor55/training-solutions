@@ -48,7 +48,7 @@ public class SchoolRecordsController {
                     break;
                 case "2":
                     System.out.println("Név?");
-                    System.out.println(src.classRecords.findStudentByName(scanner.nextLine()).toString());
+                    System.out.println(src.classRecords.findStudentByName(scanner.nextLine()));
                     break;
                 case "3":
                     System.out.println("Név?");
