@@ -6,7 +6,7 @@ import java.util.List;
 
 public class ListCounter {
     static final List<String> teszt = Arrays.asList("abc", "Abc", "hAij", "nrao");
-    final static char LETTER ='A';
+    final static char LETTER = 'A';
 
     public static void main(String[] args) {
         ListCounter listCounter = new ListCounter();
@@ -24,5 +24,15 @@ public class ListCounter {
             }
         }
         return count;
+    }
+
+    public int startsWithACounter(List<String> words) {
+        int counter = 0;
+        for (String s : words) {
+            if (s.toUpperCase().charAt(0) == 'A') {
+                counter++;
+            }
+        }
+        return counter;
     }
 }
