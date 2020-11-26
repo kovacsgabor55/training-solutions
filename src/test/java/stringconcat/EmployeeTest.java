@@ -1,14 +1,11 @@
 package stringconcat;
 
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.rules.ExpectedException;
-
-import static org.junit.Assert.assertEquals;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class EmployeeTest {
-/*
-    @Rule
+
+    /*@Rule
     public ExpectedException exception = ExpectedException.none();
 
     @Test

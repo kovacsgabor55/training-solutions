@@ -1,13 +1,13 @@
 package week03;
 
-import static org.junit.Assert.assertEquals;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 // Teszt osztály
 public class PhoneParserTest {
     // Teszt metódus == teszteset
-   /* @Test
+    @Test
     void testPatsePhone() {
         //GIVEN - előkészítés
         PhoneParser phoneParser = new PhoneParser();
@@ -17,5 +17,5 @@ public class PhoneParserTest {
         assertEquals("30", phone.getPrefix());
         assertEquals("1234567", phone.getNumber());
         assertEquals("30-1234567", phone.toString());
-    }*/
+    }
 }

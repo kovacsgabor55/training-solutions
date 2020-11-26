@@ -1,4 +1,4 @@
-package arrays;
+package arraylist;
 
 import java.util.ArrayList;
 
@@ -38,7 +38,7 @@ public class Capsules {
         System.out.println();
         capsules.removeFirst();
         capsules.removeLast();
-        ;
+
         returned = capsules.getColors();
         for (String item : returned) {
             System.out.println(item);
