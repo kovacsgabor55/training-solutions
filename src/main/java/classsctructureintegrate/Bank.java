@@ -1,10 +1,7 @@
 package classsctructureintegrate;
 
-import java.util.Scanner;
-
 public class Bank {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
 
         BankAccount acc1 = new BankAccount("10073217-12000098-67341590", "Tóth Kálmán", 103400);
         BankAccount acc2 = new BankAccount("10073217-12000098-67341592", "Tóth Béla", 652142);

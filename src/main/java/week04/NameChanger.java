@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class NameChanger {
     private String fullName;
+    Scanner scanner = new Scanner(fullName);
 
     public NameChanger(String fullName) {
         if (fullName == null || fullName.trim().equals("")) {
@@ -13,9 +14,8 @@ public class NameChanger {
     }
 
     public void changeFirstName(String firstName) {
-        String[] temp = fullName.split(" ");
+        //String[] temp = fullName.split(" ");
         /*fullName=new  StringBuilder((temp[0]))*/
-        Scanner scanner = new Scanner(fullName);
         String vezetek = scanner.next();
         this.fullName = vezetek + " " + firstName;
     }

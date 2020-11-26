@@ -1,7 +1,5 @@
 package arrayofarrays;
 
-import java.util.TreeMap;
-
 public class ArrayOfArraysMain {
     public int[][] multiplicationTable(int size) {
         int[][] returns = new int[size][size];

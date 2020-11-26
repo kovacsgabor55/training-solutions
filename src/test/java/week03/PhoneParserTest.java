@@ -2,10 +2,11 @@ package week03;
 
 
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 // Teszt osztály
-public class PhoneParserTest {
+class PhoneParserTest {
     // Teszt metódus == teszteset
     @Test
     void testPatsePhone() {

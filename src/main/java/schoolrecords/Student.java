@@ -8,7 +8,7 @@ public class Student {
     private String name;
 
     public double calculateAverage() {
-        if (marks.size() == 0) {
+        if (marks.isEmpty()) {
             return 0.0;
         }
         double sum = 0.0;
@@ -45,7 +45,7 @@ public class Student {
     }
 
     private boolean isEmpty(String string) {
-        return (string.equals("") || string.equals(null)) ? true : false;
+        return (string.equals("") || string.equals(null));
     }
 
     public Student(String name) {

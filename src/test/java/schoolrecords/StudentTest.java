@@ -9,28 +9,28 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 
-public class StudentTest {
+class StudentTest {
 
-    public static final Subject MATH = new Subject("matematika");
-    public static final Tutor TUTOR = new Tutor("Nagy Lilla", Arrays.asList(MATH, new Subject("történelem")));
+    static final Subject MATH = new Subject("matematika");
+    static final Tutor TUTOR = new Tutor("Nagy Lilla", Arrays.asList(MATH, new Subject("történelem")));
 
 
     @Test
-    public void emptyNameShouldThrowException() throws IllegalArgumentException {
+    void emptyNameShouldThrowException() throws IllegalArgumentException {
 
         Exception ex = assertThrows(IllegalArgumentException.class, () -> new Student(""));
         assertEquals("Student name must not be empty!", ex.getMessage());
     }
 
     @Test
-    public void nullMarkInGradingShouldThrowException() throws NullPointerException {
+    void nullMarkInGradingShouldThrowException() throws NullPointerException {
 
         Exception ex = assertThrows(NullPointerException.class, () -> new Student("Kovács").grading(null));
         assertEquals("Mark must not be null!", ex.getMessage());
     }
 
     @Test
-    public void testGrading() {
+    void testGrading() {
         //Given
         Student student = new Student("Kovács");
         //When
@@ -40,7 +40,7 @@ public class StudentTest {
     }
 
     @Test
-    public void testCalculateAverage() {
+    void testCalculateAverage() {
         //Given
         Student student = new Student("Kovács");
         //When
@@ -52,7 +52,7 @@ public class StudentTest {
     }
 
     @Test
-    public void testCalculateAverageIfMarksEmpty() {
+    void testCalculateAverageIfMarksEmpty() {
         //Given
         Student student = new Student("Kovács");
         //Then
@@ -60,7 +60,7 @@ public class StudentTest {
     }
 
     @Test
-    public void testCalculateSubjectAverage() {
+    void testCalculateSubjectAverage() {
         //Given
         Student student = new Student("Kovács");
         //When
@@ -72,7 +72,7 @@ public class StudentTest {
     }
 
     @Test
-    public void testCalculateSubjectAverageIfMarksEmpty() {
+    void testCalculateSubjectAverageIfMarksEmpty() {
         //Given
         Student student = new Student("Kovács");
         //Then
@@ -80,7 +80,7 @@ public class StudentTest {
     }
 
     @Test
-    public void testCalculateSubjectAverageIfNoMarkFromSubject() {
+    void testCalculateSubjectAverageIfNoMarkFromSubject() {
         //Given
         Student student = new Student("Kovács");
         //When

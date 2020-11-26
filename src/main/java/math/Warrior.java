@@ -53,7 +53,7 @@ public class Warrior {
     }
 
     public boolean isAlive() {
-        return (stamina > 0) ? true : false;
+        return (stamina > 0);
     }
 
     @Override

@@ -13,7 +13,7 @@ public class InputName {
         }
 
         for (int i = 0; i < nevek.length; i++) {
-            System.out.println("elem: " + (i + 1) + " tartalom: " + nevek[i].toString());
+            System.out.println("elem: " + (i + 1) + " tartalom: " + nevek[i]);
         }
     }
 }

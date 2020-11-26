@@ -6,21 +6,21 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 
-public class SearchTest {
+class SearchTest {
     private Search target;
 
     @BeforeEach
-    public void setUP() {
+    void setUP() {
         target = new Search();
     }
 
     @Test
-    public void Given() {
+    void Given() {
         Assertions.assertEquals(Arrays.asList(1), target.getIndexesOfChar("ketchup", 'e'));
     }
 
     @Test
-    public void Given2() {
+    void Given2() {
         Assertions.assertEquals(Arrays.asList(1, 3), target.getIndexesOfChar("kefe", 'e'));
     }
 }

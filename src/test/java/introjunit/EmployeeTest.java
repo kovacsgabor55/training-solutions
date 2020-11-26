@@ -1,12 +1,13 @@
 package introjunit;
 
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class EmployeeTest {
+class EmployeeTest {
 
     @Test
-    public void testCreate() {
+    void testCreate() {
         //Given
         Employee employee = new introjunit.Employee("John", 23);
 
@@ -18,7 +19,7 @@ public class EmployeeTest {
     }
 
     @Test
-    public void testHaveBirthDay() {
+    void testHaveBirthDay() {
         Employee employee = new Employee("Jack", 23);
         employee.haveBirthDay();
         assertEquals(24, employee.getAge());

@@ -5,8 +5,8 @@ public class StatementMain {
         int x = 5 + 6;
         int y = 11 - x;
         int z = 8;
-        boolean b = (x > z) ? true : false;
-        boolean c = (b == true || z > 5) ? true : false;
+        boolean b = (x > z);
+        boolean c = (b || z > 5);
         z++;
 
     }

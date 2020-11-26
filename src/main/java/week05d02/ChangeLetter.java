@@ -16,7 +16,7 @@ public class ChangeLetter {
     }*/
 
     public static final String VOWELS = "aeiou";
-    public static final char[] VOWELS_CHAR = {'a', 'e', 'i', 'o', 'u'};
+    static final char[] VOWELS_CHAR = {'a', 'e', 'i', 'o', 'u'};
 
     public String changeVowels(String temp) {
         temp = temp.toLowerCase();

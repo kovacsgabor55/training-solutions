@@ -1,15 +1,16 @@
 package stringconcat;
 
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class EmployeeTest {
+class EmployeeTest {
 
     /*@Rule
-    public ExpectedException exception = ExpectedException.none();
+    ExpectedException exception = ExpectedException.none();
 
     @Test
-    public void testCreate() {
+    void testCreate() {
         Employee employee = new Employee("Kis Géza", "minőségellenőr", 520000);
 
         assertEquals("Kis Géza", employee.getName());
@@ -18,28 +19,28 @@ public class EmployeeTest {
     }
 
     @Test
-    public void testCreateWithEmptyName() {
+    void testCreateWithEmptyName() {
         exception.expect(IllegalArgumentException.class);
         exception.expectMessage("Name must not be empty.");
         new Employee("", "minőségellenőr", 520000);
     }
 
     @Test
-    public void testCreateWithNullJob() {
+    void testCreateWithNullJob() {
         exception.expect(IllegalArgumentException.class);
         exception.expectMessage("Job must not be empty.");
         new Employee("Kis Géza", null, 520000);
     }
 
     @Test
-    public void testCreateWithNegativeSalary() {
+    void testCreateWithNegativeSalary() {
         exception.expect(IllegalArgumentException.class);
         exception.expectMessage("Salary must be positive.");
         new Employee("Kis Géza", "minőségellenőr", -520000);
     }
 
     @Test
-    public void testToString() {
+    void testToString() {
         Employee employee = new Employee("Kis Géza", "minőségellenőr", 520000);
 
         assertEquals("Kis Géza - minőségellenőr - 520000 Ft", employee.toString());

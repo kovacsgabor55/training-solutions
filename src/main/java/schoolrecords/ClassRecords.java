@@ -19,7 +19,7 @@ public class ClassRecords {
     }
 
     public double calculateClassAverage() {
-        if (students.size() == 0) {
+        if (students.isEmpty()) {
             throw new ArithmeticException("No student in the class, average calculation aborted!");
         }
         double sum = 0.0;
@@ -56,7 +56,7 @@ public class ClassRecords {
         if (isEmpty(name)) {
             throw new IllegalArgumentException("Student name must not be empty!");
         }
-        if (students.size() == 0) {
+        if (students.isEmpty()) {
             throw new IllegalStateException("No students to search!");
         }
         for (Student item : students) {
@@ -72,7 +72,7 @@ public class ClassRecords {
     }
 
     private boolean isEmpty(String string) {
-        return (string.equals("") || string.equals(null)) ? true : false;
+        return (string.equals("") || string.equals(null));
     }
 
     public String listStudentNames() {
@@ -104,7 +104,7 @@ public class ClassRecords {
     }
 
     public Student repetition() {
-        if (students.size() == 0) {
+        if (students.isEmpty()) {
             throw new IllegalStateException("No students to select for repetition!");
         }
         return students.get(rnd.nextInt(students.size()));

@@ -12,7 +12,7 @@ public class Languages {
 
         for (String item : languages) {
             if (item.length() > 5) {
-                System.out.println(item.toString());
+                System.out.println(item);
             }
         }
     }
