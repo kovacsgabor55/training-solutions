@@ -1,6 +1,3 @@
-references
-literals
-primitivetypes
 enumtype
 operators
 typeconversion
