@@ -13,6 +13,9 @@ public class ListSelector {
         stringBuilder.append("[");
         for (int i = 0; i < strings.size(); i += 2) {
             stringBuilder.append(strings.get(i));
+            if (!(i + 3 > strings.size())) {
+                stringBuilder.append(",");
+            }
         }
         stringBuilder.append("]");
         return stringBuilder.toString();

@@ -26,13 +26,13 @@ class ListSelectorTest {
     @DisplayName("odd size list")
     @Test
     void oddSizeList() {
-        Assertions.assertEquals("[firstthird]", listSelector.evenIndexString(oddSizeStringList));
+        Assertions.assertEquals("[first,third]", listSelector.evenIndexString(oddSizeStringList));
     }
 
     @DisplayName("even size list")
     @Test
     void evenSizeList() {
-        Assertions.assertEquals("[firstthird]", listSelector.evenIndexString(evenSizeStringList));
+        Assertions.assertEquals("[first,third]", listSelector.evenIndexString(evenSizeStringList));
     }
 
     @DisplayName("even size list")
