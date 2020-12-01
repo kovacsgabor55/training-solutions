@@ -1,5 +1,7 @@
 package schoolrecords;
 
+import java.util.Objects;
+
 public class Mark {
     private MarkType markType;
     private Subject subject;
@@ -18,9 +20,7 @@ public class Mark {
     }
 
     public Mark(MarkType markType, Subject subject, Tutor tutor) {
-        if (subject == null) {
-            throw new NullPointerException("Both subject and tutor must be provided!");
-        }
+        Objects.requireNonNull(subject,"Both subject and tutor must be provided!");
         this.markType = markType;
         this.subject = subject;
         this.tutor = tutor;

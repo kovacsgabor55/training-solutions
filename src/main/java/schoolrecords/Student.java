@@ -2,6 +2,7 @@ package schoolrecords;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Student {
     private List<Mark> marks = new ArrayList<>();
@@ -38,9 +39,7 @@ public class Student {
     }
 
     public void grading(Mark mark) {
-        if (mark == null) {
-            throw new NullPointerException("Mark must not be null!");
-        }
+        Objects.requireNonNull(mark, "Mark must not be null!");
         marks.add(mark);
     }
 

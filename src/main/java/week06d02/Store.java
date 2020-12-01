@@ -16,7 +16,7 @@ public class Store {
         Category[] categories = Category.values();
         for (Category cat : categories) {
             for (Product item : products) {
-                if (item.getCategory().equals(cat)) {
+                if (item.getCategory() == cat) {
                     count++;
                 }
             }
@@ -31,7 +31,7 @@ public class Store {
     public int getProductByCategoryName(Category category) {
         int count = 0;
         for (Product item : products) {
-            if (item.getCategory().equals(category)) {
+            if (item.getCategory() == category) {
                 count++;
             }
         }
