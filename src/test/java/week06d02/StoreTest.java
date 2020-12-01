@@ -27,7 +27,12 @@ class StoreTest {
     }
 
     @Test
+    void getProductsByCategory() {
+        Assertions.assertEquals("[FROZEN: 0, DAIRY: 1, BAKEDGOODS: 2, OTHER: 1]", store.getProductsByCategory());
+    }
+
+    @Test
     void getProductByCategoryName() {
-        Assertions.assertEquals("[FROZEN: 0, DAIRY: 1, BAKEDGOODS: 2, OTHER: 1]", store.getProductByCategoryName());
+        Assertions.assertEquals(2, store.getProductByCategoryName(Category.BAKEDGOODS));
     }
 }

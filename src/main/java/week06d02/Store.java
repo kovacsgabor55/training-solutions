@@ -10,7 +10,7 @@ public class Store {
         this.products = products;
     }
 
-    public String getProductByCategoryName() {
+    public String getProductsByCategory() {
         int count = 0;
         StringBuilder ret = new StringBuilder("[");
         Category[] categories = Category.values();
@@ -26,5 +26,15 @@ public class Store {
         ret.delete(ret.toString().length() - 2, ret.toString().length());
         ret.append("]");
         return ret.toString();
+    }
+
+    public int getProductByCategoryName(Category category) {
+        int count = 0;
+        for (Product item : products) {
+            if (item.getCategory().equals(category)) {
+                count++;
+            }
+        }
+        return count;
     }
 }
