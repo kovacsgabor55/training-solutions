@@ -13,9 +13,9 @@ class WordEraserTest {
     @BeforeEach
     void setUp() {
         wr = new WordEraser();
-        original = "barack alma körte szilva alma";
+        original = "barack alma körte szilva alma bírsalma";
         pattern = "alma";
-        expected = "barack körte szilva";
+        expected = "barack körte szilva bírsalma";
     }
 
     @Test
