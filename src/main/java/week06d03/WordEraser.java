@@ -9,7 +9,7 @@ public class WordEraser {
                 sb.append(item + " ");
             }
         }
-        sb.delete(sb.toString().length() - 1, sb.toString().length());
-        return sb.toString();
+        //sb.delete(sb.toString().length() - 1, sb.toString().length());
+        return sb.toString().trim();
     }
 }
