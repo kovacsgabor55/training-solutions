@@ -1,4 +1,4 @@
-package troopers;
+package methodpass.troopers;
 
 import java.util.ArrayList;
 import java.util.List;

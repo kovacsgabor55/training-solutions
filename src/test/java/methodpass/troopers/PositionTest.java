@@ -1,4 +1,4 @@
-package troopers;
+package methodpass.troopers;
 
 import org.junit.Test;
 
