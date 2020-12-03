@@ -1,0 +1,16 @@
+Mai Junior/Mid feladat:
+Készíts egy osztályt week05d05.User néven, melynek van egy firstName (String), egy lastName (String) és egy email (String) mezője. Legyen ellenőrzés az User konstruktorában, mely hibát jelez, ha nincs @ és . (pont) az e-mail cimben! Készíts egy metódust is getFullName névvel, mely visszaadja a firstName és a lastName változókat összefűzve. Legyen közöttük egy whitespace (" ").
+Bónusz feladat: írjunk teszteket
+
+Mai Senior feladat:
+Készítsünk egy Song osztályt, melynek az alábbi mezői vannak:
+- String name
+- long lengthInSeconds
+- String artist
+A Song konstruktorában ellenőrizzük, hogy a name és az artist üres-e. Dobjunk kivételt, ha igen.
+Ellenőrizzük továbbá a lengthInSeconds-ot is, hogy nagyobb legyen, mint 0!
+Készítsünk egy Playlist osztályt, melynek van egy konstruktora, amiben Song-ok Listáját fogadja el.
+Irjunk egy metódust findByLengthGreaterThan néven, mely egy int-et vár paraméterként mins néven.
+Azoknak a Song-oknak a listáját adjuk vissza, melyek hosszabbak percben (!), mint a Song lengthInSeconds mezője.
+Bónusz feladat 1: írjunk teszteket!
+Bónusz feladat 2: Implementáljuk megfelelően a toString metódust a Song és a Playlist osztályban, hogy a Playliset-et kiirva a konzolra olvasható eredményt kapjunk!
