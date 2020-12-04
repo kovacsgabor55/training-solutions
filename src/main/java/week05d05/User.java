@@ -14,7 +14,6 @@ public class User {
         this.firstName = firstName;
         this.lastName = lastName;
         int occurence = email.indexOf('@');
-        System.out.println(occurence);
         if (occurence == -1 || email.substring(occurence).indexOf('.') == -1) {
             throw new IllegalArgumentException(String.format("Email address (%s) is invalid", email));
         }

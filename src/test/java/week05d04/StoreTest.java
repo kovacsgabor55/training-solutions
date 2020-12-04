@@ -5,27 +5,34 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import java.lang.reflect.Array;
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
 
 @DisplayName("Given a Store object")
 class StoreTest {
     private Store store = new Store();
     private Product product;
+    private List<Product> products = new ArrayList<>();
 
     @BeforeEach
     void setUp() {
-        Product product = new Product("alma", 2020, 11, 12);
+        product = new Product("alma", 2020, 11, 12);
         Product product1 = new Product("körte", 2019, 1, 12);
         Product product2 = new Product("tej", 2020, 11, 12);
         Product product3 = new Product("kenyér", 2021, 9, 14);
         Product product4 = new Product("szalámi", 2021, 11, 12);
+
         store.addProduct(product);
         store.addProduct(product1);
         store.addProduct(product2);
         store.addProduct(product3);
         store.addProduct(product4);
+
+        products.add(product);
+        products.add(product1);
+        products.add(product2);
+        products.add(product3);
+        products.add(product4);
     }
 
     @Test
@@ -34,7 +41,6 @@ class StoreTest {
         Assertions.assertEquals(2020, product.getExpire().getYear());
         Assertions.assertEquals(11, product.getExpire().getMonthValue());
         Assertions.assertEquals(12, product.getExpire().getDayOfMonth());
-
     }
 
     @Test
@@ -42,16 +48,12 @@ class StoreTest {
         Store store = new Store();
         store.addProduct(new Product("alma", 2020, 11, 12));
         store.addProduct(new Product("korte", 2021, 11, 12));
-
     }
 
     @DisplayName("When a product is added Then the Store saves it.")
     @Test
     void shouldContainAddedProduct() {
-        Product product = new Product("alma", 2020, 11, 12);
-        store.addProduct(product);
-
         final List<Product> result = store.getProducts();
-        Assertions.assertEquals(Arrays.asList(product), result, "Nem jó");
+        Assertions.assertEquals(products, result, "Nem jó");
     }
 }
