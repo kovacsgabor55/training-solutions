@@ -18,8 +18,6 @@ public class Point {
     }
 
     public double distance(Point other) {
-        int x = Math.abs(this.x - other.x);
-        int y = Math.abs(this.y - other.y);
-        return (x > y) ? x : y;
+        return Math.sqrt((Math.pow(this.x - other.x, 2) + Math.pow(this.y - other.y, 2)));
     }
 }

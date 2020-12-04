@@ -4,7 +4,6 @@ import java.time.LocalDate;
 
 public class DayInMonth {
     int numberOfDays(int year, String month) {
-        //return 0;
         switch (month.toLowerCase()) {
             case "Január":
             case "március":
@@ -23,8 +22,6 @@ public class DayInMonth {
                 return (year % 400 == 0 || year % 4 == 0 && year % 100 != 0) ? 29 : 28;
             default:
                 throw new IllegalArgumentException("Invalid month: " + month);
-
         }
-
     }
 }

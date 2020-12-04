@@ -18,6 +18,6 @@ public class Position {
     }
 
     public double distanceFrom(Position position) {
-        return Math.sqrt((Math.pow((this.posX - position.posX), 2) + Math.pow((this.posY - position.posY), 2)));
+        return Math.sqrt((Math.pow(this.posX - position.posX, 2) + Math.pow(this.posY - position.posY, 2)));
     }
 }
