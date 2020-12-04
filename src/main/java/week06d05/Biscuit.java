@@ -18,6 +18,9 @@ public class Biscuit {
     }
 
     public static Biscuit of(BiscuitType type, int gramAmount) {
+        if (gramAmount <= 0) {
+            throw new IllegalArgumentException("gramAmount canot be Zero or less!");
+        }
         return new Biscuit(type, gramAmount);
     }
 

@@ -4,6 +4,10 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import week06d04.Budget;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class BiscuitTest {
     private Biscuit biscuit;
@@ -24,5 +28,12 @@ class BiscuitTest {
     @Test
     void toStringTest() {
         Assertions.assertEquals("Biscuit{type=HONEY, gramAmount=1200}", biscuit.toString());
+    }
+
+    @Test
+    void grammInvalidTest() {
+
+        Exception ex = assertThrows(IllegalArgumentException.class, () -> Biscuit.of(BiscuitType.HONEY, 0));
+        assertEquals("gramAmount canot be Zero or less!", ex.getMessage());
     }
 }
