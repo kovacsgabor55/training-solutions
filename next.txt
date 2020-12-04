@@ -1,1 +1,1 @@
-staticattrmeth
+defaultconstructor
