@@ -8,7 +8,7 @@ import static org.hamcrest.core.StringContains.containsString;
 import static org.junit.Assert.assertThat;
 
 public class SimpleBagTest {
-/*
+
     @Test
     public void testConstructor() {
         //Given
@@ -28,7 +28,7 @@ public class SimpleBagTest {
         bag.putItem((new Book("Rejtő Jenő", "Az ellopott cirkáló")));
         bag.putItem(new Beer("Borsodi", 239));
         //Then
-        assertThat(bag.isEmpty(),equalTo(false));
+        assertThat(bag.isEmpty(), equalTo(false));
         assertThat(bag.size(), equalTo(3));
 
     }
@@ -59,5 +59,5 @@ public class SimpleBagTest {
         assertThat(bag.contains(new Beer("Borsodi", 239)), is(true));
         assertThat(bag.contains(new Book("Rejtő Jenő", "Az ellopott cirkáló")), is(true));
         assertThat(bag.contains(new Book("Rejtő Jenő", "A megkerült cirkáló")), is(false));
-    }*/
+    }
 }

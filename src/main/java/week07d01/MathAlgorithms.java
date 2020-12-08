@@ -1,7 +1,8 @@
 package week07d01;
 
 public class MathAlgorithms {
-
+    private MathAlgorithms() {
+    }
 
     public static boolean isPrime(long x) {
         if (x <= 0) {

@@ -23,7 +23,9 @@ class MathAlgorithmsTest {
     void isNotPrime() {
         Assertions.assertEquals(false, MathAlgorithms.isPrime(1));
         Assertions.assertEquals(false, MathAlgorithms.isPrime(9));
+        Assertions.assertEquals(false, MathAlgorithms.isPrime(4));
         Assertions.assertEquals(false, MathAlgorithms.isPrime(10));
+        Assertions.assertEquals(false, MathAlgorithms.isPrime(16));
         Assertions.assertEquals(false, MathAlgorithms.isPrime(25));
         Assertions.assertEquals(false, MathAlgorithms.isPrime(341));
         Assertions.assertEquals(false, MathAlgorithms.isPrime(561));
@@ -39,7 +41,7 @@ class MathAlgorithmsTest {
     @DisplayName("Test less zero number")
     @Test
     void isInvalidArgument2() {
-        Exception ex = assertThrows(IllegalArgumentException.class, () -> MathAlgorithms.isPrime(0));
+        Exception ex = assertThrows(IllegalArgumentException.class, () -> MathAlgorithms.isPrime(-25));
         assertEquals("Number cannot be zero or less!", ex.getMessage());
     }
 }
