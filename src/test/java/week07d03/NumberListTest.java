@@ -1,6 +1,5 @@
 package week07d03;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -27,14 +26,14 @@ class NumberListTest {
     @DisplayName("Increase list")
     @Test
     void isIncreasingTest() {
-        Assertions.assertEquals(true, NumberList.isIncreasing(increase));
-        Assertions.assertEquals(true, NumberList.isIncreasing(oneNumber));
+        assertTrue(NumberList.isIncreasing(increase));
+        assertTrue(NumberList.isIncreasing(oneNumber));
     }
 
     @DisplayName("No increase list")
     @Test
     void isNonIncreasingTest() {
-        Assertions.assertEquals(false, NumberList.isIncreasing(noIncrease));
+        assertFalse(NumberList.isIncreasing(noIncrease));
     }
 
     @DisplayName("Empty list")
