@@ -141,7 +141,7 @@ __Pontosítás:__ Ha `n = 0`, akkor `0`-t adunk vissza, ha `n=1`, akkor `1`-et, 
 
 Készíts egy `week07d02.DigitSum` osztályt és benne `sumOfDigits(int x)` metódus mely visszaadja a paraméterül kapott szám számjegyeinek összegét! pl.: `123` esetén a visszatérési érték `6`.
 
-### A Senior level csoport gyakorlati feladata: :x:
+### A Senior level csoport gyakorlati feladata: :heavy_check_mark: :x: :x:
 
 Készítsünk a `week07d02` csomagba egy interfészt `User` néven. Az interfésznek legyen egy `String getUsername()`, egy `String getFirstName()`, egy `String getLastName()` és egy `String getFullName()` metódusa. Implementáljuk az `User` interfészt egy `UserImpl` nevű osztályba, mely konstruktor paraméterként várja az `username`, a `firstName` és a `lastName` paramétereket. A `getFullName` metódushoz adjunk az interfészben egy default implementációt!
 
