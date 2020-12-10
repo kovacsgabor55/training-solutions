@@ -77,37 +77,37 @@ Ha üres a lista, akkor üres stringet adjunk vissza. Ha a paraméterül kapott 
 
 ## 6. hét 2. nap (`week06d02`)
 
-### A Senior level csoport gyakorlati feladata:
-
-Hozz létre egy `week06d02.Product` osztályt melynek adattagjai a név, kategória és ár. A kategória legyen `enum` `FROZEN,DAIRY,BAKEDGOODS,OTHER` felsorolókkal. Készíts egy `Store` osztályt benne egy `Product` listával, amit konstruktorban kap meg. Legyen egy `getProductsByCategory()` aminek az lényége, hogy visszaadja valamilyen adatszerkezetben, hogy melyik kategóriából hány darab van a listában. A "valamilyen adatszerkezet" a kreativításodra van bízva, az a lényeg, hogy valahogy egyben kapjam meg, hogy melyik kategóriából hány darab van. A `getProductsByCategory()` az összeset adja vissza.
-
 ### Junior/Mid level csoport gyakorlati feladata:
 
 Hozz létre egy `week06d02.Product` osztályt melynek adattagjai a név, kategória és ár, rendre, `String`, `String` `int`. Készíts egy `Store` osztályt benne egy `Product` listával, amit konstruktorban kap meg. Legyen egy `getProductByCategoryName(Category)`, ami visszaadja, hogy a paraméterül kapott kategóriából hány darab van a listában.
 
 __Bónusz:__ A kategória legyen `enum` `FROZEN,DAIRY,BAKEDGOODS,OTHER` felsorolókkal.
 
-## 6. hét 3. nap (`week06d03`)
-
 ### A Senior level csoport gyakorlati feladata:
 
-`week06d03.Series` osztályban hozz létre egy `calculateSeriesType` metódust, mely egész számok listáját kapja, és eldönti, hogy növekvő, csökkenő vagy össze-vissza sorozatról van-e szó! Feltétel, hogy a bemeneti lista nem tartalmaz egymás után egyenlő értékeket. Írj tesztesetet. Ha a lista üres, vagy csak egy elemből áll, dobj kivételt! Mivel térnél vissza?
+Hozz létre egy `week06d02.Product` osztályt melynek adattagjai a név, kategória és ár. A kategória legyen `enum` `FROZEN,DAIRY,BAKEDGOODS,OTHER` felsorolókkal. Készíts egy `Store` osztályt benne egy `Product` listával, amit konstruktorban kap meg. Legyen egy `getProductsByCategory()` aminek az lényége, hogy visszaadja valamilyen adatszerkezetben, hogy melyik kategóriából hány darab van a listában. A "valamilyen adatszerkezet" a kreativításodra van bízva, az a lényeg, hogy valahogy egyben kapjam meg, hogy melyik kategóriából hány darab van. A `getProductsByCategory()` az összeset adja vissza.
+
+## 6. hét 3. nap (`week06d03`)
 
 ### Junior/Mid level csoport gyakorlati feladata:
 
 A `week06d03.WordEraser` osztályban legyen egy `eraseWord(String words, String word)` metódus, mely az első paraméter szöveget úgy változtatja meg, hogy a második paraméter összes előforulását kitörli belőle. A `words` paraméterben a szavak szóközzel vannak elválasztva. A metódus térjen vissza a törölni kívánt szavak nélküli `String`gel. (Mellőzzük a `replace` és `replaceAll` használatát)
 
-## 6. hét 4. nap (`week06d04`)
-
 ### A Senior level csoport gyakorlati feladata:
 
-`week06d4.ShoppingCart` osztályba dolgozz! Legyen egy `addItem(String name, int quantity)` metódusa, mellyel új bevásárlólista tételt lehet felvenni (termék neve és mennyisége). Az adatokat egy `Item` listába tárolja. Amennyiben már benne van az adott termék, ne újonnan vegye fel, hanem adja hozzá a mennyiséget a már felvett tételhez. Lehessen visszakérdezni név alapján a felvett mennyiséget a `getItem(String name)`: `int` metódussal. Ha nem szerepel benne, `0` értéket adjon vissza. _A teszt eseteket ne feledd!_
+`week06d03.Series` osztályban hozz létre egy `calculateSeriesType` metódust, mely egész számok listáját kapja, és eldönti, hogy növekvő, csökkenő vagy össze-vissza sorozatról van-e szó! Feltétel, hogy a bemeneti lista nem tartalmaz egymás után egyenlő értékeket. Írj tesztesetet. Ha a lista üres, vagy csak egy elemből áll, dobj kivételt! Mivel térnél vissza?
+
+## 6. hét 4. nap (`week06d04`)
 
 ### Junior/Mid level csoport gyakorlati feladata:
 
 Készíts az `week06d04` csomagban egy `Budget` osztályt, amely a konstruktorában `Item` példányokat vár listában (`List`). Az `Item` tartalmazza az alábbi attribútumokat: `int price`, `int month`, `String name`. A `Budget` osztály tárolja el egy attribútumban a konstruktorban megkapott `items` listát. Írjunk egy metódust, `getItemsByMonth` néven, mely egy hónapot vár (`1`-`12`) és visszaadja az `Item`eket az adott hónapban!
 
 __Bónusz feladat:__ ellenőrizzük a bemeneti paramétereket és írjunk tesztet!
+
+### A Senior level csoport gyakorlati feladata:
+
+`week06d4.ShoppingCart` osztályba dolgozz! Legyen egy `addItem(String name, int quantity)` metódusa, mellyel új bevásárlólista tételt lehet felvenni (termék neve és mennyisége). Az adatokat egy `Item` listába tárolja. Amennyiben már benne van az adott termék, ne újonnan vegye fel, hanem adja hozzá a mennyiséget a már felvett tételhez. Lehessen visszakérdezni név alapján a felvett mennyiséget a `getItem(String name)`: `int` metódussal. Ha nem szerepel benne, `0` értéket adjon vissza. _A teszt eseteket ne feledd!_
 
 ## 6. hét 5. nap (`week06d05`)
 
@@ -149,20 +149,20 @@ __Bónusz feladat:__ Készítsünk egy statikus függvényt az `User` interfész
 
 ## 7. hét 3. nap (`week07d03`)
 
-### A Senior level csoport gyakorlati feladata: :heavy_check_mark:
-
-Készítsünk a `week07d03` csomagba egy `Date` osztályt, mely az alábbi attribútumokkal rendelkezik: `int year`, `int month`, `int day`. Az összes attribútum legyen `final`! Készítsünk továbbá egy statikus `of` metódust, mely a `year`, `month` és `day` paramétereket várja és létrehoz egy `Date` objektumot ezek alapján. Legyen továbbá a `Date`-nek egy `withYear(int year)`, `withMonth(int month)` és egy `withDay(int day)` metódusa, melyek egy új `Date` objektumot adnak vissza az eredeti `Date` objektum adataival, azzal a különbséggel, hogy az új objektum a megadott paraméter értékét tartalmazza a megfelelő helyen (`year`, `month` vagy `day`).
-
 ### Junior/Mid level csoport gyakorlati feladata: :heavy_check_mark:
 
 A `week07d03` csomagban hozz létre egy `NumberList` osztályt. Ennek legyen egy metódusa `isIncreasing(List<Integer>)` mely egy számokból álló listát vár paraméterül és megnézi, hogy a listában a számok növekvő sorrendben szerepelnek-e és ennek megfelelően igaz vagy hamis értékkel tér vissza. Speciális eset ha két egymást követő szám egyenlő, ez nem probléma a `1`,`2`,`3`,`3`,`3`,`5` számokat növekvőnek tekintjük.
 
+### A Senior level csoport gyakorlati feladata: :heavy_check_mark:
+
+Készítsünk a `week07d03` csomagba egy `Date` osztályt, mely az alábbi attribútumokkal rendelkezik: `int year`, `int month`, `int day`. Az összes attribútum legyen `final`! Készítsünk továbbá egy statikus `of` metódust, mely a `year`, `month` és `day` paramétereket várja és létrehoz egy `Date` objektumot ezek alapján. Legyen továbbá a `Date`-nek egy `withYear(int year)`, `withMonth(int month)` és egy `withDay(int day)` metódusa, melyek egy új `Date` objektumot adnak vissza az eredeti `Date` objektum adataival, azzal a különbséggel, hogy az új objektum a megadott paraméter értékét tartalmazza a megfelelő helyen (`year`, `month` vagy `day`).
+
 ## 7. hét 4. nap (`week07d04`)
-
-### A Senior level csoport gyakorlati feladata: :x:
-
-A `week07d04.ShoppingList` osztályba írj egy `long calculateSum(String path)` metódust, mely a paraméterként átadott fájlból beolvassa a bevásárlólista tartalmát, és összegzi az árat. A fájl a következő formátumú sorokat tartalmazza: `kenyér;2;30` ahol az első a termék neve, a második a darabszám, a harmadik az egységár. Azaz ezen sor esetén `2*30 = 60` értékkel kell számolni.
 
 ### Junior/Mid level csoport gyakorlati feladata: :heavy_check_mark:
 
 Hozz létre egy `week07d04.Lab` nevű osztályt, ami azt tárolja el, hogy melyik feladattal készültél el. Három attribútuma: `title` ami a tananyag neve, egy `completed`, hogy elkészültél-e vele, és a `completedAt`, ami azt tárolja, hogy mikor. Legyen két konstruktora! Az egyik csak a címet várja, ekkor úgy állítsa be a példányt, hogy még nem készültél el. Legyen egy másik, ami várja a címet és a dátumot. Ekkor azt állítsa be, hogy elvégezted a gyakorlati feladatot. Írj egy `complete` metódust, ami kap egy dátumot, és beállítja, hogy elvégezted a gyakorlati feladatot. Legyen egy `complete` metódusa, ami semmit nem vár, ez azt állítja be, hogy MOST végezted el a gyakorlati feladatot. Írd meg a `toString` metódusát is!
+
+### A Senior level csoport gyakorlati feladata: :x:
+
+A `week07d04.ShoppingList` osztályba írj egy `long calculateSum(String path)` metódust, mely a paraméterként átadott fájlból beolvassa a bevásárlólista tartalmát, és összegzi az árat. A fájl a következő formátumú sorokat tartalmazza: `kenyér;2;30` ahol az első a termék neve, a második a darabszám, a harmadik az egységár. Azaz ezen sor esetén `2*30 = 60` értékkel kell számolni.
