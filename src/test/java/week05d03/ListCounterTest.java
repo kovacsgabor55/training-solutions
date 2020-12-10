@@ -1,6 +1,7 @@
 package week05d03;
 
-import org.junit.jupiter.api.Assertions;
+import static org.junit.jupiter.api.Assertions.*;
+
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
@@ -11,7 +12,7 @@ class ListCounterTest {
     void startWithATest() {
         ListCounter listCounter = new ListCounter();
         List<String> testList = Arrays.asList("Alma", "körte", "ananász", "kenyér");
-        Assertions.assertEquals(2, listCounter.startsWithACounter(testList));
+        assertEquals(2, listCounter.startsWithACounter(testList));
 
     }
 
@@ -19,7 +20,7 @@ class ListCounterTest {
     void startWithANonATest() {
         ListCounter listCounter = new ListCounter();
         List<String> testList = Arrays.asList("körte", "kenyér");
-        Assertions.assertEquals(0, listCounter.startsWithACounter(testList));
+        assertEquals(0, listCounter.startsWithACounter(testList));
 
     }
 

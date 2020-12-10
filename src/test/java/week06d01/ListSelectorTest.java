@@ -1,6 +1,5 @@
 package week06d01;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -26,19 +25,19 @@ class ListSelectorTest {
     @DisplayName("odd size list")
     @Test
     void oddSizeList() {
-        Assertions.assertEquals("[first,third]", listSelector.evenIndexString(oddSizeStringList));
+        assertEquals("[first,third]", listSelector.evenIndexString(oddSizeStringList));
     }
 
     @DisplayName("even size list")
     @Test
     void evenSizeList() {
-        Assertions.assertEquals("[first,third]", listSelector.evenIndexString(evenSizeStringList));
+        assertEquals("[first,third]", listSelector.evenIndexString(evenSizeStringList));
     }
 
     @DisplayName("even size list")
     @Test
     void emptyList() {
-        Assertions.assertEquals("", listSelector.evenIndexString(new ArrayList<String>()));
+        assertEquals("", listSelector.evenIndexString(new ArrayList<String>()));
     }
 
     @DisplayName("null list")

@@ -2,6 +2,8 @@
 
 ## 5. hét 2. nap (`week05d02`)
 
+### Junior/Mid/Senior level csoport gyakorlati feladata: :heavy_check_mark: :x:
+
 A `week05d02.ChangeLetter` osztályban írj meg egy `String changeVowels(String)` metódust, amely kicseréli a paraméterként átadott szövegben az angol magánhangzókat csillag karakterre.
 
 ## 5. hét 3. nap (`week05d03`)

@@ -1,6 +1,7 @@
 package week06d02;
 
-import org.junit.jupiter.api.Assertions;
+import static org.junit.jupiter.api.Assertions.*;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -14,16 +15,16 @@ class ProductTest {
 
     @Test
     void getName() {
-        Assertions.assertEquals("Virsli", product.getName());
+        assertEquals("Virsli", product.getName());
     }
 
     @Test
     void getCategory() {
-        Assertions.assertEquals(Category.DAIRY, product.getCategory());
+        assertEquals(Category.DAIRY, product.getCategory());
     }
 
     @Test
     void getPrice() {
-        Assertions.assertEquals(2100, product.getPrice());
+        assertEquals(2100, product.getPrice());
     }
 }

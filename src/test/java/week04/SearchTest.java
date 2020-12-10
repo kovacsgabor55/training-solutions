@@ -1,6 +1,7 @@
 package week04;
 
-import org.junit.jupiter.api.Assertions;
+import static org.junit.jupiter.api.Assertions.*;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -16,11 +17,11 @@ class SearchTest {
 
     @Test
     void Given() {
-        Assertions.assertEquals(Arrays.asList(1), target.getIndexesOfChar("ketchup", 'e'));
+        assertEquals(Arrays.asList(1), target.getIndexesOfChar("ketchup", 'e'));
     }
 
     @Test
     void Given2() {
-        Assertions.assertEquals(Arrays.asList(1, 3), target.getIndexesOfChar("kefe", 'e'));
+        assertEquals(Arrays.asList(1, 3), target.getIndexesOfChar("kefe", 'e'));
     }
 }

@@ -1,6 +1,5 @@
 package week06d04;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -27,7 +26,7 @@ class BudgetTest {
     @Test
     void createTest() {
         Budget budget = new Budget(items);
-        Assertions.assertEquals(items, budget.getItems());
+        assertEquals(items, budget.getItems());
     }
 
     @DisplayName("Null list test")
@@ -40,7 +39,7 @@ class BudgetTest {
     @Test
     void getItemsByMonth() {
         Budget budget = new Budget(items);
-        Assertions.assertEquals("[Item{price=1240, month=5, name='Mouse'}, Item{price=154, month=5, name='Butter'}]", budget.getItemsByMonth(5).toString());
+        assertEquals("[Item{price=1240, month=5, name='Mouse'}, Item{price=154, month=5, name='Butter'}]", budget.getItemsByMonth(5).toString());
     }
 
     @DisplayName("To less month number")

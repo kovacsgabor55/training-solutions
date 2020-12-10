@@ -1,6 +1,5 @@
 package week06d04;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -12,9 +11,9 @@ class ItemTest {
     @Test
     void constructorTest() {
         Item item = new Item(2500, 11, "Computer");
-        Assertions.assertEquals(2500, item.getPrice());
-        Assertions.assertEquals(11, item.getMonth());
-        Assertions.assertEquals("Computer", item.getName());
+        assertEquals(2500, item.getPrice());
+        assertEquals(11, item.getMonth());
+        assertEquals("Computer", item.getName());
 
     }
 

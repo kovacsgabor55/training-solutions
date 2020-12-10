@@ -1,6 +1,7 @@
 package week05d04;
 
-import org.junit.jupiter.api.Assertions;
+import static org.junit.jupiter.api.Assertions.*;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -37,10 +38,10 @@ class StoreTest {
 
     @Test
     void createProduct() {
-        Assertions.assertEquals("alma", product.getName());
-        Assertions.assertEquals(2020, product.getExpire().getYear());
-        Assertions.assertEquals(11, product.getExpire().getMonthValue());
-        Assertions.assertEquals(12, product.getExpire().getDayOfMonth());
+        assertEquals("alma", product.getName());
+        assertEquals(2020, product.getExpire().getYear());
+        assertEquals(11, product.getExpire().getMonthValue());
+        assertEquals(12, product.getExpire().getDayOfMonth());
     }
 
     @Test
@@ -54,6 +55,6 @@ class StoreTest {
     @Test
     void shouldContainAddedProduct() {
         final List<Product> result = store.getProducts();
-        Assertions.assertEquals(products, result, "Nem jó");
+        assertEquals(products, result, "Nem jó");
     }
 }
