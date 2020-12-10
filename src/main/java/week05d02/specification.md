@@ -1,1 +1,1 @@
-A `week05d02.ChangeLetter` osztályban írj meg egy `String changeVowels(String)` metódust, mely kicseréli a paraméterként átadott szövegben az angol magánhangzókat csillag karakterre. Írj hozzá _teszt_eseteket is!
+A `week05d02.ChangeLetter` osztályban írj meg egy `String changeVowels(String)` metódust, mely kicseréli a paraméterként átadott szövegben az angol magánhangzókat csillag karakterre. Írj hozzá _teszteseteket_ is!

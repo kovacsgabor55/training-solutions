@@ -24,7 +24,7 @@ class LabTest {
     @Test
     void labConstructorTest() {
         assertEquals("Lab{title='title1', completed=false, completedAt=null}", lab1.toString());
-        assertEquals("Lab{title='title2', completed=false, completedAt=2020-12-24}", lab2.toString());
+        assertEquals("Lab{title='title2', completed=true, completedAt=2020-12-24}", lab2.toString());
     }
 
     @DisplayName("completed test")

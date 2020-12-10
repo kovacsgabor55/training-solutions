@@ -15,7 +15,7 @@ public class Lab {
 
     public Lab(String title, LocalDate completedAt) {
         this.title = title;
-        this.completed = false;
+        this.completed = true;
         this.completedAt = completedAt;
     }
 
@@ -25,8 +25,7 @@ public class Lab {
     }
 
     public void complete() {
-        this.completed = true;
-        this.completedAt = LocalDate.now();
+        complete(LocalDate.now());
     }
 
     @Override

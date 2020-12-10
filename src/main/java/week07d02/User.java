@@ -1,6 +1,9 @@
 package week07d02;
 
 public interface User {
+    static User of() {
+        return null;
+    }
 
     String getUsername();
 
