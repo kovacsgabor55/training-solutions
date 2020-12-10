@@ -137,11 +137,11 @@ __Pontosítás:__ Ha `n = 0`, akkor `0`-t adunk vissza, ha `n=1`, akkor `1`-et, 
 
 ## 7. hét 2. nap (`week07d02`)
 
-### Junior/Mid level csoport gyakorlati feladata:
+### Junior/Mid level csoport gyakorlati feladata: :heavy_check_mark:
 
 Készíts egy `week07d02.DigitSum` osztályt és benne `sumOfDigits(int x)` metódus mely visszaadja a paraméterül kapott szám számjegyeinek összegét! pl.: `123` esetén a visszatérési érték `6`.
 
-### A Senior level csoport gyakorlati feladata:
+### A Senior level csoport gyakorlati feladata: :x:
 
 Készítsünk a `week07d02` csomagba egy interfészt `User` néven. Az interfésznek legyen egy `String getUsername()`, egy `String getFirstName()`, egy `String getLastName()` és egy `String getFullName()` metódusa. Implementáljuk az `User` interfészt egy `UserImpl` nevű osztályba, mely konstruktor paraméterként várja az `username`, a `firstName` és a `lastName` paramétereket. A `getFullName` metódushoz adjunk az interfészben egy default implementációt!
 
@@ -149,11 +149,11 @@ __Bónusz feladat:__ Készítsünk egy statikus függvényt az `User` interfész
 
 ## 7. hét 3. nap (`week07d03`)
 
-### A Senior level csoport gyakorlati feladata:
+### A Senior level csoport gyakorlati feladata: :heavy_check_mark:
 
 Készítsünk a `week07d03` csomagba egy `Date` osztályt, mely az alábbi attribútumokkal rendelkezik: `int year`, `int month`, `int day`. Az összes attribútum legyen `final`! Készítsünk továbbá egy statikus `of` metódust, mely a `year`, `month` és `day` paramétereket várja és létrehoz egy `Date` objektumot ezek alapján. Legyen továbbá a `Date`-nek egy `withYear(int year)`, `withMonth(int month)` és egy `withDay(int day)` metódusa, melyek egy új `Date` objektumot adnak vissza az eredeti `Date` objektum adataival, azzal a különbséggel, hogy az új objektum a megadott paraméter értékét tartalmazza a megfelelő helyen (`year`, `month` vagy `day`).
 
-### Junior/Mid level csoport gyakorlati feladata:
+### Junior/Mid level csoport gyakorlati feladata: :heavy_check_mark:
 
 A `week07d03` csomagban hozz létre egy `NumberList` osztályt. Ennek legyen egy metódusa `isIncreasing(List<Integer>)` mely egy számokból álló listát vár paraméterül és megnézi, hogy a listában a számok növekvő sorrendben szerepelnek-e és ennek megfelelően igaz vagy hamis értékkel tér vissza. Speciális eset ha két egymást követő szám egyenlő, ez nem probléma a `1`,`2`,`3`,`3`,`3`,`5` számokat növekvőnek tekintjük.
 
