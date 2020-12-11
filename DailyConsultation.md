@@ -8,18 +8,18 @@ A `week05d02.ChangeLetter` osztályban írj meg egy `String changeVowels(String)
 
 ## 5. hét 3. nap (`week05d03`)
 
-### Junior/Mid level csoport gyakorlati feladata:
+### Junior/Mid level csoport gyakorlati feladata: :grey_question:
 
 Írj egy olyan metódust az `week05d03.ListCounter` osztályban, mely egy kapott `List`ából (`String`) összeszámolja azokat amik `'a'` vagy `'A'` betűvel kezdődnek,
 Ha nulla elemű a tömb, vagy nincs benne ilyen elem, akkor `0`-t adjon vissza.
 
-### A Senior level csoport gyakorlati feladata:
+### A Senior level csoport gyakorlati feladata: :grey_question:
 
 Készíts egy osztályt `UserValidator` néven, mely rendelkezik egy `validate` nevű metódussal. A metódus `User` objektumok listáját várja és a feladata az, hogy ellenőrizze, hogy az `User` `name` attribútuma nem üres és az `User` `age` attribútuma nem negatív és nem nagyobb, mint `120`! Ha találunk egy nem megfelelő objektumot, akkor dobjunk el egy `InvalidArgumentException` kivételt, mely tartalmaz egy hibaüzenetet a validációs hiba okával!
 
 ## 5. hét 4. nap (`week05d04`)
 
-### Junior/Mid level csoport gyakorlati feladata:
+### Junior/Mid level csoport gyakorlati feladata: :grey_question:
 
 Készíts egy `week05d04.Product` osztályt amelyben egy termékről tárolod a nevét és a lejárati dátumát (`LocalDate`). Legyen egy konstruktora, ami a nevet kapja meg illetve a lejárati dátumot három részletben `int year, int month, int day`. (`public Product(String name, int year, int month, int day)`)
 A lejárati dátumot a konstruktorban állítsd össze.
@@ -28,7 +28,7 @@ Készíts egy `week05d04.Store` osztályt, melyben van egy `Product`okat tárol�
 
 __Bónusz:__ Legyen benne egy `getNumberOfExpired()` metódus ami visszaadja a lejárt termékek számát. Használd a `LocalDate.now()` és az `isBefore()` metódusokat.
 
-### A Senior level csoport gyakorlati feladata:
+### A Senior level csoport gyakorlati feladata: :grey_question:
 
 Készíts egy osztályt `Product` néven, melynek van egy `price` (`long`) és egy `currency` (`String`) mezője. A `Product` a konstruktorában ellenőrizze a `currency` mezőt, melynek az értéke vagy `HUF`, vagy `USD` lehet.
 Készíts egy metódust `convertPrice` néven, melynek egy paramétere van (`currency`) és visszaadja a `currency`-nek megfelelő összeget (`double`). Használjunk `300` forintos átváltási árfolyamot! Példa: ha a `Product`-ot létrehozzuk a következőképp: `new Product(150, "HUF")`, majd meghívjuk a `convertPrice`-ot "`USD`" paraméterrel, akkor az elvárt visszatérési érték `0.5`.
@@ -37,11 +37,11 @@ __Bónusz feladat:__ Használjunk `enum`-ot `String` helyett a pénznem reprezen
 
 ## 5. hét 5. nap (`week05d05`)
 
-### Junior/Mid level csoport gyakorlati feladata:
+### Junior/Mid level csoport gyakorlati feladata: :grey_question:
 
 Készíts egy osztályt `week05d05.User` néven, melynek van egy `firstName (String)`, egy `lastName (String)` és egy `email (String)` mezője. Legyen ellenőrzés az `User` konstruktorában, mely hibát jelez, ha nincs `@` és `.` (pont) az e-mail címben! Készíts egy metódust is `getFullName` névvel, mely visszaadja a `firstName` és a `lastName` változókat összefűzve. Legyen köztük egy whitespace ("` `").
 
-### A Senior level csoport gyakorlati feladata:
+### A Senior level csoport gyakorlati feladata: :grey_question:
 
 Készítsünk egy `Song` osztályt, melynek az alábbi mezői vannak:
 - `String name`
@@ -58,59 +58,59 @@ __Bónusz feladat:__ Implementáljuk megfelelően a `toString` metódust a `Song
 
 ## 6. hét 1. nap (`week06d01`)
 
-### Junior/Mid level csoport gyakorlati feladata:
+### Junior/Mid level csoport gyakorlati feladata: :grey_question:
 
 Írj egy olyan metódust az `week06d01.ListSelector` osztályban, mely egy kapott listából minden második elemet kiválogat, és egy szövegként összerak, szögletes zárójelek között.
 A páros megállapítása index szerint működik. Azaz az első, nulla indexű elem páros, a második, azaz egyes indexű elem páratlan, stb.
 Ha üres a lista, akkor üres `String`et adjunk vissza. Ha a paraméterül kapott lista `null`, akkor dobjunk `IllegalArgumentException`t a metódusban.
 
-### A Senior level csoport gyakorlati feladata:
+### A Senior level csoport gyakorlati feladata: :grey_question:
 
 Írj egy `week06d01.SeparatedSum.sum(String s)` metódust, amely kap egy `String`-et, melyben lebegőpontos számok szerepelnek pontosvesszővel elválasztva. A számoknál vessző a tizedes elválasztó. Ezt szétszedi, és összeadja külön a pozitív és külön a negatív számokat. Mivel térnél vissza ebből a metódusból?
 
 ## 6. hét 2. nap (`week06d02`)
 
-### Junior/Mid level csoport gyakorlati feladata:
+### Junior/Mid level csoport gyakorlati feladata: :grey_question:
 
 Hozz létre egy `week06d02.Product` osztályt amelynek adattagjai a név, kategória és ár, rendre, `String`, `String` `int`. Készíts egy `Store` osztályt benne egy `Product` listával, amit konstruktorban kap meg. Legyen egy `getProductByCategoryName(Category)`, ami visszaadja, hogy a paraméterül kapott kategóriából hány darab van a listában.
 
 __Bónusz:__ A kategória legyen `enum` `FROZEN, DAIRY, BAKEDGOODS, OTHER` felsorolókkal.
 
-### A Senior level csoport gyakorlati feladata:
+### A Senior level csoport gyakorlati feladata: :grey_question:
 
 Hozz létre egy `week06d02.Product` osztályt amelynek adattagjai a név, kategória és ár. A kategória legyen `enum` `FROZEN, DAIRY, BAKEDGOODS, OTHER` felsorolókkal. Készíts egy `Store` osztályt benne egy `Product` listával, amit konstruktorban kap meg. Legyen egy `getProductsByCategory()` aminek a lényege, hogy visszaadja valamilyen adatszerkezetben, hogy melyik kategóriából hány darab van a listában. A "valamilyen adatszerkezet" a kreativitásodra van bízva, az a lényeg, hogy valahogy egyben kapjam meg, hogy melyik kategóriából hány darab van. A `getProductsByCategory()` az összeset adja vissza.
 
 ## 6. hét 3. nap (`week06d03`)
 
-### Junior/Mid level csoport gyakorlati feladata:
+### Junior/Mid level csoport gyakorlati feladata: :grey_question:
 
 A `week06d03.WordEraser` osztályban legyen egy `eraseWord(String words, String word)` metódus, amely az első paraméter szöveget úgy változtatja meg, hogy a második paraméter összes előfordulását törli belőle. A `words` paraméterben a szavak szóközzel vannak elválasztva. A metódus térjen vissza a törölni kívánt szavak nélküli `String`gel. (Mellőzzük a `replace` és `replaceAll` használatát)
 
-### A Senior level csoport gyakorlati feladata:
+### A Senior level csoport gyakorlati feladata: :grey_question:
 
 `week06d03.Series` osztályban hozz létre egy `calculateSeriesType` metódust, amely egész számok listáját kapja, és eldönti, hogy növekvő, csökkenő vagy össze-vissza sorozatról van-e szó! Feltétel, hogy a bemeneti lista nem tartalmaz egymás után egyenlő értékeket. Ha a lista üres, vagy csak egy elemből áll, dobj kivételt! Mivel térnél vissza?
 
 ## 6. hét 4. nap (`week06d04`)
 
-### Junior/Mid level csoport gyakorlati feladata:
+### Junior/Mid level csoport gyakorlati feladata: :grey_question:
 
 Készíts az `week06d04` csomagban egy `Budget` osztályt, amely a konstruktorában `Item` példányokat vár listában (`List`). Az `Item` tartalmazza az alábbi attribútumokat: `int price`, `int month`, `String name`. A `Budget` osztály tárolja el egy attribútumban a konstruktorban megkapott `items` listát. Írjunk egy metódust, `getItemsByMonth` néven, amely egy hónapot vár (`1`-`12`) és visszaadja az `Item`eket az adott hónapban!
 
 __Bónusz feladat:__ ellenőrizzük a bemeneti paramétereket!
 
-### A Senior level csoport gyakorlati feladata:
+### A Senior level csoport gyakorlati feladata: :grey_question:
 
 `week06d4.ShoppingCart` osztályba dolgozz! Legyen egy `addItem(String name, int quantity)` metódusa, mellyel új bevásárlólista tételt lehet felvenni (termék neve és mennyisége). Az adatokat egy `Item` listába tárolja. Amennyiben már benne van az adott termék, ne újonnan vegye fel, hanem adja hozzá a mennyiséget a már felvett tételhez. Lehessen visszakérdezni név alapján a felvett mennyiséget a `getItem(String name)`: `int` metódussal. Ha nem szerepel benne, `0` értéket adjon vissza.
 
 ## 6. hét 5. nap (`week06d05`)
 
-### Junior/Mid level csoport gyakorlati feladata:
+### Junior/Mid level csoport gyakorlati feladata: :grey_question:
 
 Készíts a `week06d05` csomagban egy `Biscuit` nevű osztályt, amelynek van 2 attribútuma: `BiscuitType type` és `int gramAmount`. A `BiscuitType` legyen felsorolásos típus a 3 kedvenc keksz fajtáddal. A `Biscuit` nevű osztálynak legyen egy `static` metódusa `of` néven, mely paraméterként egy `BiscuitType`-ot, és egy `int gramAmount`-ot vár és visszaad egy új `Biscuit` objektumot amelyet a megadott paraméterek alapján hoz létre.
 
 __Bónusz feladat:__ konzolra írás esetén a Biscuit jelenítse meg a type és a gramAmount mezőket!
 
-### A Senior level csoport gyakorlati feladata:
+### A Senior level csoport gyakorlati feladata: :grey_question:
 
 Készíts a `week06d05` csomagban egy `Bottle` nevű osztályt, amelynek van 2 attribútuma: `BottleType type` és `int filledUntil`. A `BottleType` legyen felsorolásos típus az alábbi értékekkel: `GLASS_BOTTLE` és `PET_BOTTLE`, . A `Bottle` nevű osztálynak legyen egy `static` metódusa `of` néven, mely paraméterként egy `BottleType`-ot vár és visszaad egy új `Bottle` objektumot amelyet a megadott paraméter alapján hoz létre. A `Bottle` osztálynak legyen egy `fill` metódusa, mely egy `int fillAmount` paramétert vár. A `fill` meghívása esetén végezzen ellenőrzést, hogy megtelt-e már a `Bottle` objektum. Az ehhez szükséges `int maximumAmount` mezőt a `BottleType` tartalmazza! Ha túlcsordul a `Bottle` objektum, akkor dobjunk kivételt!
 
@@ -159,3 +159,11 @@ Hozz létre egy `week07d04.Lab` nevű osztályt, ami azt tárolja el, hogy melyi
 ### A Senior level csoport gyakorlati feladata: :x:
 
 A `week07d04.ShoppingList` osztályba írj egy `long calculateSum(String path)` metódust, amely a paraméterként átadott fájlból beolvassa a bevásárlólista tartalmát, és összegzi az árat. A fájl a következő formátumú sorokat tartalmazza: `kenyér;2;30` ahol az első a termék neve, a második a darabszám, a harmadik az egységár. Azaz ezen sor esetén `2*30 = 60` értékkel kell számolni.
+
+## 7. hét 5. nap (`week07d05`)
+
+### Junior/Mid level csoport gyakorlati feladata: :heavy_check_mark: :x:
+Készíts a `week07d05` csomagba egy `Vehicle`, egy `Car`, egy `Truck` és egy `Motorcycle` osztályt. A `Vehicle` osztálynak legyen egy `int getNumberOfGears` és egy `TransmissionType getTransmissionType` metódusa. A fenti osztályok értelemszerűen öröklődjenek egymásból és mindegyiknek implementálja a sebességek számát és a váltó típusát. A lehetséges váltótípusok: `MANUAL, AUTOMATIC, SEQUENTIAL`. Az alapértelmezett váltó típus (a `Vehicle` osztályban) `MANUAL`, de a `Car` automatikus, míg a `Motorcycle` `SEQUENTIAL`. Az alapértelmezett sebesség szám `5`.
+
+### A Senior level csoport gyakorlati feladata: :x:
+Kérj be a felhasználótól három sort, majd a fájl nevét. Mentsd el a sorokat ebbe a fájlba. A `week07d05.SaveInput` osztályba dolgozz!
