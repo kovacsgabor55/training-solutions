@@ -1,1 +1,1 @@
-inheritancemethods
+interface
