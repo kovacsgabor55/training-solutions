@@ -1,5 +1,96 @@
 # Konzultációs feladatok
 
+> A feladatoknál írj teszteseteket.
+
+## 2020-11-03 (`week02d2`)
+
+Írj egy `Phone` osztályt, `type` (`String`) és mem (`int`) attribútumokkal!
+Generálj konstruktort, gettert és settert! Írj bele egy `main` metódust, amivel példányosítasz egy osztályt, és kiírod az attribútumok értékeit!
+
+## 2020-11-04 (`week02d3`)
+
+Írj egy `Product` oszályt `String name` és `String code` attribútumokkal!
+Legyen egy konstruktora a két attribútummal! Legyen egy `areTheyEqual()`
+metódusa, mely kap egy másik `Product` példányt, és eldönti, hogy
+azonos-e az adott példánnyal. Két termék akkor egyezik, ha
+a nevük megegyezik.
+
+__Bónusz:__ szigorúbb egyelőség a feltételre: a két termék kódjának hosszának különbsége
+maximum egy karakter lehet.
+
+## 2020-11-05 (`week02d4`)
+
+Hozz létre egy `InputNames` Java osztályt, melynek van egy `main` metódusa.
+Ciklusban kérj be öt nevet! A neveket tárold el egy tömbben!
+Írd ki a tömb tartalmát, sortöréssel elválasztva (írd bele, hogy hanyadik elem - 1-től sorszámozva)!
+
+## 2020-11-06 (`week02d5`)
+
+Hozz létre egy `Languages` osztályt, `main` metódussal!
+Ebben hozz létre egy listát, mely karakterláncokat tartalmaz!
+Vegyetek fel 3 elemet: `Java`, `Python`, `JavaScript`!
+
+Írd ki, az öt karakternél hosszabb programozási nyelveket!
+
+## 2020-11-10 (`week03d02`)
+
+Írj egy `Position` osztályt, melynek van egy `name` és egy `bonus` attribútuma!
+Egy alkalmazotti pozíciót jelöl, melynek a `bonus` attribútuma tárolja, hogy
+ebben a pozícióban évente mennyi bónuszt kap egy alkalmazott.
+A `main` metódusban hozz létre egy `Position` objektumokat tartalmazo listát!
+
+Menj végig a lista elemein, és írd ki azokat, ahol a bónusz magasabb, mint
+`150_000`. Azonban a kiírás  
+formátumát a `Position` osztály `toString()` metódusában implementáld!
+
+## 2020-11-12 (`week03d4`)
+
+Írj egy `Phone` oszályt, melynek van egy `prefix` és egy `number`
+`String` attribútuma! Írj egy `PhoneParser` osztályt egy
+`parse(String)` metódussal, ami beolvas egy `10-1234567`
+formátumú szöveget, és visszaad egy `Phone` objektumot,
+feltöltve a `prefix` értékét `10`, a `number` értékét `1234567`
+értékekkel!
+
+## 2020-11-13 (`week03d05`)
+
+Írj egy `Operation` osztályt, mely konstruktorban kap egy 
+összeadást, pl. `68+12`! A `getResult()` metódus visszaadja a 
+művelet eredményét. Egy belső `leftOperand` és `rightOperand`
+attribútumba dolgozz!
+
+## 2020-11-16 (`week04d01`)
+
+Készítsd el a `NameChanger` osztályt, melynek privát attribútuma
+legyen a `String fillName`, mely egy ember teljes nevét reprezentálja!
+A `fullName` attribútum `[vezetéknév][szóköz][keresztnév]` formátumban épül fel.
+A konstruktor állítsa be a paraméterül kapott értékre az adattagot,
+de ha az érték `null`, vagy üres String, akkor dobjon egy
+`IllegalAgrumentException` kivételt a következő üzenettel: 
+`Invalid name:[paraméter értéke]`!
+
+Legyen egy `changeFirstName(String firstName)` metódusa, mely megváltoztatja az
+objektum állapotát és kicseréli a vezetéknevet a paraméterül kapott értékre!
+
+## 2020-11-18 (`week04d02`)
+
+A `Search` osztályban írj egy `getIndexesOfChar()` 
+metódust, mely első paraméterként vár egy `String` értéket,
+második paraméterként egy `char` értéket! Visszaad egy listát,
+melyben visszaadja, hogy a karakter hanyadik indexeken
+szerepel az első paraméterként átadott listában.
+
+Pl.: `almafa` szóban a `a` karakter: `0, 3, 5`.
+
+## 2020-11-18 (`week04d03`)
+
+Írj egy számkitaláló programot a `GuessTheNumber` osztályba! A
+program kitalál egy véletlenszerű számot `1` és `100` között. Majd
+bekér a felhasználótól ciklusban számokat. Mindig megmondja,
+hogy a szám, kisebb, nagyobb vagy egyenlő-e mint a gondolt szám.
+
+__Bónusz:__ max `6`-szor lehet kérdezni!
+
 ## 5. hét 2. nap (`week05d02`)
 
 ### Junior/Mid/Senior level csoport gyakorlati feladata: :heavy_check_mark: :x:
