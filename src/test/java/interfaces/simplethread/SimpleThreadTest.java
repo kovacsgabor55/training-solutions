@@ -10,29 +10,29 @@ import static org.junit.Assert.*;
 
 public class SimpleThreadTest {
 
-	@Test
-	public void runWithEmptyTasks() {
-		List<String> tasks = new ArrayList<>();
-		SimpleThread simpleThread = new SimpleThread(tasks);
-		assertThat(simpleThread.getTasks().size(), is(0));
+    @Test
+    public void runWithEmptyTasks() {
+        List<String> tasks = new ArrayList<>();
+        SimpleThread simpleThread = new SimpleThread(tasks);
+        assertThat(simpleThread.getTasks().size(), is(0));
 
-		simpleThread.run();
+        simpleThread.run();
 
-		assertThat(simpleThread.getTasks().size(), is(0));
-	}
+        assertThat(simpleThread.getTasks().size(), is(0));
+    }
 
-	@Test
-	public void runWithTasks() {
-		List<String> tasks = new ArrayList<>();
-		tasks.add("sut");
-		tasks.add("foz");
-		tasks.add("takarit");
-		SimpleThread simpleThread = new SimpleThread(tasks);
-		assertThat(simpleThread.getTasks().size(), is(tasks.size()));
+    @Test
+    public void runWithTasks() {
+        List<String> tasks = new ArrayList<>();
+        tasks.add("sut");
+        tasks.add("foz");
+        tasks.add("takarit");
+        SimpleThread simpleThread = new SimpleThread(tasks);
+        assertThat(simpleThread.getTasks().size(), is(tasks.size()));
 
-		simpleThread.run();
+        simpleThread.run();
 
-		assertThat(simpleThread.getTasks().size(), is(0));
-	}
+        assertThat(simpleThread.getTasks().size(), is(0));
+    }
 
 }
