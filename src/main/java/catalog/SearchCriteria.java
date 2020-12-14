@@ -1,6 +1,6 @@
 package catalog;
 
-public class SearchCriteria {
+public final class SearchCriteria {
     private String contributor;
     private String title;
 

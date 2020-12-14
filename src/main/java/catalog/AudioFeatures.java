@@ -23,28 +23,12 @@ public class AudioFeatures implements Feature {
         this.performers = performers;
     }
 
-    public List<String> getComposer() {
-        return composer;
-    }
-
-    public void setComposer(List<String> composer) {
-        this.composer = composer;
-    }
-
     public int getLength() {
         return length;
     }
 
     public void setLength(int length) {
         this.length = length;
-    }
-
-    public List<String> getPerformers() {
-        return performers;
-    }
-
-    public void setPerformers(List<String> performers) {
-        this.performers = performers;
     }
 
     public void setTitle(String title) {

@@ -27,14 +27,24 @@ public class CatalogItem {
         return registrationNumber;
     }
 
-    //FIXME
     public int numberOfPagesAtOneItem() {
-        return 0;
+        int sumPage = 0;
+        for (Feature item : features) {
+            if (item instanceof PrintedFeatures) {
+                sumPage += ((PrintedFeatures) item).getNumberOfPages();
+            }
+        }
+        return sumPage;
     }
 
-    //FIXME
     public int fullLengthAtOneItem() {
-        return 0;
+        int sumLength = 0;
+        for (Feature item : features) {
+            if (item instanceof AudioFeatures) {
+                sumLength += ((AudioFeatures) item).getLength();
+            }
+        }
+        return sumLength;
     }
 
     public List<String> getContributors() {
@@ -53,13 +63,21 @@ public class CatalogItem {
         return titles;
     }
 
-    //FIXME
     public boolean hasAudioFeature() {
+        for (Feature item : features) {
+            if (item instanceof AudioFeatures) {
+                return true;
+            }
+        }
         return false;
     }
 
-    //FIXME
     public boolean hasPrintedFeature() {
+        for (Feature item : features) {
+            if (item instanceof PrintedFeatures) {
+                return true;
+            }
+        }
         return false;
     }
 }
