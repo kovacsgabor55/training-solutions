@@ -16,29 +16,30 @@ class RobotTest {
 
     @Test
     void move() {
-        point=robot.move("FFLLLLLBBBBJJJJJJJ");
-        assertEquals(3,point.getX());
-        assertEquals(-3,point.getY());
+        point = robot.move("FFLLLLLBBBBJJJJJJJ");
+        assertEquals(3, point.getX());
+        assertEquals(-3, point.getY());
     }
+
     @Test
     void moveNonCaseSensitive() {
-        point=robot.move("FfLLllLBBbBJJJjJJJ");
-        assertEquals(3,point.getX());
-        assertEquals(-3,point.getY());
+        point = robot.move("FfLLllLBBbBJJJjJJJ");
+        assertEquals(3, point.getX());
+        assertEquals(-3, point.getY());
     }
 
     @Test
     void moveOrigoToOrigo() {
-        point=robot.move("FLBJ");
-        assertEquals(0,point.getX());
-        assertEquals(0,point.getY());
+        point = robot.move("FLBJ");
+        assertEquals(0, point.getX());
+        assertEquals(0, point.getY());
     }
 
     @Test
     void noMoveToOrigo() {
-        point=robot.move("");
-        assertEquals(0,point.getX());
-        assertEquals(0,point.getY());
+        point = robot.move("");
+        assertEquals(0, point.getX());
+        assertEquals(0, point.getY());
     }
 
     @Test
