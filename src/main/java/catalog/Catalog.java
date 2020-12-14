@@ -79,40 +79,40 @@ public class Catalog {
     }
 
     public List<CatalogItem> findByCriteria(SearchCriteria searchCriteria) {
-        List<CatalogItem> searchedCatalogItems = new ArrayList<>();
         if (searchCriteria.hasTitle() && searchCriteria.hasContributor()) {
-            for (CatalogItem item : catalogItems) {
-                for (String contributorItem : item.getContributors()) {
-                    if (contributorItem.equals(searchCriteria.getContributor())) {
-                        for (String titleItem : item.getTitles()) {
-                            if (titleItem.equals(searchCriteria.getTitle())) {
-                                searchedCatalogItems.add(item);
-                            }
-                        }
-                    }
-                }
-            }
-            return searchedCatalogItems;
-        }
-        if (searchCriteria.hasContributor()) {
-            for (CatalogItem item : catalogItems) {
-                for (String contributorItem : item.getContributors()) {
-                    if (contributorItem.equals(searchCriteria.getContributor())) {
-                        searchedCatalogItems.add(item);
-                    }
-                }
-            }
-            return searchedCatalogItems;
+            return findByCriteriaContributor(searchCriteria, findByCriteriaTitle(searchCriteria, catalogItems));
         }
         if (searchCriteria.hasTitle()) {
-            for (CatalogItem item : catalogItems) {
-                for (String titleItem : item.getTitles()) {
-                    if (titleItem.equals(searchCriteria.getTitle())) {
-                        searchedCatalogItems.add(item);
-                    }
+            return findByCriteriaTitle(searchCriteria, catalogItems);
+        }
+        if (searchCriteria.hasContributor()) {
+            return findByCriteriaContributor(searchCriteria, catalogItems);
+        }
+        return new ArrayList<>();
+    }
+
+    private List<CatalogItem> findByCriteriaTitle(SearchCriteria searchCriteria, List<CatalogItem> catalogItems) {
+        List<CatalogItem> searchedCatalogItems = new ArrayList<>();
+        for (CatalogItem item : catalogItems) {
+            for (String titleItem : item.getTitles()) {
+                if (titleItem.equals(searchCriteria.getTitle())) {
+                    searchedCatalogItems.add(item);
                 }
             }
         }
         return searchedCatalogItems;
     }
+
+    private List<CatalogItem> findByCriteriaContributor(SearchCriteria searchCriteria, List<CatalogItem> catalogItems) {
+        List<CatalogItem> searchedCatalogItems = new ArrayList<>();
+        for (CatalogItem item : catalogItems) {
+            for (String contributorItem : item.getContributors()) {
+                if (contributorItem.equals(searchCriteria.getContributor())) {
+                    searchedCatalogItems.add(item);
+                }
+            }
+        }
+        return searchedCatalogItems;
+    }
+
 }
