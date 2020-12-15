@@ -21,16 +21,16 @@ public class Robot {
         switch (command) {
             case "B":
                 position = position.step(Point.of(-1, 0));
-                break;
+                return;
             case "J":
                 position = position.step(Point.of(1, 0));
-                break;
+                return;
             case "F":
                 position = position.step(Point.of(0, 1));
-                break;
+                return;
             case "L":
                 position = position.step(Point.of(0, -1));
-                break;
+                return;
             default:
                 throw new IllegalArgumentException("Invalid command: " + command);
         }

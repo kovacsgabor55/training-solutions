@@ -1,0 +1,8 @@
+##Mai Senior feladat:
+
+A török szultán elhatározza, hogy a `100` nap múlva lévő születésnapján szabadon enged néhány rabot a börtönéből. A börtönben `100` cella van. Mindegyik cella zárva van. Ha egyet fordítunk a kulcson akkor nyitva lesz, ha még egyet akkor zárva ha hármat akkor ismét nyitva és így tovább.
+A szultán azt a parancsot adja, hogy az első nap mindegyik cellán fordítsanak egyet.  (Ekkor minden cella nyitva lesz) A második napon minden másodikon fordítsanak egyet, így minden második zárva lesz. A harmadik napon minden harmadikon fordítsanak egyet így a 3. cella zárva , de a 6. cella például nyitva lesz. A `week08d01.Sultan` osztályba írj egy metódust `openDoors()` néven,  aminek visszatérési értékéből kiderül, hogy mely ajtók lesznek nyitva a `100`. napon! Az osztály szabadon bővíthető!
+
+##Junior/Mid-leve csoport mai feladata:
+
+A feladatban egy robot mozgását fogjuk szimulálni. Képzelj el egy koordináta rendszert, ahol a robot az origóban van. A robot négy irányba képes mozogni fel, le, balra és jobbra. A `week08d01.Robot` osztályban írj egy `move()` metódust ami egy karaktersorozatot vár.  pl: `FFLLLLLBBBBJJJJJJJ`, ahol az `F` = fel, `L`=le, `B`=bal, `J`=jobb. A metódus visszatérési értéke legyen a robot mozgás utáni pozíciója. A feladat szabadon bővíthető osztályokkal és metódusokkal. Bónusz kiegészítés, hogyha más karaktert is tartalmaz a paraméter `String` nem csak a `FLBJ` valamelyikét, akkor dobjunk `IllegalArgumentException`t!

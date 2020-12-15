@@ -258,3 +258,39 @@ Készíts a `week07d05` csomagba egy `Vehicle`, egy `Car`, egy `Truck` és egy `
 
 ### A Senior level csoport gyakorlati feladata: :x:
 Kérj be a felhasználótól három sort, majd a fájl nevét. Mentsd el a sorokat ebbe a fájlba. A `week07d05.SaveInput` osztályba dolgozz!
+
+## 8. hét 1. nap (`week08d01`)
+
+### Junior/Mid level csoport gyakorlati feladata: :heavy_check_mark:
+
+A feladatban egy robot mozgását fogjuk szimulálni. Képzelj el egy koordináta rendszert, ahol a robot az origóban van. A robot négy irányba képes mozogni fel, le, balra és jobbra. A `week08d01.Robot` osztályban írj egy `move()` metódust ami egy karaktersorozatot vár.  pl: `FFLLLLLBBBBJJJJJJJ`, ahol az `F` = fel, `L`=le, `B`=bal, `J`=jobb. A metódus visszatérési értéke legyen a robot mozgás utáni pozíciója. A feladat szabadon bővíthető osztályokkal és metódusokkal. Bónusz kiegészítés, hogyha más karaktert is tartalmaz a paraméter `String` nem csak a `FLBJ` valamelyikét, akkor dobjunk `IllegalArgumentException`t!
+
+### A Senior level csoport gyakorlati feladata: :x:
+
+A török szultán elhatározza, hogy a `100` nap múlva lévő születésnapján szabadon enged néhány rabot a börtönéből. A börtönben `100` cella van. Mindegyik cella zárva van. Ha egyet fordítunk a kulcson akkor nyitva lesz, ha még egyet akkor zárva ha hármat akkor ismét nyitva és így tovább.
+A szultán azt a parancsot adja, hogy az első nap mindegyik cellán fordítsanak egyet.  (Ekkor minden cella nyitva lesz) A második napon minden másodikon fordítsanak egyet, így minden második zárva lesz. A harmadik napon minden harmadikon fordítsanak egyet így a 3. cella zárva , de a 6. cella például nyitva lesz. A `week08d01.Sultan` osztályba írj egy metódust `openDoors()` néven,  aminek visszatérési értékéből kiderül, hogy mely ajtók lesznek nyitva a `100`. napon! Az osztály szabadon bővíthető!
+
+## 8. hét 2. nap (`week08d02`)
+
+### Junior/Mid level csoport gyakorlati feladata: :heavy_check_mark:
+
+Készíts a `week08d02` csomagban egy `Lottery` osztályt, melynek legyen egy `getNumbers(int interval, int numbers)` metódusa, ami visszaad egy listát amiben `numbers` mennyiségű véletlen szám van `1`-`interval` között, tehát kvázi készíts egy lottósorsoló programot. A sorrendre nem kell figyelni, a lényeg, hogy a számok __különbözők__ legyenek!
+
+### A Senior level csoport gyakorlati feladata: :x:
+
+Adott a countries.txt állomány, melyet helyezz el a projekt gyökérkönyvtárába. A fájlban az adatok a következők: __ország_neve népesség hány_színű_a_zászló szomszédos_országok_száma__. Készíts a week08d02 csomagba egy CountryStatistics osztályt melyben van egy metódus, ami az adatokat beolvassa egy listába. A lista legyen az osztály privát attribútuma, és legyen hozzá getter metódus, figyelj arra, hogy ezen keresztül ne lehessen megváltoztatni a listát. Készíts egy metódust maxPopulaton() néven, ami a listából visszaadja a legnagyobb népességű ország minden adatát.
+
+_countries.txt_
+```
+Nepal 31 3 2
+Csad 13 3 6
+Kongoi_Demokratikus_Koztarsasag 79 3 9
+Honduras 8 2 3
+Kirgizisztán 6 2 4
+Dzsibuti 1 4 3
+Togo 7 4 3
+Kambodzsa 15 3 3
+Guyana 1 5 3
+Albánia 3 2 4
+Libanon 4 3 2
+```
