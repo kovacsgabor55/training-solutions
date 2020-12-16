@@ -294,3 +294,14 @@ Guyana 1 5 3
 Albánia 3 2 4
 Libanon 4 3 2
 ```
+
+## 8. hét 3. nap (`week08d03`)
+
+### Junior/Mid level csoport gyakorlati feladata: :x:
+
+Készíts `week08d03` csomagban egy `StringLists` osztályt és benne egy `stringListsUnion(List<String> first, List<String> second)` metódust, mely két string listát vár paraméterül és visszaadja az uniójukat. Az úniónak minden elemet tartalmaznia kell mindkét listából, de egy elem nem szerepelhet kétszer!
+
+### A Senior level csoport gyakorlati feladata: :x:
+
+Készíts a `week08d03` csomagban egy `StringLists` osztályt és benne egy `shortestWords(List<String> words)` metódust, mely paraméterül kap egy `String` listát és a legrövidebb szavakat vissza adja belőle egy Listában. PL :`{"aaa", "aa", "bb", "cccc", "dd"}` Itt a legrövidebb szavak az `"aa", "bb", "dd"`.
+
