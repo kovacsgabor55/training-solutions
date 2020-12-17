@@ -3,3 +3,4 @@ inheritanceconstructor.cars
 objectclass
 inheritancemethods.bankaccount
 interfacedefaultmethods.print
+isahasa <- később
