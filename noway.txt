@@ -3,5 +3,5 @@ inheritanceconstructor.cars
 objectclass
 inheritancemethods.bankaccount
 interfacedefaultmethods.print
-isahasa  html
+isahasa  html//flet ok
 exceptions.faults <-- majd ezt is
