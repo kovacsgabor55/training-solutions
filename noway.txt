@@ -3,4 +3,5 @@ inheritanceconstructor.cars
 objectclass
 inheritancemethods.bankaccount
 interfacedefaultmethods.print
-isahasa <- később
+isahasa  html
+exceptions.faults <-- majd ezt is

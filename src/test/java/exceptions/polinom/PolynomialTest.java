@@ -43,25 +43,25 @@ public class PolynomialTest {
 
         Polynomial polynomial = new Polynomial(coefficientStrs);
 
-        double[] expected = new double[] {1,2,2};
+        double[] expected = new double[]{1, 2, 2};
         assertThat(polynomial.getCoefficients(), equalTo(expected));
     }
 
     @Test
     public void evaluate() throws Exception {
-        Polynomial p = new Polynomial(new double[] {1, 2, 3});
+        Polynomial p = new Polynomial(new double[]{1, 2, 3});
         double x = 1;
-        assertThat(p.evaluate(x), equalTo(x*x+2*x+3));
+        assertThat(p.evaluate(x), equalTo(x * x + 2 * x + 3));
 
         x = 2;
-        assertThat(p.evaluate(x), equalTo(x*x+2*x+3));
+        assertThat(p.evaluate(x), equalTo(x * x + 2 * x + 3));
 
         x = -2;
-        assertThat(p.evaluate(x), equalTo(x*x+2*x+3));
+        assertThat(p.evaluate(x), equalTo(x * x + 2 * x + 3));
 
-        Polynomial p2 = new Polynomial(new double[] {1, 1, 0, 1});
+        Polynomial p2 = new Polynomial(new double[]{1, 1, 0, 1});
         x = 3;
-        assertThat(p2.evaluate(x), equalTo(x*x*x + x*x + 1));
+        assertThat(p2.evaluate(x), equalTo(x * x * x + x * x + 1));
     }
 
 }

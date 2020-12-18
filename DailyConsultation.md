@@ -312,3 +312,34 @@ Készíts `week08d03` csomagban egy `StringLists` osztályt és benne egy `strin
 ### A Senior level csoport gyakorlati feladata: :x:
 
 Készíts `week08d03` csomagban egy `StringLists` osztályt és benne egy `stringListsUnion(List<String> first, List<String> second)` metódust, mely két string listát vár paraméterül és visszaadja az uniójukat. Az úniónak minden elemet tartalmaznia kell mindkét listából, de egy elem nem szerepelhet kétszer! Feltételezhetjük, hogy az egyes listákban minden elem legfejebb egyszer fordul elő.
+
+## 8. hét 4. nap (`week08d04`)
+
+### Junior/Mid level csoport gyakorlati feladata: :heavy_check_mark: :x:
+Hozz létre egy `CanMark` interfészt egy `int giveMark()` metódussal! Ez azt jelenti, hogy valaki
+tud osztályzatot adni. Ennek legyen két implementációja, egy `GoodMood`
+osztály, mely mindig `5` értéket ad vissza, és egy `BadMood` osztály, mely mindig `3` értéket ad vissza!
+Azaz jó hangulatban valaki mindig ötöst ad, rossz hangulatban hármast.
+Legyen egy `Trainer` osztály, melynek van egy `CanMark` attribútuma, mely konstruktorral állítható be! És
+legyen egy `int giveMark()` metódusa, mely továbbhív, azaz "delegál" a `CanMark` példány felé!
+Hozz létre a `main()` metódusban egy `Trainer` példányt, aki jó hangulatban van (azaz konstruktorban
+adj át neki egy `GoodMood` példányt, és egy másikat, aki `BadMood` példányt kap! Majd hívd meg
+a `giveMark()` metódusát mindkettőnek, és nézd meg, mit ad vissza!
+
+### A Senior level csoport gyakorlati feladata: :x:
+
+Legyen a classpath-on egy `examples.md` fájl, mely a gyakorlati feladatok leírásait tartalmazza
+a következő formátumban! A `ExamplesStore` osztályba írj egy `getTitlesOfExamples()`
+metódust, mely visszaadja a feladatok címeit egy listában!
+
+```
+# Első feladat
+
+Írj egy programot, amely
+kiírja az összeadás eredményét!
+
+# Második feladat
+
+Írj egy programot,
+mely kiírja a kivonás eredményét!
+```
