@@ -1,7 +1,0 @@
-initializer
-inheritanceconstructor.cars
-objectclass
-inheritancemethods.bankaccount
-interfacedefaultmethods.print
-isahasa  html//flet ok
-exceptions.faults <-- majd ezt is
