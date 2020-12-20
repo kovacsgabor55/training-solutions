@@ -16,16 +16,15 @@ public class FileManager {
     }
 
     public void readFromFile() {
+        List<String> readed = null;
         try {
-            List<String> fileInString = Files.readAllLines(myFile);
-            for (String s : fileInString) {
-                String firstAndLast[] = s.split(" ");
-                Human h = new Human(firstAndLast[0], firstAndLast[1]);
-                humans.add(h);
-            }
-
+            readed = Files.readAllLines(myFile);
         } catch (IOException e) {
-            throw new IllegalStateException("Can't reach file!", e);
+            e.printStackTrace();
+        }
+        for (String item : readed) {
+            String[] splitted = item.split(" ");
+            humans.add(new Human(splitted[0], splitted[1]));
         }
     }
 

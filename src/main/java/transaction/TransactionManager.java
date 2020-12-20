@@ -11,38 +11,33 @@ public class TransactionManager {
     private List<BankAccount> accountList = new ArrayList<>();
 
     public void uploadListFromFile(String filePath) {
-
         Path accounts = Path.of(filePath);
+        List<String> readed = null;
         try {
-            List<String> accountsFromFile = Files.readAllLines(accounts);
-
-            for (String s : accountsFromFile) {
-                String[] temp = s.split(";");
-                BankAccount ba = new BankAccount(temp[0], temp[1], Integer.parseInt(temp[2]));
-                accountList.add(ba);
-            }
+            readed = Files.readAllLines(accounts);
         } catch (IOException e) {
-            throw new IllegalStateException("Can't open file", e);
+            e.printStackTrace();
+        }
+        for (String item : readed) {
+            String[] accs = item.split(";");
+            accountList.add(new BankAccount(accs[0], accs[1], Double.parseDouble(accs[2])));
         }
     }
 
     public void makeTransactions(String filePath) {
         Path transactions = Path.of(filePath);
-
+        List<String> readed = null;
         try {
-            List<String> transactionsFromFile = Files.readAllLines(transactions);
-
-            for (String s : transactionsFromFile) {
-                String[] temp = s.split(";");
-                for (BankAccount b : accountList) {
-                    if (temp[0].equals(b.getAccountNumber())) {
-                        b.setBalance(Double.parseDouble(temp[1]));
-                    }
+            readed = Files.readAllLines(transactions);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        for (String item : readed) {
+            for (BankAccount ba : accountList) {
+                if (ba.getAccountNumber().equals(item.split(";")[0])) {
+                    ba.setBalance(Double.parseDouble(item.split(";")[1]));
                 }
             }
-
-        } catch (IOException e) {
-            throw new IllegalStateException("Can't open file", e);
         }
     }
 
