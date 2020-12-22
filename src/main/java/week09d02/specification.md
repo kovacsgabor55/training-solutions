@@ -1,0 +1,2 @@
+Mai feladat:
+A `week09d02` csomagban készíts egy osztályt `FibCalculator` néven. Ennek legyen egy metódusa `long sumEvens(int bound)` néven. Ennek a metódusnak a feladata az, hogy összeadja a páros fibonacci számokat addig, amig a következő fibonacci szám nem nagyobb, mint `bound`, majd visszadja a végredményt.
