@@ -1,6 +1,8 @@
 package week09d02;
 
 public final class FibCalculator {
+    private static int[] FIB_NUMS= new int[1000];
+
     private FibCalculator() {
     }
 
