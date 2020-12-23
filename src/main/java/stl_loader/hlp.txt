@@ -1,0 +1,2 @@
+https://en.wikipedia.org/wiki/IEEE_754
+https://stackoverflow.com/questions/5157664/java-how-to-convert-a-string-of-binary-values-to-a-float-and-vice-versa
