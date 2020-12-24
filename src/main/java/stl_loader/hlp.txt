@@ -3,3 +3,4 @@ https://stackoverflow.com/questions/5157664/java-how-to-convert-a-string-of-bina
 https://grabcad.com/questions/is-there-a-way-to-save-a-model-to-an-stl-in-color
 https://people.sc.fsu.edu/~jburkardt/data/obj/obj.html
 https://www.marxentlabs.com/obj-files
+https://www.mathworks.com/matlabcentral/mlc-downloads/downloads/submissions/27982/versions/5/previews/help%20file%20format/MTL_format.html
