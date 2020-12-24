@@ -1,2 +1,5 @@
 https://en.wikipedia.org/wiki/IEEE_754
 https://stackoverflow.com/questions/5157664/java-how-to-convert-a-string-of-binary-values-to-a-float-and-vice-versa
+https://grabcad.com/questions/is-there-a-way-to-save-a-model-to-an-stl-in-color
+https://people.sc.fsu.edu/~jburkardt/data/obj/obj.html
+https://www.marxentlabs.com/obj-files
