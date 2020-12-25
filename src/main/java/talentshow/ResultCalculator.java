@@ -1,9 +1,6 @@
 package talentshow;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.OpenOption;
 import java.nio.file.Path;
@@ -60,14 +57,43 @@ public class ResultCalculator {
         }
     }
 
-    public void writeResultToFile(Path resultFile) {
-        /*try (BufferedWriter bw = new BufferedWriter(Files.newBufferedWriter(resultFile))) {
-            for (:
-                 ) {
-
-            }
+    /*public void writeResultToFile(Path resultFile) {
+        try (PrintWriter pw = new PrintWriter(Files.newBufferedWriter(resultFile))) {
+            pw.println(render());
+            pw.println(winner());
         } catch (IOException e) {
             e.printStackTrace();
-        }*/
+        }
     }
+
+    private String render() {
+        StringBuilder stringBuilder = new StringBuilder();
+        for (Production item : productions) {
+            for (Vote vot : votes) {
+                if (item.getId() == vot.getId()) {
+                    stringBuilder.append(item.getId());
+                    stringBuilder.append(item.getName());
+                    stringBuilder.append(vot.getNumber());
+                }
+            }
+        }
+        return stringBuilder.toString();
+    }
+
+    private String winner() {
+        int bestvote = 0;
+        int bestvoteid = -1;
+        for (Vote item : votes) {
+            if (item.getNumber() > bestvote) {
+                bestvote = item.getNumber();
+                bestvoteid = item.getId();
+            }
+        }
+        for (Production item : productions) {
+            if (item.getId() == bestvoteid) {
+                return bestvote +" "+ item.getName()+" "+bestvote;//9 Singer 6
+            }
+        }
+        return null;
+    }*/
 }
