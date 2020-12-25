@@ -5,3 +5,6 @@ https://people.sc.fsu.edu/~jburkardt/data/obj/obj.html
 https://www.marxentlabs.com/obj-files
 https://www.mathworks.com/matlabcentral/mlc-downloads/downloads/submissions/27982/versions/5/previews/help%20file%20format/MTL_format.html
 https://en.wikipedia.org/wiki/Wavefront_.obj_file
+http://devernay.free.fr/cours/opengl/materials.html
+http://www.it.hiof.no/~borres/j3d/explain/light/p-materials.html
+https://cgvr.cs.uni-bremen.de/teaching/cg_downloads/Materials.html
