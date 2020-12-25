@@ -14,14 +14,14 @@ public class StateRegister {
     }
 
     public StateRegister() {
-        this.states = new ArrayList<>(50);
+        this.states = new ArrayList<>();
     }
 
     public void readStatesFromFile(String stringFileName) {
         try (BufferedReader br = new BufferedReader(new FileReader("src/main/resources/" + stringFileName))) {
             String line;
             while ((line = br.readLine()) != null) {
-                String[] data = br.readLine().split("-");
+                String[] data = line.split("-");
                 states.add(new State(data[0], data[1]));
             }
         } catch (IOException e) {
