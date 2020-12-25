@@ -25,7 +25,7 @@ public final class FibCalculator {
         }
     }
 
-    static long sumEvens(int bound) {
+    static long sumEvens2(int bound) {
         int sum = 0;
         int fibN = 0;
         while (fib(fibN) < bound) {
