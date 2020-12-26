@@ -1,4 +1,4 @@
-package talentshow;
+package ioprintwriter.talentshow;
 
 import org.junit.Before;
 import org.junit.Rule;
@@ -9,7 +9,6 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
-import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;

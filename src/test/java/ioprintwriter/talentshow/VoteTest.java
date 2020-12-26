@@ -1,4 +1,4 @@
-package talentshow;
+package ioprintwriter.talentshow;
 
 import org.junit.Test;
 

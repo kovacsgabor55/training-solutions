@@ -1,6 +1,6 @@
 # [STL (file format)](https://en.wikipedia.org/wiki/STL_(file_format))
 
-__STL__ is a [file format]() native to the [stereolithography]() [CAD]() software created by [3D Systems](). STL has several [backronym]()s such as "Standard Triangle Language" and "Standard [Tessellation]() Language". This file format is supported by many other software packages; it is widely used for [rapid prototyping](), [3D printing]() and [computer-aided manufacturing](). STL files describe only the surface geometry of a three-dimensional object without any representation of color, texture or other common CAD model attributes. The STL format specifies both [ASCII]() and [binary file|binary]() representations. Binary files are more common, since they are more compact.
+__STL__ is a [file format]() native to the [stereolithography]() [CAD]() software created by [3D Systems](). STL has several [backronym]()s such as "Standard Triangle Language" and "Standard [Tessellation]() Language". This file format is supported by many other software packages; it is widely used for [rapid prototyping](), [3D printing]() and [computer-aided manufacturing](). STL files describe only the surface geometry of a three-dimensional object without any representation of color, texture or other common CAD model attributes. The STL format specifies both [ASCII]() and [binary]() representations. Binary files are more common, since they are more compact.
 
 An STL file describes a raw, unstructured [triangulated]() surface by the [unit]() [normal]() and vertices (ordered by the [right-hand rule]()) of the triangles using a three-dimensional [Cartesian coordinate system](). In the original specification, all STL coordinates were required to be positive numbers, but this restriction is no longer enforced and negative coordinates are commonly encountered in STL files today. STL files contain no scale information, and the units are arbitrary.
 
@@ -93,4 +93,3 @@ STL can also be used for interchanging data between CAD/CAM systems and computat
 ## Representation of curved surfaces
 
 It is not possible to use triangles to perfectly represent curved surfaces. To compensate, users often save enormous STL files to reduce the inaccuracy. Native formats of 3D design software files use [mathematical surfaces]() to preserve detail losslessly in small files.
-

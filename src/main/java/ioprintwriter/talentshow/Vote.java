@@ -1,4 +1,4 @@
-package talentshow;
+package ioprintwriter.talentshow;
 
 public class Vote {
     private int id;

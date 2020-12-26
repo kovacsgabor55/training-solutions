@@ -8,3 +8,4 @@ https://en.wikipedia.org/wiki/Wavefront_.obj_file
 http://devernay.free.fr/cours/opengl/materials.html
 http://www.it.hiof.no/~borres/j3d/explain/light/p-materials.html
 https://cgvr.cs.uni-bremen.de/teaching/cg_downloads/Materials.html
+https://ltslashgt.com
