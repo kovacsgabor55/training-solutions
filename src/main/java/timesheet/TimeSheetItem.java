@@ -21,10 +21,6 @@ public class TimeSheetItem {
         this.endDate = endDate;
     }
 
-    public Validator getValidator() {
-        return validator;
-    }
-
     public Employee getEmployee() {
         return employee;
     }

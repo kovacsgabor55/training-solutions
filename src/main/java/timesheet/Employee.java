@@ -2,14 +2,14 @@ package timesheet;
 
 public class Employee {
     private String firstname;
-    private String lasttname;
+    private String lastname;
 
-    public Employee(String firstname, String lasttname) {
+    public Employee(String firstname, String lastname) {
         this.firstname = firstname;
-        this.lasttname = lasttname;
+        this.lastname = lastname;
     }
 
     public String getName() {
-        return firstname + " " + lasttname;
+        return firstname + " " + lastname;
     }
 }
