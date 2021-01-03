@@ -11,6 +11,18 @@ public class Vertex {
         this.z = z;
     }
 
+    public float getX() {
+        return x;
+    }
+
+    public float getY() {
+        return y;
+    }
+
+    public float getZ() {
+        return z;
+    }
+
     @Override
     public String toString() {
         return "   vertex " + x + ' ' + y + ' ' + z;

@@ -11,6 +11,18 @@ public class Normal {
         this.k = k;
     }
 
+    public float getI() {
+        return i;
+    }
+
+    public float getJ() {
+        return j;
+    }
+
+    public float getK() {
+        return k;
+    }
+
     @Override
     public String toString() {
         return "normal " + i + ' ' + j + ' ' + k;

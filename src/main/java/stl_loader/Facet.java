@@ -11,6 +11,14 @@ public class Facet {
         this.vertices = new ArrayList<>();
     }
 
+    public Normal getNormal() {
+        return normal;
+    }
+
+    public List<Vertex> getVertices() {
+        return new ArrayList<>(vertices);
+    }
+
     public void appendNormal(Normal normal) {
         this.normal = normal;
     }

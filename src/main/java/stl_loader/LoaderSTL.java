@@ -3,7 +3,9 @@ package stl_loader;
 import java.io.*;
 import java.math.BigInteger;
 import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
@@ -26,9 +28,11 @@ public final class LoaderSTL {
                     facet.appendNormal(new Normal(Float.parseFloat(line[2]), Float.parseFloat(line[3]), Float.parseFloat(line[4])));
                 }
                 if (line[0].equals("vertex")) {
+                    assert facet != null;
                     facet.appendVertex(new Vertex(Float.parseFloat(line[1]), Float.parseFloat(line[2]), Float.parseFloat(line[3])));
                 }
                 if (line[0].equals("endfacet")) {
+                    assert solid != null;
                     solid.appendFacet(facet);
                 }
             }
@@ -46,9 +50,9 @@ public final class LoaderSTL {
             System.out.println(str);
             int decimal = readReverseInt(dis);
 
-                    //     1234567812345678123456781234567812345678123456781234567812345678
+            //     1234567812345678123456781234567812345678123456781234567812345678
             String text = "00110011001100110100101111000001";
-            System.out.println(Double.longBitsToDouble(Integer.parseInt(text,2)));
+            System.out.println(Double.longBitsToDouble(Integer.parseInt(text, 2)));
             System.out.println(Double.longBitsToDouble(new BigInteger(text, 2).longValue()));
             //double doubleVal = Double.longBitsToDouble(new BigInteger(text, 2).longValue());
 
@@ -63,7 +67,7 @@ public final class LoaderSTL {
 
 
             for (int i = 0; i < 12; i++) {
-                 System.out.println(readReverseDouble(dis));
+                System.out.println(readReverseDouble(dis));
             }
             /*for (int i = 0; i <= decimal; i++) {
                 byte[] datein = dis.readNBytes(50);
@@ -78,8 +82,13 @@ public final class LoaderSTL {
     }
 
     public static void main(String[] args) {
-        //System.out.println(loadSTLtxt(Path.of("src/main/resources/Sphericon.stl")));
-        System.out.println(loadSTLbin(Path.of("src/main/resources/teszt.stl")));
+        System.out.println(loadSTLtxt(Path.of("src/main/resources/Sphericon.stl")));
+        //System.out.println(loadSTLbin(Path.of("src/main/resources/teszt.stl")));
+        if (saveSTLbin(Path.of("src/main/resources/out.stl"), loadSTLtxt(Path.of("src/main/resources/Sphericon.stl")))) {
+            System.out.println("passed");
+        } else {
+            System.out.println("failed");
+        }
     }
 
     private static double readReverseDouble(DataInputStream dis) throws IOException {
@@ -111,4 +120,44 @@ public final class LoaderSTL {
     public static double toDouble(byte[] bytes) {
         return ByteBuffer.wrap(bytes).getDouble();
     }*/
+
+
+    static boolean saveSTLbin(Path path, Solid solid) {
+        try (DataOutputStream dos = new DataOutputStream(new BufferedOutputStream(Files.newOutputStream(path)))) {
+            byte[] head = solid.getName().getBytes(StandardCharsets.US_ASCII);
+            dos.write(head);
+            if (head.length < 80) {
+                dos.write(new byte[80 - head.length]);
+            }
+            ByteBuffer bb = ByteBuffer.allocate(4).order(ByteOrder.LITTLE_ENDIAN);
+            bb.putInt(solid.getFacets().size());
+            //bb.flip();
+            dos.write(bb.array());
+            for (Facet facet : solid.getFacets()) {
+                put3coord(dos, facet.getNormal().getI(), facet.getNormal().getJ(), facet.getNormal().getK());
+                for (Vertex vertex : facet.getVertices()) {
+                    put3coord(dos, vertex.getX(), vertex.getY(), vertex.getZ());
+                }
+                dos.write(new byte[2]);
+            }
+            dos.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        }
+
+        return true;
+    }
+
+    private static void put3coord(DataOutputStream dos, float a, float b, float c) throws IOException {
+        ByteBuffer bb = ByteBuffer.allocate(4).order(ByteOrder.LITTLE_ENDIAN);
+        bb.putFloat(a);
+        dos.write(bb.array());
+        bb = ByteBuffer.allocate(4).order(ByteOrder.LITTLE_ENDIAN);
+        bb.putFloat(b);
+        dos.write(bb.array());
+        bb = ByteBuffer.allocate(4).order(ByteOrder.LITTLE_ENDIAN);
+        bb.putFloat(c);
+        dos.write(bb.array());
+    }
 }

@@ -12,6 +12,14 @@ public class Solid {
         this.facets = new ArrayList<>();
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public List<Facet> getFacets() {
+        return new ArrayList<>(facets);
+    }
+
     public void appendFacet(Facet facet) {
         facets.add(facet);
     }
