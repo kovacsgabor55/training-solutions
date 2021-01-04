@@ -1,9 +1,11 @@
 package stl_loader;
 
+import java.util.Objects;
+
 public class Vertex {
-    private float x;
-    private float y;
-    private float z;
+    private final float x;
+    private final float y;
+    private final float z;
 
     public Vertex(float x, float y, float z) {
         this.x = x;
@@ -26,5 +28,18 @@ public class Vertex {
     @Override
     public String toString() {
         return "   vertex " + x + ' ' + y + ' ' + z;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Vertex vertex = (Vertex) o;
+        return Float.compare(vertex.x, x) == 0 && Float.compare(vertex.y, y) == 0 && Float.compare(vertex.z, z) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(x, y, z);
     }
 }

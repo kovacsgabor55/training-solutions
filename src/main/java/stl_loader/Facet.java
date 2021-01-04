@@ -33,6 +33,6 @@ public class Facet {
         for (Vertex item : vertices) {
             sb.append(item + "\n");
         }
-        return " facet " + normal + "\n  outer loop\n" + sb.toString() + "  endloop";
+        return " facet " + normal + "\n  outer loop\n" + sb.toString() + "  endloop\n endfacet";
     }
 }

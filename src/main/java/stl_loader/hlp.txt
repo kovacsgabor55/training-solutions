@@ -9,3 +9,10 @@ http://devernay.free.fr/cours/opengl/materials.html
 http://www.it.hiof.no/~borres/j3d/explain/light/p-materials.html
 https://cgvr.cs.uni-bremen.de/teaching/cg_downloads/Materials.html
 https://ltslashgt.com
+
+https://stackoverflow.com/questions/18508649/saving-a-binary-stl-file-in-java
+http://www.java2s.com/Code/JavaAPI/java.nio/ByteOrderLITTLEENDIAN.htm
+https://www.programcreek.com/java-api-examples/?class=java.nio.ByteOrder&method=LITTLE_ENDIAN
+https://stackoverflow.com/questions/17334031/how-to-read-and-parse-a-big-stl-file
+https://github.com/zhe8300975/STLShowView/blob/master/app/src/main/java/com/example/zhaowencong/showstlview/stlbean/STLObject.java
+

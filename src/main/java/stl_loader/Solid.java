@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Solid {
-    private String name;
-    private List<Facet> facets;
+    private final String name;
+    private final List<Facet> facets;
 
     public Solid(String name) {
         this.name = name;
@@ -30,8 +30,8 @@ public class Solid {
         for (Facet item : facets) {
             sb.append(item + "\n");
         }
-        return "Solid " + name + '\n' +
+        return "solid " + name.trim() + '\n' +
                 sb.toString() +
-                " endfacet\nendsolid " + name + '\n';
+                "endsolid " + name.trim() + '\n';
     }
 }
