@@ -2,12 +2,12 @@
 
 > A feladatoknál írj teszteseteket.
 
-## 2020-11-03 (`week02d2`)
+## 2020-11-03 (`week02d02`) :heavy_check_mark: :grey_question:
 
 Írj egy `Phone` osztályt, `type` (`String`) és mem (`int`) attribútumokkal!
 Generálj konstruktort, gettert és settert! Írj bele egy `main` metódust, amivel példányosítasz egy osztályt, és kiírod az attribútumok értékeit!
 
-## 2020-11-04 (`week02d3`)
+## 2020-11-04 (`week02d03`) :heavy_check_mark: :grey_question:
 
 Írj egy `Product` oszályt `String name` és `String code` attribútumokkal!
 Legyen egy konstruktora a két attribútummal! Legyen egy `areTheyEqual()`
@@ -18,13 +18,13 @@ a nevük megegyezik.
 __Bónusz:__ szigorúbb egyelőség a feltételre: a két termék kódjának hosszának különbsége
 maximum egy karakter lehet.
 
-## 2020-11-05 (`week02d4`)
+## 2020-11-05 (`week02d04`) :heavy_check_mark: :grey_question:
 
 Hozz létre egy `InputNames` Java osztályt, melynek van egy `main` metódusa.
 Ciklusban kérj be öt nevet! A neveket tárold el egy tömbben!
 Írd ki a tömb tartalmát, sortöréssel elválasztva (írd bele, hogy hanyadik elem - 1-től sorszámozva)!
 
-## 2020-11-06 (`week02d5`)
+## 2020-11-06 (`week02d05`) :heavy_check_mark: :grey_question:
 
 Hozz létre egy `Languages` osztályt, `main` metódussal!
 Ebben hozz létre egy listát, mely karakterláncokat tartalmaz!
@@ -32,7 +32,7 @@ Vegyetek fel 3 elemet: `Java`, `Python`, `JavaScript`!
 
 Írd ki, az öt karakternél hosszabb programozási nyelveket!
 
-## 2020-11-10 (`week03d02`)
+## 2020-11-10 (`week03d02`) :heavy_check_mark: :grey_question:
 
 Írj egy `Position` osztályt, melynek van egy `name` és egy `bonus` attribútuma!
 Egy alkalmazotti pozíciót jelöl, melynek a `bonus` attribútuma tárolja, hogy
@@ -43,7 +43,7 @@ Menj végig a lista elemein, és írd ki azokat, ahol a bónusz magasabb, mint
 `150_000`. Azonban a kiírás  
 formátumát a `Position` osztály `toString()` metódusában implementáld!
 
-## 2020-11-12 (`week03d4`)
+## 2020-11-12 (`week03d04`) :heavy_check_mark: :grey_question:
 
 Írj egy `Phone` oszályt, melynek van egy `prefix` és egy `number`
 `String` attribútuma! Írj egy `PhoneParser` osztályt egy
@@ -52,14 +52,14 @@ formátumú szöveget, és visszaad egy `Phone` objektumot,
 feltöltve a `prefix` értékét `10`, a `number` értékét `1234567`
 értékekkel!
 
-## 2020-11-13 (`week03d05`)
+## 2020-11-13 (`week03d05`) :heavy_check_mark: :grey_question:
 
 Írj egy `Operation` osztályt, mely konstruktorban kap egy 
 összeadást, pl. `68+12`! A `getResult()` metódus visszaadja a 
 művelet eredményét. Egy belső `leftOperand` és `rightOperand`
 attribútumba dolgozz!
 
-## 2020-11-16 (`week04d01`)
+## 2020-11-16 (`week04d01`) :heavy_check_mark: :grey_question:
 
 Készítsd el a `NameChanger` osztályt, melynek privát attribútuma
 legyen a `String fillName`, mely egy ember teljes nevét reprezentálja!
@@ -72,7 +72,7 @@ de ha az érték `null`, vagy üres String, akkor dobjon egy
 Legyen egy `changeFirstName(String firstName)` metódusa, mely megváltoztatja az
 objektum állapotát és kicseréli a vezetéknevet a paraméterül kapott értékre!
 
-## 2020-11-17 (`week04d02`)
+## 2020-11-17 (`week04d02`) :heavy_check_mark: :grey_question:
 
 A `Search` osztályban írj egy `getIndexesOfChar()` 
 metódust, mely első paraméterként vár egy `String` értéket,
@@ -82,7 +82,7 @@ szerepel az első paraméterként átadott listában.
 
 Pl.: `almafa` szóban a `a` karakter: `0, 3, 5`.
 
-## 2020-11-18 (`week04d03`)
+## 2020-11-18 (`week04d03`) :x:
 
 Írj egy számkitaláló programot a `GuessTheNumber` osztályba! A
 program kitalál egy véletlenszerű számot `1` és `100` között. Majd

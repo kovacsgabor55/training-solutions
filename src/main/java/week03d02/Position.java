@@ -1,4 +1,4 @@
-package week03;
+package week03d02;
 
 public enum Position {
     CEO(150000), MANNAGER(100000);//, CTO, ASSISTANT;

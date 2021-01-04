@@ -1,5 +1,7 @@
 package week03;
 
+import week03d02.Position;
+
 public class Employee {
     private Position position;
 
