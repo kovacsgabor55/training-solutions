@@ -346,28 +346,28 @@ mely kiírja a kivonás eredményét!
 
 ## 2020-12-18 (`week08d05`)
 
-### Junior
-A week08d05 csomagban készíts egy osztályt MathAlgorithms néven. Legyen benne egy metódus, greatestCommonDivisor(), ami paraméterül vár két pozitív egész számot és visszaadja a legnagyobb közös osztójukat.
+### Junior :heavy_check_mark:
+A `week08d05` csomagban készíts egy osztályt `MathAlgorithms` néven. Legyen benne egy metódus, `greatestCommonDivisor()` , ami paraméterül vár két pozitív egész számot és visszaadja a legnagyobb közös osztójukat.
 
-### Senior
+### Senior :x:
 Egy repülőgéppel átszeljük az óceánt és a közben méréseket végzünk. Tudjuk, hogy partól indulunk és parthoz érünk. A méréseket adott időközönként egyenletesen végezzük. A mérések azt mutatják, hogy sziget vagy óceán fölött repülünk éppen. Az 1-es szigetet míg a 0 óceánt jelöl.
-pl.: 111000010100001  sorozatban egy három "hosszú" sziget majd négy hosszú "óceán", aztán sziget, víz, sziget, majd óceán és végül egy szigeten leszálltunk. A map.txt állományban egy "térképet" tárolunk. A feladat az, hogy "repüljünk" a térkép fölött végig és határozzuk meg a leghosszabb óceán szakasz hosszát.
-A térkép fölött csak egyszer repülhetünk el és amikor leszálltunk már tudnunk is kell az eredményt. (Magyarul ne olvasd be a file-t a memóriába) A feladatot a week08d05.Plane osztályba végezzük el.
+pl.: 111000010100001  sorozatban egy három "hosszú" sziget majd négy hosszú "óceán", aztán sziget, víz, sziget, majd óceán és végül egy szigeten leszálltunk. A `map.txt` állományban egy "térképet" tárolunk. A feladat az, hogy "repüljünk" a térkép fölött végig és határozzuk meg a leghosszabb óceán szakasz hosszát.
+A térkép fölött csak egyszer repülhetünk el és amikor leszálltunk már tudnunk is kell az eredményt. (Magyarul ne olvasd be a file-t a memóriába) A feladatot a `week08d05.Plane` osztályba végezzük el.
 A térkép: 10000000111110000000000001111111111000010000010000100000111111110000101000000000111110000000000000000100000001000000000000111111000000000100000000000011
 
-## 9. hét 2. nap (`week09d02`)
+## 2020-12-22 (`week09d02`)
 
 ### Junior/Medior/Senior :heavy_check_mark:
 
 A `week09d02` csomagban készíts egy osztályt `FibCalculator` néven. Ennek legyen egy metódusa `long sumEvens(int bound)` néven. Ennek a metódusnak a feladata az, hogy összeadja a páros fibonacci számokat addig, amig a következő fibonacci szám nem nagyobb, mint `bound`, majd visszadja a végredményt.
 
-## 9. hét 3. nap (`week09d03`)
+## 2020-12-23 (`week09d03`)
 
 ### Junior/Medior/Senior :heavy_check_mark:
 
 A mai feladatban Mikulásnak segítünk ajándékokat kiosztani. A `week09d03` csomagba  dolgozz. Készíts egy `Present` nevű enumot a következő felsorolókkal: `Toy`, `Electronic`, `Housekepping`, `Decoration`. Ezek fogják az ajándékok típusát reprezentálni. Készíts egy `Person` osztályt legyen neki neve és életkora és legyen egy `Present` típusú attribútuma. A nevet és életkort konstruktorban kapja meg. Legyen egy `setPresent()` metódusa ami beállítja az ajándék attribútumot véletlenszerűen, egy kitétel van, `14` év fölötti nem kaphat játékot. Ennek megvalósításához szabadon bővíthetőek az eddig elkészült elemek. Legyen egy `SantaClaus` osztály, akinek van egy `Person` listája, amit konstruktorban kap meg. Legyen neki egy `getThroughChimneys()` metódusa, ami végigmegy az emberek listáján és meghívja minden ember `setPresent()` metódusát.
 
-# 2021-01-04  (`week10d01`)
+## 2021-01-04  (`week10d01`)
 
 ### Junior/Medior
 
