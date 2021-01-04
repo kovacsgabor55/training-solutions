@@ -91,26 +91,26 @@ hogy a szám, kisebb, nagyobb vagy egyenlő-e mint a gondolt szám.
 
 __Bónusz:__ max `6`-szor lehet kérdezni!
 
-## 5. hét 2. nap (`week05d02`)
+## 2020-11-24 (`week05d02`)
 
-### Junior/Medior/Senior feladat: :heavy_check_mark: :x:
+### Junior/Medior/Senior :heavy_check_mark: :x:
 
 A `week05d02.ChangeLetter` osztályban írj meg egy `String changeVowels(String)` metódust, amely kicseréli a paraméterként átadott szövegben az angol magánhangzókat csillag karakterre.
 
-## 5. hét 3. nap (`week05d03`)
+## 2020-11-25 (`week05d03`)
 
-### Junior/Medior feladat: :grey_question:
+### Junior/Medior :grey_question:
 
 Írj egy olyan metódust az `week05d03.ListCounter` osztályban, mely egy kapott `List`ából (`String`) összeszámolja azokat amik `'a'` vagy `'A'` betűvel kezdődnek,
 Ha nulla elemű a tömb, vagy nincs benne ilyen elem, akkor `0`-t adjon vissza.
 
-### Senior feladat: :grey_question:
+### Senior :grey_question:
 
 Készíts egy osztályt `UserValidator` néven, mely rendelkezik egy `validate` nevű metódussal. A metódus `User` objektumok listáját várja és a feladata az, hogy ellenőrizze, hogy az `User` `name` attribútuma nem üres és az `User` `age` attribútuma nem negatív és nem nagyobb, mint `120`! Ha találunk egy nem megfelelő objektumot, akkor dobjunk el egy `InvalidArgumentException` kivételt, mely tartalmaz egy hibaüzenetet a validációs hiba okával!
 
-## 5. hét 4. nap (`week05d04`)
+## 2020-11-26 (`week05d04`)
 
-### Junior/Medior feladat: :grey_question:
+### Junior/Medior :grey_question:
 
 Készíts egy `week05d04.Product` osztályt amelyben egy termékről tárolod a nevét és a lejárati dátumát (`LocalDate`). Legyen egy konstruktora, ami a nevet kapja meg illetve a lejárati dátumot három részletben `int year, int month, int day`. (`public Product(String name, int year, int month, int day)`)
 A lejárati dátumot a konstruktorban állítsd össze.
@@ -119,20 +119,20 @@ Készíts egy `week05d04.Store` osztályt, melyben van egy `Product`okat tárol�
 
 __Bónusz:__ Legyen benne egy `getNumberOfExpired()` metódus ami visszaadja a lejárt termékek számát. Használd a `LocalDate.now()` és az `isBefore()` metódusokat.
 
-### Senior feladat: :grey_question:
+### Senior :grey_question:
 
 Készíts egy osztályt `Product` néven, melynek van egy `price` (`long`) és egy `currency` (`String`) mezője. A `Product` a konstruktorában ellenőrizze a `currency` mezőt, melynek az értéke vagy `HUF`, vagy `USD` lehet.
 Készíts egy metódust `convertPrice` néven, melynek egy paramétere van (`currency`) és visszaadja a `currency`-nek megfelelő összeget (`double`). Használjunk `300` forintos átváltási árfolyamot! Példa: ha a `Product`-ot létrehozzuk a következőképp: `new Product(150, "HUF")`, majd meghívjuk a `convertPrice`-ot "`USD`" paraméterrel, akkor az elvárt visszatérési érték `0.5`.
 
 __Bónusz feladat:__ Használjunk `enum`-ot `String` helyett a pénznem reprezentációjára
 
-## 5. hét 5. nap (`week05d05`)
+## 2020-11-27 (`week05d05`)
 
-### Junior/Medior feladat: :grey_question:
+### Junior/Medior :grey_question:
 
 Készíts egy osztályt `week05d05.User` néven, melynek van egy `firstName (String)`, egy `lastName (String)` és egy `email (String)` mezője. Legyen ellenőrzés az `User` konstruktorában, mely hibát jelez, ha nincs `@` és `.` (pont) az e-mail címben! Készíts egy metódust is `getFullName` névvel, mely visszaadja a `firstName` és a `lastName` változókat összefűzve. Legyen köztük egy whitespace ("` `").
 
-### Senior feladat: :grey_question:
+### Senior :grey_question:
 
 Készítsünk egy `Song` osztályt, melynek az alábbi mezői vannak:
 - `String name`
@@ -147,71 +147,71 @@ Azoknak a `Song`-oknak a listáját adjuk vissza, amelyek hosszabbak percben (!)
 
 __Bónusz feladat:__ Implementáljuk megfelelően a `toString` metódust a `Song` és a `Playlist` osztályban, hogy a `Playlist`et-et kiírva a konzolra olvasható eredményt kapjunk!
 
-## 6. hét 1. nap (`week06d01`)
+## 2020-11-30 (`week06d01`)
 
-### Junior/Medior feladat: :grey_question:
+### Junior/Medior :grey_question:
 
 Írj egy olyan metódust az `week06d01.ListSelector` osztályban, mely egy kapott listából minden második elemet kiválogat, és egy szövegként összerak, szögletes zárójelek között.
 A páros megállapítása index szerint működik. Azaz az első, nulla indexű elem páros, a második, azaz egyes indexű elem páratlan, stb.
 Ha üres a lista, akkor üres `String`et adjunk vissza. Ha a paraméterül kapott lista `null`, akkor dobjunk `IllegalArgumentException`t a metódusban.
 
-### Senior feladat: :grey_question:
+### Senior :grey_question:
 
 Írj egy `week06d01.SeparatedSum.sum(String s)` metódust, amely kap egy `String`-et, melyben lebegőpontos számok szerepelnek pontosvesszővel elválasztva. A számoknál vessző a tizedes elválasztó. Ezt szétszedi, és összeadja külön a pozitív és külön a negatív számokat. Mivel térnél vissza ebből a metódusból?
 
-## 6. hét 2. nap (`week06d02`)
+## 2020-12-01 (`week06d02`)
 
-### Junior/Medior feladat: :grey_question:
+### Junior/Medior :grey_question:
 
 Hozz létre egy `week06d02.Product` osztályt amelynek adattagjai a név, kategória és ár, rendre, `String`, `String` `int`. Készíts egy `Store` osztályt benne egy `Product` listával, amit konstruktorban kap meg. Legyen egy `getProductByCategoryName(Category)`, ami visszaadja, hogy a paraméterül kapott kategóriából hány darab van a listában.
 
 __Bónusz:__ A kategória legyen `enum` `FROZEN, DAIRY, BAKEDGOODS, OTHER` felsorolókkal.
 
-### Senior feladat: :grey_question:
+### Senior :grey_question:
 
 Hozz létre egy `week06d02.Product` osztályt amelynek adattagjai a név, kategória és ár. A kategória legyen `enum` `FROZEN, DAIRY, BAKEDGOODS, OTHER` felsorolókkal. Készíts egy `Store` osztályt benne egy `Product` listával, amit konstruktorban kap meg. Legyen egy `getProductsByCategory()` aminek a lényege, hogy visszaadja valamilyen adatszerkezetben, hogy melyik kategóriából hány darab van a listában. A "valamilyen adatszerkezet" a kreativitásodra van bízva, az a lényeg, hogy valahogy egyben kapjam meg, hogy melyik kategóriából hány darab van. A `getProductsByCategory()` az összeset adja vissza.
 
-## 6. hét 3. nap (`week06d03`)
+## 2020-12-02 (`week06d03`)
 
-### Junior/Medior feladat: :grey_question:
+### Junior/Medior :grey_question:
 
 A `week06d03.WordEraser` osztályban legyen egy `eraseWord(String words, String word)` metódus, amely az első paraméter szöveget úgy változtatja meg, hogy a második paraméter összes előfordulását törli belőle. A `words` paraméterben a szavak szóközzel vannak elválasztva. A metódus térjen vissza a törölni kívánt szavak nélküli `String`gel. (Mellőzzük a `replace` és `replaceAll` használatát)
 
-### Senior feladat: :grey_question:
+### Senior :grey_question:
 
 `week06d03.Series` osztályban hozz létre egy `calculateSeriesType` metódust, amely egész számok listáját kapja, és eldönti, hogy növekvő, csökkenő vagy össze-vissza sorozatról van-e szó! Feltétel, hogy a bemeneti lista nem tartalmaz egymás után egyenlő értékeket. Ha a lista üres, vagy csak egy elemből áll, dobj kivételt! Mivel térnél vissza?
 
-## 6. hét 4. nap (`week06d04`)
+## 2020-12-03 (`week06d04`)
 
-### Junior/Medior feladat: :grey_question:
+### Junior/Medior :grey_question:
 
 Készíts az `week06d04` csomagban egy `Budget` osztályt, amely a konstruktorában `Item` példányokat vár listában (`List`). Az `Item` tartalmazza az alábbi attribútumokat: `int price`, `int month`, `String name`. A `Budget` osztály tárolja el egy attribútumban a konstruktorban megkapott `items` listát. Írjunk egy metódust, `getItemsByMonth` néven, amely egy hónapot vár (`1`-`12`) és visszaadja az `Item`eket az adott hónapban!
 
 __Bónusz feladat:__ ellenőrizzük a bemeneti paramétereket!
 
-### Senior feladat: :grey_question:
+### Senior :grey_question:
 
 `week06d4.ShoppingCart` osztályba dolgozz! Legyen egy `addItem(String name, int quantity)` metódusa, mellyel új bevásárlólista tételt lehet felvenni (termék neve és mennyisége). Az adatokat egy `Item` listába tárolja. Amennyiben már benne van az adott termék, ne újonnan vegye fel, hanem adja hozzá a mennyiséget a már felvett tételhez. Lehessen visszakérdezni név alapján a felvett mennyiséget a `getItem(String name)`: `int` metódussal. Ha nem szerepel benne, `0` értéket adjon vissza.
 
-## 6. hét 5. nap (`week06d05`)
+## 2020-12-04 (`week06d05`)
 
-### Junior/Medior feladat: :grey_question:
+### Junior/Medior :grey_question:
 
 Készíts a `week06d05` csomagban egy `Biscuit` nevű osztályt, amelynek van 2 attribútuma: `BiscuitType type` és `int gramAmount`. A `BiscuitType` legyen felsorolásos típus a 3 kedvenc keksz fajtáddal. A `Biscuit` nevű osztálynak legyen egy `static` metódusa `of` néven, mely paraméterként egy `BiscuitType`-ot, és egy `int gramAmount`-ot vár és visszaad egy új `Biscuit` objektumot amelyet a megadott paraméterek alapján hoz létre.
 
 __Bónusz feladat:__ konzolra írás esetén a Biscuit jelenítse meg a type és a gramAmount mezőket!
 
-### Senior feladat: :grey_question:
+### Senior :grey_question:
 
 Készíts a `week06d05` csomagban egy `Bottle` nevű osztályt, amelynek van 2 attribútuma: `BottleType type` és `int filledUntil`. A `BottleType` legyen felsorolásos típus az alábbi értékekkel: `GLASS_BOTTLE` és `PET_BOTTLE`, . A `Bottle` nevű osztálynak legyen egy `static` metódusa `of` néven, mely paraméterként egy `BottleType`-ot vár és visszaad egy új `Bottle` objektumot amelyet a megadott paraméter alapján hoz létre. A `Bottle` osztálynak legyen egy `fill` metódusa, mely egy `int fillAmount` paramétert vár. A `fill` meghívása esetén végezzen ellenőrzést, hogy megtelt-e már a `Bottle` objektum. Az ehhez szükséges `int maximumAmount` mezőt a `BottleType` tartalmazza! Ha túlcsordul a `Bottle` objektum, akkor dobjunk kivételt!
 
-## 7. hét 1. nap (`week07d01`)
+## 2020-12-07 (`week07d01`)
 
-### Junior/Medior feladat: :heavy_check_mark:
+### Junior/Medior :heavy_check_mark:
 
 Készíts egy osztályt a `week07d01` csomagba `MathAlgorithms` néven. Ebben az osztályban legyen egy `isPrime(int x)` metódus ami a paraméterül kapott számról eldönti, hogy prím-e vagy sem és ennek megfelelően `true` vagy `false` értékkel tér vissza. Aki már tart ott és tudja mit jelent a `static` az nyugodtan implementálhatja a metódust statikus metódus ként. Az egyszerűség kedvért a prímeket most csak a pozitív egész számok körében értelmezzük, így __bónuszként__ rá lehet ellenőrizni, hogy `x>0`  és ha nem akkor kivételt dobni. Prímeknek tekintjük azokat számokat amelyek csak eggyel és önmagukkal oszthatók, tehát a `2`,`3`,`5`,`7`,`11`,`13` stb.
 
-### Senior feladat: :heavy_check_mark: :x: :heavy_check_mark:
+### Senior :heavy_check_mark: :x: :heavy_check_mark:
 
 Készíts egy osztályt a `week07d01` csomagba `Fibonacci` néven. Legyen benne egy `fib` metódus, ami egy `int n` paramétert vár. A visszatérési értékünk legyen egy `long` szám, ami az `n`-edik fibonacci számot tartalmazza. (A fibonacci szám az az az előző kettő fibonacci szám összege és az első két szám az `1`, `1`.
 
@@ -219,64 +219,64 @@ __Bónusz feladat:__ implementáljuk az algoritmust ciklus nélkül és mentsük
 
 __Pontosítás:__ Ha `n = 0`, akkor `0`-t adunk vissza, ha `n=1`, akkor `1`-et, ezért lesz a `2`. elem szintén `1`, mert `0 + 1 = 1`
 
-## 7. hét 2. nap (`week07d02`)
+## 2020-12-08 (`week07d02`)
 
-### Junior/Medior feladat: :heavy_check_mark:
+### Junior/Medior :heavy_check_mark:
 
 Készíts egy `week07d02.DigitSum` osztályt és benne `sumOfDigits(int x)` metódus amely visszaadja a paraméterül kapott szám számjegyeinek összegét! pl.: `123` esetén a visszatérési érték `6`.
 
-### Senior feladat: :heavy_check_mark: :x: :x:
+### Senior :heavy_check_mark: :x: :x:
 
 Készítsünk a `week07d02` csomagba egy interfészt `User` néven. Az interfésznek legyen egy `String getUsername()`, egy `String getFirstName()`, egy `String getLastName()` és egy `String getFullName()` metódusa. Implementáljuk az `User` interfészt egy `UserImpl` nevű osztályba, mely konstruktor paraméterként várja az `username`, a `firstName` és a `lastName` paramétereket. A `getFullName` metódushoz adjunk az interfészben egy default implementációt!
 
 __Bónusz feladat:__ Készítsünk egy statikus függvényt az `User` interfészben `of` néven, amely létrehoz egy új `User` típusú objektumot!
 
-## 7. hét 3. nap (`week07d03`)
+## 2020-12-09 (`week07d03`)
 
-### Junior/Medior feladat: :heavy_check_mark:
+### Junior/Medior :heavy_check_mark:
 
 A `week07d03` csomagban hozz létre egy `NumberList` osztályt. Ennek legyen egy metódusa `isIncreasing(List<Integer>)` mely egy számokból álló listát vár paraméterül és megnézi, hogy a listában a számok növekvő sorrendben szerepelnek-e és ennek megfelelően igaz vagy hamis értékkel tér vissza. Speciális eset ha két egymást követő szám egyenlő, ez nem probléma a `1`,`2`,`3`,`3`,`3`,`5` számokat növekvőnek tekintjük.
 
-### Senior feladat: :heavy_check_mark:
+### Senior :heavy_check_mark:
 
 Készítsünk a `week07d03` csomagba egy `Date` osztályt, mely az alábbi attribútumokkal rendelkezik: `int year`, `int month`, `int day`. Az összes attribútum legyen `final`! Készítsünk továbbá egy statikus `of` metódust, mely a `year`, `month` és `day` paramétereket várja és létrehoz egy `Date` objektumot ezek alapján. Legyen továbbá a `Date`-nek egy `withYear(int year)`, `withMonth(int month)` és egy `withDay(int day)` metódusa, melyek egy új `Date` objektumot adnak vissza az eredeti `Date` objektum adataival, azzal a különbséggel, hogy az új objektum a megadott paraméter értékét tartalmazza a megfelelő helyen (`year`, `month` vagy `day`).
 
-## 7. hét 4. nap (`week07d04`)
+## 2020-12-10 (`week07d04`)
 
-### Junior/Medior feladat: :heavy_check_mark:
+### Junior/Medior :heavy_check_mark:
 
 Hozz létre egy `week07d04.Lab` nevű osztályt, ami azt tárolja el, hogy melyik feladattal készültél el. Három attribútuma: `title` ami a tananyag neve, egy `completed`, hogy elkészültél-e vele, és a `completedAt`, ami azt tárolja, hogy mikor. Legyen két konstruktora! Az egyik csak a címet várja, ekkor úgy állítsa be a példányt, hogy még nem készültél el. Legyen egy másik, ami várja a címet és a dátumot. Ekkor azt állítsa be, hogy elvégezted a gyakorlati feladatot. Írj egy `complete` metódust, ami kap egy dátumot, és beállítja, hogy elvégezted a gyakorlati feladatot. Legyen egy `complete` metódusa, ami semmit nem vár, ez azt állítja be, hogy MOST végezted el a gyakorlati feladatot. Írd meg a `toString` metódusát is!
 
-### Senior feladat: :x:
+### Senior :x:
 
 A `week07d04.ShoppingList` osztályba írj egy `long calculateSum(String path)` metódust, amely a paraméterként átadott fájlból beolvassa a bevásárlólista tartalmát, és összegzi az árat. A fájl a következő formátumú sorokat tartalmazza: `kenyér;2;30` ahol az első a termék neve, a második a darabszám, a harmadik az egységár. Azaz ezen sor esetén `2*30 = 60` értékkel kell számolni.
 
-## 7. hét 5. nap (`week07d05`)
+## 2020-12-11 (`week07d05`)
 
-### Junior/Medior feladat: :heavy_check_mark: :x:
+### Junior/Medior :heavy_check_mark: :x:
 Készíts a `week07d05` csomagba egy `Vehicle`, egy `Car`, egy `Truck` és egy `Motorcycle` osztályt. A `Vehicle` osztálynak legyen egy `int getNumberOfGears` és egy `TransmissionType getTransmissionType` metódusa. A fenti osztályok értelemszerűen öröklődjenek egymásból és mindegyiknek implementálja a sebességek számát és a váltó típusát. A lehetséges váltótípusok: `MANUAL, AUTOMATIC, SEQUENTIAL`. Az alapértelmezett váltó típus (a `Vehicle` osztályban) `MANUAL`, de a `Car` automatikus, míg a `Motorcycle` `SEQUENTIAL`. Az alapértelmezett sebesség szám `5`.
 
-### Senior feladat: :x:
+### Senior :x:
 Kérj be a felhasználótól három sort, majd a fájl nevét. Mentsd el a sorokat ebbe a fájlba. A `week07d05.SaveInput` osztályba dolgozz!
 
-## 8. hét 1. nap (`week08d01`)
+## 2020-12-14 (`week08d01`)
 
-### Junior/Medior feladat: :heavy_check_mark:
+### Junior/Medior :heavy_check_mark:
 
 A feladatban egy robot mozgását fogjuk szimulálni. Képzelj el egy koordináta rendszert, ahol a robot az origóban van. A robot négy irányba képes mozogni fel, le, balra és jobbra. A `week08d01.Robot` osztályban írj egy `move()` metódust ami egy karaktersorozatot vár.  pl: `FFLLLLLBBBBJJJJJJJ`, ahol az `F` = fel, `L`=le, `B`=bal, `J`=jobb. A metódus visszatérési értéke legyen a robot mozgás utáni pozíciója. A feladat szabadon bővíthető osztályokkal és metódusokkal. Bónusz kiegészítés, hogyha más karaktert is tartalmaz a paraméter `String` nem csak a `FLBJ` valamelyikét, akkor dobjunk `IllegalArgumentException`t!
 
-### Senior feladat: :x:
+### Senior :x:
 
 A török szultán elhatározza, hogy a `100` nap múlva lévő születésnapján szabadon enged néhány rabot a börtönéből. A börtönben `100` cella van. Mindegyik cella zárva van. Ha egyet fordítunk a kulcson akkor nyitva lesz, ha még egyet akkor zárva ha hármat akkor ismét nyitva és így tovább.
 A szultán azt a parancsot adja, hogy az első nap mindegyik cellán fordítsanak egyet.  (Ekkor minden cella nyitva lesz) A második napon minden másodikon fordítsanak egyet, így minden második zárva lesz. A harmadik napon minden harmadikon fordítsanak egyet így a 3. cella zárva , de a 6. cella például nyitva lesz. A `week08d01.Sultan` osztályba írj egy metódust `openDoors()` néven,  aminek visszatérési értékéből kiderül, hogy mely ajtók lesznek nyitva a `100`. napon! Az osztály szabadon bővíthető!
 
-## 8. hét 2. nap (`week08d02`)
+## 2020-12-15 (`week08d02`)
 
-### Junior/Medior feladat: :heavy_check_mark:
+### Junior/Medior :heavy_check_mark:
 
 Készíts a `week08d02` csomagban egy `Lottery` osztályt, melynek legyen egy `getNumbers(int interval, int numbers)` metódusa, ami visszaad egy listát amiben `numbers` mennyiségű véletlen szám van `1`-`interval` között, tehát kvázi készíts egy lottósorsoló programot. A sorrendre nem kell figyelni, a lényeg, hogy a számok __különbözők__ legyenek!
 
-### Senior feladat: :x:
+### Senior :x:
 
 Adott a countries.txt állomány, melyet helyezz el a projekt gyökérkönyvtárába. A fájlban az adatok a következők: __ország_neve népesség hány_színű_a_zászló szomszédos_országok_száma__. Készíts a week08d02 csomagba egy CountryStatistics osztályt melyben van egy metódus, ami az adatokat beolvassa egy listába. A lista legyen az osztály privát attribútuma, és legyen hozzá getter metódus, figyelj arra, hogy ezen keresztül ne lehessen megváltoztatni a listát. Készíts egy metódust maxPopulaton() néven, ami a listából visszaadja a legnagyobb népességű ország minden adatát.
 
@@ -295,9 +295,9 @@ Albánia 3 2 4
 Libanon 4 3 2
 ```
 
-## 8. hét 3. nap (`week08d03`)
+## 2020-12-16 (`week08d03`)
 
-### Junior/Medior feladat: :heavy_check_mark:
+### Junior/Medior :heavy_check_mark:
 
 Készíts `week08d03` csomagban egy `StringLists` osztályt és benne egy `stringListsUnion(List<String> first, List<String> second)` metódust, mely két string listát vár paraméterül és visszaadja az uniójukat. Az úniónak minden elemet tartalmaznia kell mindkét listából, de egy elem nem szerepelhet kétszer!
 
@@ -309,13 +309,13 @@ Készíts `week08d03` csomagban egy `StringLists` osztályt és benne egy `strin
 
 `unio: "a" "b" "c" "d"`
 
-### Senior feladat: :x:
+### Senior :x:
 
 Készíts `week08d03` csomagban egy `StringLists` osztályt és benne egy `stringListsUnion(List<String> first, List<String> second)` metódust, mely két string listát vár paraméterül és visszaadja az uniójukat. Az úniónak minden elemet tartalmaznia kell mindkét listából, de egy elem nem szerepelhet kétszer! Feltételezhetjük, hogy az egyes listákban minden elem legfejebb egyszer fordul elő.
 
-## 8. hét 4. nap (`week08d04`)
+## 2020-12-17 (`week08d04`)
 
-### Junior/Medior feladat: :heavy_check_mark: :x:
+### Junior/Medior :heavy_check_mark: :x:
 Hozz létre egy `CanMark` interfészt egy `int giveMark()` metódussal! Ez azt jelenti, hogy valaki
 tud osztályzatot adni. Ennek legyen két implementációja, egy `GoodMood`
 osztály, mely mindig `5` értéket ad vissza, és egy `BadMood` osztály, mely mindig `3` értéket ad vissza!
@@ -326,7 +326,7 @@ Hozz létre a `main()` metódusban egy `Trainer` példányt, aki jó hangulatban
 adj át neki egy `GoodMood` példányt, és egy másikat, aki `BadMood` példányt kap! Majd hívd meg
 a `giveMark()` metódusát mindkettőnek, és nézd meg, mit ad vissza!
 
-### Senior feladat: :x:
+### Senior :x:
 
 Legyen a classpath-on egy `examples.md` fájl, mely a gyakorlati feladatok leírásait tartalmazza
 a következő formátumban! A `ExamplesStore` osztályba írj egy `getTitlesOfExamples()`
@@ -344,14 +344,49 @@ kiírja az összeadás eredményét!
 mely kiírja a kivonás eredményét!
 ```
 
+## 2020-12-18 (`week08d05`)
+
+### Junior
+A week08d05 csomagban készíts egy osztályt MathAlgorithms néven. Legyen benne egy metódus, greatestCommonDivisor(), ami paraméterül vár két pozitív egész számot és visszaadja a legnagyobb közös osztójukat.
+
+### Senior
+Egy repülőgéppel átszeljük az óceánt és a közben méréseket végzünk. Tudjuk, hogy partól indulunk és parthoz érünk. A méréseket adott időközönként egyenletesen végezzük. A mérések azt mutatják, hogy sziget vagy óceán fölött repülünk éppen. Az 1-es szigetet míg a 0 óceánt jelöl.
+pl.: 111000010100001  sorozatban egy három "hosszú" sziget majd négy hosszú "óceán", aztán sziget, víz, sziget, majd óceán és végül egy szigeten leszálltunk. A map.txt állományban egy "térképet" tárolunk. A feladat az, hogy "repüljünk" a térkép fölött végig és határozzuk meg a leghosszabb óceán szakasz hosszát.
+A térkép fölött csak egyszer repülhetünk el és amikor leszálltunk már tudnunk is kell az eredményt. (Magyarul ne olvasd be a file-t a memóriába) A feladatot a week08d05.Plane osztályba végezzük el.
+A térkép: 10000000111110000000000001111111111000010000010000100000111111110000101000000000111110000000000000000100000001000000000000111111000000000100000000000011
+
 ## 9. hét 2. nap (`week09d02`)
 
-### Junior/Medior/Senior feladat: :heavy_check_mark:
+### Junior/Medior/Senior :heavy_check_mark:
 
 A `week09d02` csomagban készíts egy osztályt `FibCalculator` néven. Ennek legyen egy metódusa `long sumEvens(int bound)` néven. Ennek a metódusnak a feladata az, hogy összeadja a páros fibonacci számokat addig, amig a következő fibonacci szám nem nagyobb, mint `bound`, majd visszadja a végredményt.
 
 ## 9. hét 3. nap (`week09d03`)
 
-### Junior/Medior/Senior feladat: :heavy_check_mark:
+### Junior/Medior/Senior :heavy_check_mark:
 
 A mai feladatban Mikulásnak segítünk ajándékokat kiosztani. A `week09d03` csomagba  dolgozz. Készíts egy `Present` nevű enumot a következő felsorolókkal: `Toy`, `Electronic`, `Housekepping`, `Decoration`. Ezek fogják az ajándékok típusát reprezentálni. Készíts egy `Person` osztályt legyen neki neve és életkora és legyen egy `Present` típusú attribútuma. A nevet és életkort konstruktorban kapja meg. Legyen egy `setPresent()` metódusa ami beállítja az ajándék attribútumot véletlenszerűen, egy kitétel van, `14` év fölötti nem kaphat játékot. Ennek megvalósításához szabadon bővíthetőek az eddig elkészült elemek. Legyen egy `SantaClaus` osztály, akinek van egy `Person` listája, amit konstruktorban kap meg. Legyen neki egy `getThroughChimneys()` metódusa, ami végigmegy az emberek listáján és meghívja minden ember `setPresent()` metódusát.
+
+# 2021-01-04  (`week10d01`)
+
+### Junior/Medior
+
+Túrázás közben egy GPS eszköz rögzíti a pontokat. Eltárolja a GPS koordinátákat, valamint a magasságot (mindegyik lebegőpontos érték).
+Írj a `week10d01.Hiking` osztályba egy `getPlusElevation()` metódust, mely megkapja a magasságok listáját, és visszaadja
+a emelkedések összegét. Azaz pl. `10,20,15,18` esetén `13`, ugyanis `(20 - 10) + (18 - 15)`. A `20` méterről `15` méterre ereszkedést nem számolja bele,
+hiszen az ereszkedés, és nem emelkedés.
+
+### Senior
+
+Túrázás közben egy GPS eszköz rögzíti a pontokat. Eltárolja a GPS koordinátákat, valamint a magasságot (mindegyik lebegőpontos érték).
+Ezt egy fájlba tárolja, melynek formátuma:
+
+```
+47.497913, 19.040236, 400
+47.497912, 19.040232, 420
+47.497916, 19.040236, 410
+```
+
+Írj a `week10d01.HikingFile` osztályba egy `getPlusElevation()` metódust, mely kap egy `InputStream`-et, és visszaadja
+külön az ereszkedések, és külön az emelkedések összegét. Azaz pl. `10,20,15,18` esetén az emelkedés `13`, ugyanis `(20 - 10) + (18 - 15)`.
+A `20` méterről `15` méterre ereszkedést pedig `5`.
