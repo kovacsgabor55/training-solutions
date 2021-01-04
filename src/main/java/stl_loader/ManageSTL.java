@@ -104,7 +104,6 @@ public final class ManageSTL {
                     facet.appendVertex(new Vertex(x, y, z));
                 }
                 dis.skip(2);
-                byte[] skip = dis.readNBytes(2);
                 solid.appendFacet(facet);
             }
         } catch (IOException e) {
