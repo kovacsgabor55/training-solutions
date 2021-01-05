@@ -399,7 +399,7 @@ Van egy egész számok listája, amelyben egy szám azt jelzi, hogy az adott sz�
 
 ha két megállóban ugyanannyian akarnak felszállni, akkor az első megálló azonosítóját add vissza.
 
-### Senior :heavy_check_mark: :x:
+### Senior :x:
 
 Adott egy fájl, `utasadat.txt`, mely a következőket tartalmazza:
 
