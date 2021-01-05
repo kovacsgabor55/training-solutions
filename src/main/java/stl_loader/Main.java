@@ -2,26 +2,28 @@ package stl_loader;
 
 import java.nio.file.Path;
 
+import static stl_loader.ManageSTL.*;
+
 public class Main {
     public static void main(String[] args) {
-        if (ManageSTL.saveBinarySTL(Path.of("src/main/resources/out.stl"), ManageSTL.loadTextSTL(Path.of("src/main/resources/Sphericon.stl")))) {
+        if (saveBinarySTL(Path.of("src/main/resources/out.stl"), loadTextSTL(Path.of("src/main/resources/Sphericon.stl")))) {
             System.out.println("passed");
         } else {
             System.out.println("failed");
         }
 
-        if (ManageSTL.saveTextSTL(Path.of("src/main/resources/cubeText.stl"), ManageSTL.loadTextSTL(Path.of("src/main/resources/Sphericon.stl")))) {
+        if (saveTextSTL(Path.of("src/main/resources/cubeText.stl"), loadTextSTL(Path.of("src/main/resources/Sphericon.stl")))) {
             System.out.println("passed");
         } else {
             System.out.println("failed");
         }
 
-        ManageSTL.saveBinarySTL(Path.of("src/main/resources/cubeBin.stl"), ManageSTL.loadBinarySTL(Path.of("src/main/resources/teszt.stl")));
+        saveBinarySTL(Path.of("src/main/resources/cubeBin.stl"), loadBinarySTL(Path.of("src/main/resources/teszt.stl")));
 
 
-        ManageSTL.saveTextSTL(Path.of("src/main/resources/cubeText.stl"), ManageSTL.loadBinarySTL(Path.of("src/main/resources/teszt.stl")));
-        ManageSTL.saveBinarySTL(Path.of("src/main/resources/cubeBin.stl"), ManageSTL.loadTextSTL(Path.of("src/main/resources/cubeText.stl")));
-        ManageSTL.saveTextSTL(Path.of("src/main/resources/cubeText.stl"), ManageSTL.loadBinarySTL(Path.of("src/main/resources/cubeBin.stl")));
+        saveTextSTL(Path.of("src/main/resources/cubeText.stl"), loadBinarySTL(Path.of("src/main/resources/teszt.stl")));
+        saveBinarySTL(Path.of("src/main/resources/cubeBin.stl"), loadTextSTL(Path.of("src/main/resources/cubeText.stl")));
+        saveTextSTL(Path.of("src/main/resources/cubeText.stl"), loadBinarySTL(Path.of("src/main/resources/cubeBin.stl")));
 
         /**
          *

@@ -369,7 +369,7 @@ A mai feladatban Mikulásnak segítünk ajándékokat kiosztani. A `week09d03` c
 
 ## 2021-01-04  (`week10d01`)
 
-### Junior/Medior :heavy_check_mark: :x:
+### Junior/Medior :heavy_check_mark:
 
 Túrázás közben egy GPS eszköz rögzíti a pontokat. Eltárolja a GPS koordinátákat, valamint a magasságot (mindegyik lebegőpontos érték).
 Írj a `week10d01.Hiking` osztályba egy `getPlusElevation()` metódust, mely megkapja a magasságok listáját, és visszaadja
@@ -390,3 +390,29 @@ Ezt egy fájlba tárolja, melynek formátuma:
 Írj a `week10d01.HikingFile` osztályba egy `getPlusElevation()` metódust, mely kap egy `InputStream`-et, és visszaadja
 külön az ereszkedések, és külön az emelkedések összegét. Azaz pl. `10,20,15,18` esetén az emelkedés `13`, ugyanis `(20 - 10) + (18 - 15)`.
 A `20` méterről `15` méterre ereszkedést pedig `5`.
+
+## 2021-01-05  (`week10d02`)
+
+### Junior/Medior :heavy_check_mark:
+
+Van egy egész számok listája, amelyben egy szám azt jelzi, hogy az adott számú buszmegállóban egy ember fel akar szállni. A `12,12,0,3,4,4` sorozat tehát azt jelenti, hogy a `12`-es buszmegállóban `2`-en, a `0`-ásban `1` ember, `3`-asban egy ember, `4`-esben `2` ember akar felszállni. A `MaxTravel` osztály `getMaxIndex()` metódusa adja vissza, hogy hanyas megállóban szeretnének a legtöbben felszállni. Maximum `30` megálló lehet.
+
+ha két megállóban ugyanannyian akarnak felszállni, akkor az első megálló azonosítóját add vissza.
+
+### Senior :heavy_check_mark: :x:
+
+Adott egy fájl, `utasadat.txt`, mely a következőket tartalmazza:
+
+```
+0 20190326-0700 6572582 RVS 20210101
+0 20190326-0700 8808290 JGY 7
+0 20190326-0700 1680423 TAB 20190420
+12 20190326-0716 3134404 FEB 20190301
+12 20190326-0716 9529716 JGY 0
+```
+
+Ebből a megálló száma az első oszlop.
+
+Feladat: írj egy `Travel.getStopWithMax(InputStream)` metódust, mely
+visszaadja, hogy melyik megállóban szerettek volna a legtöbben
+felszállni.
