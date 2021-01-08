@@ -14,6 +14,5 @@ public class Calculator {
             sum += sorted[i];
         }
         return sum;
-
     }
 }
