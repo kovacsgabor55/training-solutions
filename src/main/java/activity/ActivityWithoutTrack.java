@@ -1,6 +1,6 @@
 package activity;
 
-public class ActivityWithoutTrack {
+public class ActivityWithoutTrack implements Activity {
     private ActivityType activityType;
 
     public ActivityWithoutTrack(ActivityType activityType) {
@@ -9,5 +9,9 @@ public class ActivityWithoutTrack {
 
     public ActivityType getType() {
         return activityType;
+    }
+
+    public double getDistance() {
+        return 0;
     }
 }

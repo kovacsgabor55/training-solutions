@@ -1,6 +1,6 @@
 package activity;
 
-public class ActivityWithTrack {
+public class ActivityWithTrack implements Activity {
     private ActivityType activityType;
     private Track track;
 
@@ -9,6 +9,12 @@ public class ActivityWithTrack {
         this.activityType = activityType;
     }
 
+    @Override
+    public double getDistance() {
+        return track.getDistance();
+    }
+
+    @Override
     public ActivityType getType() {
         return activityType;
     }
