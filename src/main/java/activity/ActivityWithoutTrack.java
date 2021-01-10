@@ -7,10 +7,12 @@ public class ActivityWithoutTrack implements Activity {
         this.activityType = activityType;
     }
 
+    @Override
     public ActivityType getType() {
         return activityType;
     }
 
+    @Override
     public double getDistance() {
         return 0;
     }
