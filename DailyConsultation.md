@@ -54,8 +54,8 @@ feltöltve a `prefix` értékét `10`, a `number` értékét `1234567`
 
 ## 2020-11-13 (`week03d05`) :heavy_check_mark: :grey_question:
 
-Írj egy `Operation` osztályt, mely konstruktorban kap egy 
-összeadást, pl. `68+12`! A `getResult()` metódus visszaadja a 
+Írj egy `Operation` osztályt, mely konstruktorban kap egy
+összeadást, pl. `68+12`! A `getResult()` metódus visszaadja a
 művelet eredményét. Egy belső `leftOperand` és `rightOperand`
 attribútumba dolgozz!
 
@@ -66,7 +66,7 @@ legyen a `String fillName`, mely egy ember teljes nevét reprezentálja!
 A `fullName` attribútum `[vezetéknév][szóköz][keresztnév]` formátumban épül fel.
 A konstruktor állítsa be a paraméterül kapott értékre az adattagot,
 de ha az érték `null`, vagy üres String, akkor dobjon egy
-`IllegalAgrumentException` kivételt a következő üzenettel: 
+`IllegalAgrumentException` kivételt a következő üzenettel:
 `Invalid name:[paraméter értéke]`!
 
 Legyen egy `changeFirstName(String firstName)` metódusa, mely megváltoztatja az
@@ -74,7 +74,7 @@ objektum állapotát és kicseréli a vezetéknevet a paraméterül kapott ért�
 
 ## 2020-11-17 (`week04d02`) :heavy_check_mark: :grey_question:
 
-A `Search` osztályban írj egy `getIndexesOfChar()` 
+A `Search` osztályban írj egy `getIndexesOfChar()`
 metódust, mely első paraméterként vár egy `String` értéket,
 második paraméterként egy `char` értéket! Visszaad egy listát,
 melyben visszaadja, hogy a karakter hanyadik indexeken
@@ -367,7 +367,7 @@ A `week09d02` csomagban készíts egy osztályt `FibCalculator` néven. Ennek le
 
 A mai feladatban Mikulásnak segítünk ajándékokat kiosztani. A `week09d03` csomagba  dolgozz. Készíts egy `Present` nevű enumot a következő felsorolókkal: `Toy`, `Electronic`, `Housekepping`, `Decoration`. Ezek fogják az ajándékok típusát reprezentálni. Készíts egy `Person` osztályt legyen neki neve és életkora és legyen egy `Present` típusú attribútuma. A nevet és életkort konstruktorban kapja meg. Legyen egy `setPresent()` metódusa ami beállítja az ajándék attribútumot véletlenszerűen, egy kitétel van, `14` év fölötti nem kaphat játékot. Ennek megvalósításához szabadon bővíthetőek az eddig elkészült elemek. Legyen egy `SantaClaus` osztály, akinek van egy `Person` listája, amit konstruktorban kap meg. Legyen neki egy `getThroughChimneys()` metódusa, ami végigmegy az emberek listáján és meghívja minden ember `setPresent()` metódusát.
 
-## 2021-01-04  (`week10d01`)
+## 2021-01-04 (`week10d01`)
 
 ### Junior/Medior :heavy_check_mark:
 
@@ -391,7 +391,7 @@ Ezt egy fájlba tárolja, melynek formátuma:
 külön az ereszkedések, és külön az emelkedések összegét. Azaz pl. `10,20,15,18` esetén az emelkedés `13`, ugyanis `(20 - 10) + (18 - 15)`.
 A `20` méterről `15` méterre ereszkedést pedig `5`.
 
-## 2021-01-05  (`week10d02`)
+## 2021-01-05 (`week10d02`)
 
 ### Junior/Medior :heavy_check_mark:
 
@@ -417,7 +417,7 @@ Feladat: írj egy `Travel.getStopWithMax(InputStream)` metódust, mely
 visszaadja, hogy melyik megállóban szerettek volna a legtöbben
 felszállni.
 
-## 2021-01-08  (`week10d05`)
+## 2021-01-08 (`week10d05`)
 
 ### Junior/Medior :heavy_check_mark: :x:
 
@@ -427,3 +427,13 @@ Készítsünk egy `Calculator` nevű osztályt, melynek van egy `findMinSum(int[
 
 Készítsünk egy `Calculator` nevű osztályt, melynek van egy `findMinMaxSum(int[] arr)` metódusa. A metódus feladata, hogy kiírja a legnagyobb és a legkisebb összegeket `4` számból, amiket lehetséges összerakni az `arr` tömb elemeiből. Példa: ha az `arr` tartalma `[1, 3, 5, 7, 9]`, akkor a minimum összeg `1+3+5+7=16` , a maximum összeg `3+5+7+9=24`.
 A `Calculator` osztály tartalmazzon egy `main` metódust is, amely a konzolról olvassa be a számokat és azokból készít tömböt, amivel meghívja a `findMinMaxSum` metódust.
+
+## 2021-01-11 (`week11d01`)
+
+### Junior/Medior :heavy_check_mark:
+
+Készítsünk egy `DivisorFinder` nevű osztályt, melynek van egy `int findDivisors(int n)` metódusa. A feladat az, hogy megnézzük a szám minden egyes számjegyére, hogy osztója-e a számnak, majd számoljuk össze őket. Példa: a `425`-ben az `5` osztója a számnak, ezért a visszatérési érték `1`.
+
+### Senior :x:
+
+Készítsünk egy `PairFinder` nevű osztályt, melynek van egy `int findPairs(int[] arr)` metódusa. A feladat az, hogy a tömb elemeiből kikeressük, hogy hány darab pár van bennük. Ha egy szám kétszer szerepel a tömbben, akkor az egy párnak számít. Példa: A `[5, 1, 4, 5]` tömbben kétszer szerepel az 5, ezért a visszatérési érték `1`. A `[7, 1, 5, 7, 3, 3, 9, 7, 6, 7]` tömbben négyszer szerepel a 7, ezért ez 2 párnak számít, illetve a 3 kétszer szerepel, így a visszatérési érték `3`.
