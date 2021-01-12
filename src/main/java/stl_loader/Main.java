@@ -24,7 +24,7 @@ public class Main {
         saveTextSTL(Path.of("src/main/resources/cubeText.stl"), loadBinarySTL(Path.of("src/main/resources/teszt.stl")));
         saveBinarySTL(Path.of("src/main/resources/cubeBin.stl"), loadTextSTL(Path.of("src/main/resources/cubeText.stl")));
         saveTextSTL(Path.of("src/main/resources/cubeText.stl"), loadBinarySTL(Path.of("src/main/resources/cubeBin.stl")));
-
+        System.out.println(loadTextSTL(Path.of("src/main/resources/Sphericon.stl")).info());
         /**
          *
          * Azt nem kezeli ha solid névvel kezdődik az objektum neve.

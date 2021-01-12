@@ -34,4 +34,20 @@ public class Solid {
                 sb.toString() +
                 "endsolid " + name.trim() + '\n';
     }
+
+    public String info() {
+        StringBuilder stringBuilder = new StringBuilder("Solid name: ");
+        stringBuilder.append(name);
+        stringBuilder.append("\n");
+        stringBuilder.append("Facets: ");
+        stringBuilder.append(facets.size());
+        stringBuilder.append("\n");
+        stringBuilder.append("Global material: True/False");
+        stringBuilder.append("\n");
+        stringBuilder.append("Global Colour: True/False");
+        stringBuilder.append("\n");
+        stringBuilder.append("Local colour: True/False");
+        stringBuilder.append("\n");
+        return stringBuilder.toString();
+    }
 }
