@@ -438,8 +438,42 @@ Készítsünk egy `DivisorFinder` nevű osztályt, melynek van egy `int findDivi
 
 Készítsünk egy `PairFinder` nevű osztályt, melynek van egy `int findPairs(int[] arr)` metódusa. A feladat az, hogy a tömb elemeiből kikeressük, hogy hány darab pár van bennük. Ha egy szám kétszer szerepel a tömbben, akkor az egy párnak számít. Példa: A `[5, 1, 4, 5]` tömbben kétszer szerepel az 5, ezért a visszatérési érték `1`. A `[7, 1, 5, 7, 3, 3, 9, 7, 6, 7]` tömbben négyszer szerepel a 7, ezért ez 2 párnak számít, illetve a 3 kétszer szerepel, így a visszatérési érték `3`.
 
-## 2021-01-12 (`week11d02`)
+## 2021-01-12 (`week11d02`) Csoportmunka
 
-### Junior/Medior/Senior *csoportos* :heavy_check_mark:
+### Junior/Medior :heavy_check_mark:
 
-A feladatban egy biciklis futár egy heti munkáját rögzítjük és készítünk statissztikákat.  A futár minden fuvar után feljegyzi, hogy a hét hányadik napján történt a fuvar. Ezután azt, hogy az adott nap hányadik fuvarját teljesítette és ezután azt, hogy hány kilométer volt az adott fuvar. A futár egy-egy fuvarját reprezentálja a `Ride` nevű osztály, adatagokkal, konstruktorra, getterekkel.  Készítsd el a `Courier` osztályt. Ez fogja a futárt reprezentálni. Legyen egy `rides` listája ami fuvarokat tárol. Legyen egy `addRide` metódus, ami csak sorrendben enged hozzáadni elemeket a listához. Figyeljünk viszont arra, hogy nem feltétlenül minden nap dolgozott a futár, de ha már bekerült egy 3. napi fuvar, akkor ne kerülhessen be egy 2. napi. És arra is figyelj, hogy a napon belül is sorrendben kerüljenek be az adatok. Ha a paraméterül kapott `Ride` nem felel meg a feltételeknek dobjunk `IllegalArgumentException`-t. Készíts egy metódust, ami visszad egy napot amikor a futár nem dolgozott. Ha több ilyen nap is van akkor a korábbit!
+A feladatban egy biciklis futár egy heti munkáját rögzítjük és készítünk statissztikákat.
+
+A futár minden fuvar után feljegyzi, hogy a hét hányadik napján történt a fuvar. Ezután azt, hogy az adott nap hányadik fuvarját teljesítette és ezután azt, hogy hány kilométer volt az adott fuvar. A futár egy-egy fuvarját reprezentálja a `Ride` nevű osztály, adatagokkal, konstruktorra, getterekkel.
+
+Készítsd el a `Courier` osztályt. Ez fogja a futárt reprezentálni. Legyen egy rides listája ami fuvarokat tárol. Legyen egy addRide metódus, ami csak sorrendben enged hozzáadni elemeket a listához. Figyeljünk viszont arra, hogy nem feltétlenül minden nap dolgozott a futár, de ha már bekerült egy 3. napi fuvar, akkor ne kerülhessen be egy 2. napi. És arra is figyelj, hogy a napon belül is sorrendben kerüljenek be az adatok. Ha a paraméterül kapott Ride nem felel meg a feltételeknek dobjunk `IllegalArgumentException`-t.
+
+pl egy helyes listára:
+1 1 12
+1 2 11
+2 1 10
+4 1 19
+
+Készíts egy metódust, ami visszad egy napot amikor a futár nem dolgozott. Ha több ilyen nap is van akkor a korábbit!
+
+### Senior :x:
+
+A feladatban egy biciklis futár egy heti munkáját rögzítjük és készítünk statissztikákat.
+
+A futár minden fuvar után feljegyzi, hogy a hét hányadik napján történt a fuvar. Ezután azt, hogy az adott nap hányadik fuvarját teljesítette és ezután azt, hogy hány kilométer volt az adott fuvar. A futár egy-egy fuvarját reprezentálja a `Ride` nevű osztály.
+
+Készítsd el a `Courier` osztályt. Ez fogja a futárt reprezentálni. Legyen egy metódusa, ami a mellékelt fájl fuvarjait beolvassa és eltárolja a memóriában. Figyelem a fuvarok nem sorrendben vannak! (Készíts magadnak minta fájlt!)
+
+Készíts egy metódust ami visszaadja a hét legelső fuvarjának minden adatát. Figyelj arra, hogy nem sorrendben vannak a fuvaraok és lehet, hogy nem is dolgozott az 1-es számú napon.
+Készíts egy metódust, ami visszaadja valamilyen formában, hogy mely napokon nem dolgozott a futár!
+Készíts egy metódust, ami visszaadja valamilyen formában napokra lebontva, hogy melyik nap hány kilométert tekert!
+
+## 2021-01-13 (`week11d03`)
+
+### Junior/Medior :x:
+
+Készíts egy `WordFilter` osztályt, melyben van egy `List<String> wordsWithChar(List<String> words, char c)` metódus. A metódus kiválógatja a paraméterül kapott String listából azokat a szavakat, melyekben előfordul a c karakter, majd ezeket visszaadja egy listában.
+
+### Senior :x:
+
+Készítsünk egy `CharCounter` osztályt, melyben van egy `int countChars(String[] chars)` metódus. A feladat az, hogy összeszámoljuk azokat a karaktereket az összes `chars`-ban lévő `String`-ből, amelyek mindegyik `String`-ben szerepelnek. Példa: Ha a chars-ban `["abc", "cba", "ab"]` szerepel, akkor a visszatérési érték `2`, mert az `a` és a `b` karakter szerepel mindegyik `String`-ben.
