@@ -477,3 +477,18 @@ Készíts egy `WordFilter` osztályt, melyben van egy `List<String> wordsWithCha
 ### Senior :x:
 
 Készítsünk egy `CharCounter` osztályt, melyben van egy `int countChars(String[] chars)` metódus. A feladat az, hogy összeszámoljuk azokat a karaktereket az összes `chars`-ban lévő `String`-ből, amelyek mindegyik `String`-ben szerepelnek. Példa: Ha a chars-ban `["abc", "cba", "ab"]` szerepel, akkor a visszatérési érték `2`, mert az `a` és a `b` karakter szerepel mindegyik `String`-ben.
+
+## 2021-01-14 (`week11d04`)
+
+### Junior/Medior :x:
+
+Adott az aktuális könyvtárban több, fájl, melynek a nevei: `number00.txt`, `number03.txt`, `number20.txt`, egészen 99-ig.
+Nem minden fájl létezik, lehet, hogy bizonyos számhoz tartozó fájl kimaradt. Olvasd be az állományból a benne lévő
+számot, és ezt összegezd! Használd a `Files.isRegularFile()` metódust arra, hogy megnézd, létezik-e a fájl!
+Használd a `Files.readString()` metódust a fájl beolvasására! A `FilesSum` osztály `sumNumbers(InputStream)` metódusába dolgozz!
+
+### Senior :x:
+
+Adott egy nevek listája. Add vissza egy listában, hogy milyen hosszúságú `J` karakterrel kezdődő nevek szerepelnek a listában! Minden szám
+csak egyszer szerepeljen! A `NameLength` osztály `getLengths(List<String>)` metódusába dolgozz!
+Ha a bemenet pl. `List.of("Joe", "Jack", "Jane", "Jake", "George", "William")`, a visszatérési érték `[3, 4]` legyen!
