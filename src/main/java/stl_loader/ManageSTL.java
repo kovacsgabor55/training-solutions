@@ -1,18 +1,23 @@
 package stl_loader;
 
 import java.io.*;
-import java.nio.ByteBuffer;
-import java.nio.ByteOrder;
-import java.nio.charset.Charset;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Path;
+import java.nio.*;
+import java.nio.charset.*;
+import java.nio.file.*;
+import java.util.Locale;
 
 public final class ManageSTL {
 
     private ManageSTL() {
     }
 
+    /**
+     * Egy STL objektumot szöveges fájlba ment.
+     *
+     * @param path  Az STL falj mentési helye.
+     * @param solid A fájlba mentendő STL objektum.
+     * @return Igaz ha sikeres a mentés.
+     */
     public static boolean saveTextSTL(Path path, Solid solid) {
         try (BufferedWriter bw = Files.newBufferedWriter(path, Charset.defaultCharset())) {
             bw.write(solid.toString());
@@ -24,6 +29,12 @@ public final class ManageSTL {
         return true;
     }
 
+    /**
+     * Szöveges fájlbol betölt egy STL modellt.
+     *
+     * @param path Az stl fájl elérési útvonala.
+     * @return A betöltött modell objektum.
+     */
     public static Solid loadTextSTL(Path path) {
         Solid solid = null;
         try (BufferedReader br = Files.newBufferedReader(path, Charset.defaultCharset())) {
@@ -53,6 +64,13 @@ public final class ManageSTL {
         return solid;
     }
 
+    /**
+     * Egy STL objektumot bináris fájlba ment.
+     *
+     * @param path  Az STL falj mentési helye.
+     * @param solid A fájlba mentendő STL objektum.
+     * @return Igaz ha sikeres a mentés.
+     */
     public static boolean saveBinarySTL(Path path, Solid solid) {
         try (DataOutputStream dos = new DataOutputStream(new BufferedOutputStream(Files.newOutputStream(path)))) {
             byte[] head = solid.getName().getBytes(StandardCharsets.US_ASCII);
@@ -78,6 +96,12 @@ public final class ManageSTL {
         }
     }
 
+    /**
+     * Bináris fájlbol betölt egy STL modellt.
+     *
+     * @param path Az stl fájl elérési útvonala.
+     * @return A betöltött modell objektum.
+     */
     public static Solid loadBinarySTL(Path path) {
         Solid solid = null;
         try (DataInputStream dis = new DataInputStream(new BufferedInputStream(Files.newInputStream(path)))) {
@@ -112,10 +136,26 @@ public final class ManageSTL {
         return solid;
     }
 
+    /**
+     * Egy 4 elemű bájt tömböt little edian szerint alakít egy int számmá.
+     *
+     * @param bytes  A bemeneti 4 elemű tömb.
+     * @param offset eltolás.
+     * @return Az átalakított egész szám.
+     */
     private static int getIntWithLittleEndian(byte[] bytes, int offset) {
         return (0xff & bytes[offset]) | ((0xff & bytes[offset + 1]) << 8) | ((0xff & bytes[offset + 2]) << 16) | ((0xff & bytes[offset + 3]) << 24);
     }
 
+    /**
+     * Beszúr egy három elemű koordinátát mely lehet akár szín vektor vagy pont.
+     *
+     * @param dos Azon DataOutputStream amibe a koordináta elemeket be kell szúrni.
+     * @param a   A koordináta első komponense.
+     * @param b   A koordináta második komponense.
+     * @param c   A koordináta harmadik komponense.
+     * @throws IOException Ha nem sikerül a DataOutputStream-be a beszúrás.
+     */
     private static void put3Coordinate(DataOutputStream dos, float a, float b, float c) throws IOException {
         ByteBuffer bb = ByteBuffer.allocate(4).order(ByteOrder.LITTLE_ENDIAN);
         bb.putFloat(a);
@@ -128,6 +168,13 @@ public final class ManageSTL {
         dos.write(bb.array());
     }
 
+    /**
+     * A space karakter mentén szétvágott nevet újra összeilleszti.
+     *
+     * @param line azon sor ami tartalmazza a nevet space mentén elválasztva (solid) kezdéssel.
+     * @return Az STL modell neve.
+     */
+    //TODO 80 karakternél nem lehet hosszabb.
     private static String generateSolidName(String[] line) {
         StringBuilder name = new StringBuilder();
         if (line.length >= 2) {
@@ -136,5 +183,37 @@ public final class ManageSTL {
             }
         }
         return name.toString().trim();
+    }
+
+    /**
+     * Meghatározza, hogy a paraméterében megadott STL fájl text formátumú-e.
+     *
+     * @param path Az stl fájl elérési útvonala.
+     * @return Igaz ha az stl fájl text formátumú.
+     */
+    private static boolean isTextSTL(Path path) {
+        boolean result = false;
+        try (DataInputStream dis = new DataInputStream(new BufferedInputStream(Files.newInputStream(path)))) {
+            byte[] head = new byte[5];
+            dis.read(head);
+            result = new String(head, StandardCharsets.UTF_8).toLowerCase(Locale.ROOT).equals("solid");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
+
+    /**
+     * Fájlból betölt egy STL modellt.
+     *
+     * @param path Az stl fájl elérési útvonala.
+     * @return A betöltött modell objektum.
+     */
+    public static Solid loadSTL(Path path) {
+        if (isTextSTL(path)) {
+            return loadTextSTL(path);
+        } else {
+            return loadBinarySTL(path);
+        }
     }
 }
