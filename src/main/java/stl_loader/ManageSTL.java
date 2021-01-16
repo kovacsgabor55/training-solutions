@@ -14,12 +14,12 @@ public final class ManageSTL {
     /**
      * Egy STL objektumot szöveges fájlba ment.
      *
-     * @param path  Az STL falj mentési helye.
+     * @param path  Az STL fálj mentési helye.
      * @param solid A fájlba mentendő STL objektum.
      * @return Igaz ha sikeres a mentés.
      */
     public static boolean saveTextSTL(Path path, Solid solid) {
-        try (BufferedWriter bw = Files.newBufferedWriter(path, Charset.defaultCharset())) {
+        try (BufferedWriter bw = Files.newBufferedWriter(path, StandardCharsets.US_ASCII)) {
             bw.write(solid.toString());
             bw.flush();
         } catch (IOException e) {
@@ -30,14 +30,14 @@ public final class ManageSTL {
     }
 
     /**
-     * Szöveges fájlbol betölt egy STL modellt.
+     * Szöveges fájlboól betölt egy STL modellt.
      *
-     * @param path Az stl fájl elérési útvonala.
+     * @param path Az STL fájl elérési útvonala.
      * @return A betöltött modell objektum.
      */
     public static Solid loadTextSTL(Path path) {
         Solid solid = null;
-        try (BufferedReader br = Files.newBufferedReader(path, Charset.defaultCharset())) {
+        try (BufferedReader br = Files.newBufferedReader(path, StandardCharsets.US_ASCII)) {
             String str;
             Facet facet = null;
             while ((str = br.readLine()) != null) {
@@ -67,7 +67,7 @@ public final class ManageSTL {
     /**
      * Egy STL objektumot bináris fájlba ment.
      *
-     * @param path  Az STL falj mentési helye.
+     * @param path  Az STL fálj mentési helye.
      * @param solid A fájlba mentendő STL objektum.
      * @return Igaz ha sikeres a mentés.
      */
@@ -97,9 +97,9 @@ public final class ManageSTL {
     }
 
     /**
-     * Bináris fájlbol betölt egy STL modellt.
+     * Bináris fájlból betölt egy STL modellt.
      *
-     * @param path Az stl fájl elérési útvonala.
+     * @param path Az STL fájl elérési útvonala.
      * @return A betöltött modell objektum.
      */
     public static Solid loadBinarySTL(Path path) {
@@ -171,7 +171,7 @@ public final class ManageSTL {
     /**
      * A space karakter mentén szétvágott nevet újra összeilleszti.
      *
-     * @param line azon sor ami tartalmazza a nevet space mentén elválasztva (solid) kezdéssel.
+     * @param line Azon sor ami tartalmazza a nevet space mentén elválasztva (solid) kezdéssel.
      * @return Az STL modell neve.
      */
     //TODO 80 karakternél nem lehet hosszabb.
@@ -188,15 +188,15 @@ public final class ManageSTL {
     /**
      * Meghatározza, hogy a paraméterében megadott STL fájl text formátumú-e.
      *
-     * @param path Az stl fájl elérési útvonala.
-     * @return Igaz ha az stl fájl text formátumú.
+     * @param path Az STL fájl elérési útvonala.
+     * @return Igaz ha az STL fájl text formátumú.
      */
     private static boolean isTextSTL(Path path) {
         boolean result = false;
         try (DataInputStream dis = new DataInputStream(new BufferedInputStream(Files.newInputStream(path)))) {
             byte[] head = new byte[5];
             dis.read(head);
-            result = new String(head, StandardCharsets.UTF_8).toLowerCase(Locale.ROOT).equals("solid");
+            result = new String(head, StandardCharsets.US_ASCII).toLowerCase(Locale.ENGLISH).equals("solid");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -206,7 +206,7 @@ public final class ManageSTL {
     /**
      * Fájlból betölt egy STL modellt.
      *
-     * @param path Az stl fájl elérési útvonala.
+     * @param path Az STL fájl elérési útvonala.
      * @return A betöltött modell objektum.
      */
     public static Solid loadSTL(Path path) {

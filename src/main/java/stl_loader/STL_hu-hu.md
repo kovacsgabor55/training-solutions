@@ -36,7 +36,7 @@ A szóköz (szóközök, tabulátorok, új sorok) a fájlban bárhol használhat
 
 ## Bináris STL
 
-Mivel az ASCII STL fájlok nagyon naggyá válhatnak, létezik az STL bináris verziója. A bináris STL fájl 80 karakteres fejléccel rendelkezik (amelyet általában figyelmen kívül hagynak, de soha nem szabad "szilárd" betűvel kezdődnie, mert ez egyes szoftvereket feltételezheti, hogy ez egy ASCII STL fájl). A fejléc után egy 4 bájtos kis endián előjel nélküli egész szám jelzi a fájlban található háromszöges oldalak számát. Ezt követi az egyes háromszögeket egymás után leíró adatok. A fájl egyszerűen az utolsó háromszög után ér véget.
+Mivel az ASCII STL fájlok nagyon naggyá válhatnak, létezik az STL bináris verziója. A bináris STL fájl 80 karakteres fejléccel rendelkezik (amelyet általában figyelmen kívül hagynak, de soha nem szabad "solid" betűvel kezdődnie, mert ez egyes szoftvereket feltételezheti, hogy ez egy ASCII STL fájl). A fejléc után egy 4 bájtos kis endián előjel nélküli egész szám jelzi a fájlban található háromszöges oldalak számát. Ezt követi az egyes háromszögeket egymás után leíró adatok. A fájl egyszerűen az utolsó háromszög után ér véget.
 
 Mindegyik háromszöget tizenkét 32 bites lebegőpontos szám írja le: három a normál értékre, majd három az egyes csúcsok X/Y/Z koordinátáira - ugyanúgy, mint az STL ASCII verziója esetén. Ezek után következik egy 2 bájtos ("short") előjel nélküli egész szám, amely az "attribútum bájtok száma" - a szokásos formátumban ennek nullának kell lennie, mert a legtöbb szoftver nem ért semmit.
 
