@@ -8,11 +8,11 @@ import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
 
 public class Installer {
-    private String INSTALLFILE = "src/main/resources/install.txt";
+    private static final String INSTALLFILE = "src/main/resources/install.txt";
+    private static final String INSTALLDIR = "src/main/resources/install/";
 
     public void install(String targetDirectory) {
         Path target = Path.of(targetDirectory);
-        Path installfile = Path.of(INSTALLFILE);
         if (!Files.exists(target) || !Files.isDirectory(target)) {
             throw new IllegalArgumentException("The given directory doesn't exist");
         }
@@ -22,7 +22,7 @@ public class Installer {
                 if (fn.endsWith("/")) {
                     Files.createDirectories(Path.of(targetDirectory, fn));
                 } else {
-                    Files.copy(Path.of("src/main/resources/install/"), Path.of(targetDirectory, fn), StandardCopyOption.REPLACE_EXISTING);
+                    Files.copy(Path.of(INSTALLDIR), Path.of(targetDirectory, fn), StandardCopyOption.REPLACE_EXISTING);
                 }
             }
         } catch (IOException e) {
