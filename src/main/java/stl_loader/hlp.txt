@@ -16,3 +16,11 @@ https://www.programcreek.com/java-api-examples/?class=java.nio.ByteOrder&method=
 https://stackoverflow.com/questions/17334031/how-to-read-and-parse-a-big-stl-file
 https://github.com/zhe8300975/STLShowView/blob/master/app/src/main/java/com/example/zhaowencong/showstlview/stlbean/STLObject.java
 
+
+https://www.scratchapixel.com/lessons/3d-basic-rendering/introduction-to-shading/shading-normals
+https://en.wikipedia.org/wiki/Cross_product
+https://gyires.inf.unideb.hu/KMITT/d03/ch01s02.html#d0e264
+https://hu.wikipedia.org/wiki/Vektori%C3%A1lis_szorzat
+http://www.pgccphy.net/ref/vprod.pdf
+https://users.physics.ox.ac.uk/~harnew/lectures/lecture2-handout.pdf
+* https://math.stackexchange.com/questions/305642/how-to-find-surface-normal-of-a-triangle
