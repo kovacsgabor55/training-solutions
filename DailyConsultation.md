@@ -480,7 +480,7 @@ Készítsünk egy `CharCounter` osztályt, melyben van egy `int countChars(Strin
 
 ## 2021-01-14 (`week11d04`)
 
-### Junior/Medior :x:
+### Junior/Medior :heavy_check_mark: :x:
 
 Adott az aktuális könyvtárban több, fájl, melynek a nevei: `number00.txt`, `number03.txt`, `number20.txt`, egészen 99-ig.
 Nem minden fájl létezik, lehet, hogy bizonyos számhoz tartozó fájl kimaradt. Olvasd be az állományból a benne lévő
@@ -492,3 +492,15 @@ Használd a `Files.readString()` metódust a fájl beolvasására! A `FilesSum` 
 Adott egy nevek listája. Add vissza egy listában, hogy milyen hosszúságú `J` karakterrel kezdődő nevek szerepelnek a listában! Minden szám
 csak egyszer szerepeljen! A `NameLength` osztály `getLengths(List<String>)` metódusába dolgozz!
 Ha a bemenet pl. `List.of("Joe", "Jack", "Jane", "Jake", "George", "William")`, a visszatérési érték `[3, 4]` legyen!
+
+## 2021-01-14 (`week12d01`)
+
+### Junior/Medior :x:
+
+Készíts egy `GradeRounder` osztályt, amiben van egy `int[] roundGrades(int[] grades)` metódus. A `grades` tömb pontszámokat tartalmaz `0` és `100` között. A feladat az, hogy kerekítsük a benne lévő számokat a következő szabály szerint: Ha a pontszám és az `5` következő többszöröse közötti különbség kisebb, mint `3`, akkor kerekítsük fel a számot az `5` következő többszörösére. Fontos: a `40` pont alatti pontszámok elégtelenek, ezeket egyáltalán nem kell kerekíteni. Példa: a pontszám `84`. `85 - 84` kevesebb mint `3`, így felfelé kerekítünk.
+
+### Senior :x:
+
+Készíts egy `GoodsPacker` osztályt, melynek van egy `int packGoods(int[][] types, int capacity)` metódusa. A `types` tömb számpárokat tartalmaz, melyek tárgyak súlyát és értékét tartalmazzák, például: `[(7, 160), (3, 90), (2, 15)]`. Az első szám a súly kilogrammban, a második szám az érték forintban. A feladat az, hogy kiszámoljuk, hogy a megadott táskamérethez (`capacity`) mennyi a tárgyak maximum értéke, amit belepakolhatunk a táskába. Például ha a `types` `[(7, 160), (3, 90), (2, 15)]` és a `capacity` `20`, akkor a maximum érték `555`.
+
+
