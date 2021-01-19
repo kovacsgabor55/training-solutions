@@ -5,27 +5,41 @@ import java.nio.file.Path;
 import static stl_loader.ManageSTL.*;
 
 public class Main {
+    static final Path cubeText = Path.of("src/main/resources/cubeText.stl");
+    static final Path cubeBin = Path.of("src/main/resources/cubeBin.stl");
+    static final Path outCubeTextToBin = Path.of("src/main/resources/outCubeTextToBin.stl");
+    static final Path outCubeBinToText = Path.of("src/main/resources/outCubeBinToText.stl");
+    static final Path outCubeText = Path.of("src/main/resources/outCubeText.stl");
+    static final Path outCubeBin = Path.of("src/main/resources/outCubeBin.stl");
+
     public static void main(String[] args) {
-        loadSTL(Path.of("src/main/resources/cubeText.stl"));
-        if (saveBinarySTL(Path.of("src/main/resources/out.stl"), loadSTL(Path.of("src/main/resources/Sphericon.stl")))) {
+        if (saveBinarySTL(outCubeTextToBin, loadSTL(cubeText))) {
             System.out.println("passed");
         } else {
             System.out.println("failed");
         }
 
-        if (saveTextSTL(Path.of("src/main/resources/cubeText.stl"), loadSTL(Path.of("src/main/resources/Sphericon.stl")))) {
+        if (saveTextSTL(outCubeBinToText, loadSTL(cubeBin))) {
             System.out.println("passed");
         } else {
             System.out.println("failed");
         }
 
-        saveBinarySTL(Path.of("src/main/resources/cubeBin.stl"), loadSTL(Path.of("src/main/resources/teszt.stl")));
+        if (saveBinarySTL(outCubeText, loadSTL(cubeText))) {
+            System.out.println("passed");
+        } else {
+            System.out.println("failed");
+        }
 
+        if (saveTextSTL(outCubeBin, loadSTL(cubeBin))) {
+            System.out.println("passed");
+        } else {
+            System.out.println("failed");
+        }
 
-        saveTextSTL(Path.of("src/main/resources/cubeText.stl"), loadSTL(Path.of("src/main/resources/teszt.stl")));
-        saveBinarySTL(Path.of("src/main/resources/cubeBin.stl"), loadSTL(Path.of("src/main/resources/cubeText.stl")));
-        saveTextSTL(Path.of("src/main/resources/cubeText.stl"), loadSTL(Path.of("src/main/resources/cubeBin.stl")));
-        System.out.println(loadSTL(Path.of("src/main/resources/Sphericon.stl")).info());
+        System.out.println(loadSTL(cubeBin).info());
+        System.out.println(loadSTL(cubeText).info());
+
         /**
          *
          * Azt nem kezeli ha solid névvel kezdődik az objektum neve. (ez alapján döntheti el hogy miylen a formátum)

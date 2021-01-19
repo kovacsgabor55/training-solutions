@@ -24,3 +24,4 @@ https://hu.wikipedia.org/wiki/Vektori%C3%A1lis_szorzat
 http://www.pgccphy.net/ref/vprod.pdf
 https://users.physics.ox.ac.uk/~harnew/lectures/lecture2-handout.pdf
 * https://math.stackexchange.com/questions/305642/how-to-find-surface-normal-of-a-triangle
+https://howtodoinjava.com/java/io/sha-md5-file-checksum-hash/
