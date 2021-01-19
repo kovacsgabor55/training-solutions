@@ -36,10 +36,11 @@ class StreetTest {
     void lastSiteHouseNumberTest() {
         assertEquals(3, street.lastSiteHouseNumber());
     }
+
     @Test
-    void reportTest(){
-        assertEquals(4,street.report().get(0).getCount());
-        assertEquals(1,street.report().get(1).getCount());
-        assertEquals(1,street.report().get(2).getCount());
+    void reportTest() {
+        assertEquals(4, street.report().get(0).getCount());
+        assertEquals(1, street.report().get(1).getCount());
+        assertEquals(1, street.report().get(2).getCount());
     }
 }

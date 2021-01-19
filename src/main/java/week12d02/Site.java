@@ -1,9 +1,9 @@
 package week12d02;
 
 public class Site {
-    private Side side;
-    private int length;
-    private Fence fence;
+    private final Side side;
+    private final int length;
+    private final Fence fence;
     private int houseNumber;
 
     public Site(Side side, int length, Fence fence) {

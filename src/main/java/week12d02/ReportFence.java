@@ -1,8 +1,8 @@
 package week12d02;
 
 public class ReportFence {
-    private Fence fenceType;
-    private int count;
+    private final Fence fenceType;
+    private final int count;
 
     public ReportFence(Fence fenceType, int count) {
         this.fenceType = fenceType;
