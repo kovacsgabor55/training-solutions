@@ -29,10 +29,10 @@ public class GraphicMath {
 
     public static Normal normalizeVector(Vector v) {
         //NOTE nem szükséges a négyzetösszeg
-        double divisor = abs(v.getI() + v.getJ() + v.getK());
-        double oneNormalX = v.getI() / divisor;
-        double oneNormalY = v.getJ() / divisor;
-        double oneNormalZ = v.getK() / divisor;
+        float divisor = abs(v.getI() + v.getJ() + v.getK());
+        float oneNormalX = v.getI() / divisor;
+        float oneNormalY = v.getJ() / divisor;
+        float oneNormalZ = v.getK() / divisor;
         if (oneNormalX == -0.0) {
             oneNormalX = 0;
         }
@@ -42,6 +42,6 @@ public class GraphicMath {
         if (oneNormalZ == -0.0) {
             oneNormalZ = 0;
         }
-        return new Normal((float) oneNormalX, (float) oneNormalY, (float) oneNormalZ);
+        return new Normal(oneNormalX, oneNormalY, oneNormalZ);
     }
 }
