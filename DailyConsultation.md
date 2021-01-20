@@ -503,7 +503,7 @@ Készíts egy `GradeRounder` osztályt, amiben van egy `int[] roundGrades(int[] 
 
 Készíts egy `GoodsPacker` osztályt, melynek van egy `int packGoods(int[][] types, int capacity)` metódusa. A `types` tömb számpárokat tartalmaz, melyek tárgyak súlyát és értékét tartalmazzák, például: `[(7, 160), (3, 90), (2, 15)]`. Az első szám a súly kilogrammban, a második szám az érték forintban. A feladat az, hogy kiszámoljuk, hogy a megadott táskamérethez (`capacity`) mennyi a tárgyak maximum értéke, amit belepakolhatunk a táskába. Például ha a `types` `[(7, 160), (3, 90), (2, 15)]` és a `capacity` `20`, akkor a maximum érték `555`.
 
-## 2021-01-19 (`week12d02`)
+## 2021-01-19 (`week12d02`) Csoportmunka
 
 ### Junior/Medior :heavy_check_mark:
 
@@ -547,3 +547,17 @@ Határozzuk meg a fájl utolsó sorában szereplő telek házszámát!
 Pl.: (1)KKKKKKKK(3)::::::::::(5)SSSSSSSSS
 Magyarázat: A házszám zárójelben, majd annyi a kerítést leíró jellemző, amilyen hosszú a telek.
 
+## 2021-01-20 (`week12d03`)
+
+### Junior/Medior :heavy_check_mark: :x:
+
+Készítsd el a `week12d03.NumberStat` osztályt melyben legyen egy metódus, ami paraméterül vár egy egész számokból álló listát. Add vissza azt a számot amelyik pontosan egyszer szerepel a listában. Ha több ilyen szám van akkor a kisebbet! Ellenőrizd, hogy olyan listát fogadunk el, ami legalább 1 elemű, ha a lista nem ilyen, dobj kivételt!
+pl: {1,1,5,3,4,5,6,5,6,4,1,6,5,4} A megoldás: 3
+Bónusz: Módosítsd az osztályt. Legyen egy egész számokból álló lista attribútuma. A fent megírt metódus ezen a listán dolgozzon. A lista elemeit fájlból töltsük fel. A file úgy néz ki, hogy egy sorban három szám van vesszővel elválasztva. Tehát:
+1,1,4
+2,3,5
+2,2,5
+
+### Senior :x:
+
+Készítsünk egy osztályt `AgeSorter` néven, melynek van egy `int[] sortAges(int[] ages)` metódusa. Az `ages` tömbben emberek életkorai szerepelnek. A feladat az, hogy visszaadjunk egy tömböt, mely az életkorokat tartalmazza sorrendbe rendezve. Ne használjunk beépített sorrendbe rendező algoritmusokat (`Collections.sort`) a feladat megoldásához!

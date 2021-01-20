@@ -1,4 +1,4 @@
-package timesheet;
+package timesheet2;
 
 import org.junit.Test;
 
