@@ -2,13 +2,14 @@ package stl_loader;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Solid {
     private final String name;
     private final List<Facet> facets;
 
     public Solid(String name) {
-        this.name = name;
+        this.name = name.trim();
         this.facets = new ArrayList<>();
     }
 
@@ -49,5 +50,18 @@ public class Solid {
         stringBuilder.append("Local colour: True/False");
         stringBuilder.append("\n");
         return stringBuilder.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Solid solid = (Solid) o;
+        return Objects.equals(name, solid.name) && Objects.equals(facets, solid.facets);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, facets);
     }
 }

@@ -2,6 +2,7 @@ package stl_loader;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Facet {
     private Normal normal;
@@ -34,5 +35,18 @@ public class Facet {
             sb.append(item + "\n");
         }
         return " facet " + normal + "\n  outer loop\n" + sb.toString() + "  endloop\n endfacet";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Facet facet = (Facet) o;
+        return Objects.equals(normal, facet.normal) && Objects.equals(vertices, facet.vertices);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(normal, vertices);
     }
 }
