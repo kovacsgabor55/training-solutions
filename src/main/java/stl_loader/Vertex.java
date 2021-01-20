@@ -1,8 +1,9 @@
 package stl_loader;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Vertex {
+public class Vertex implements Serializable {
     private final float x;
     private final float y;
     private final float z;

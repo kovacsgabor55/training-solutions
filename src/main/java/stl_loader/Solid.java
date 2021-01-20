@@ -1,10 +1,11 @@
 package stl_loader;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class Solid {
+public class Solid implements Serializable {
     private final String name;
     private final List<Facet> facets;
 

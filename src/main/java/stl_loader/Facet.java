@@ -1,10 +1,11 @@
 package stl_loader;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class Facet {
+public class Facet implements Serializable {
     private Normal normal;
     private List<Vertex> vertices;
 

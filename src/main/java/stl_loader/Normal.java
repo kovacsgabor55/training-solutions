@@ -1,8 +1,9 @@
 package stl_loader;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Normal {
+public class Normal implements Serializable {
     private final float i;
     private final float j;
     private final float k;
