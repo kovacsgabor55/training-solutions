@@ -6,12 +6,9 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.net.URISyntaxException;
+import java.nio.file.Files;
 import java.nio.file.Path;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static stl_loader.ManageSTL.*;
@@ -28,13 +25,12 @@ class ManageSTLTest {
     public File temporaryFolder;
 
     @BeforeEach
-    void setUp() throws URISyntaxException {
-       Path aa= Path.of(ManageSTLTest.class.getResource("/tetrahedronBin.stl").toString());
-        System.out.println(aa.toString());
-        binarySaved = Path.of("src", "test", "resources", "binarySaved.stl");
-        textSaved = Path.of("src", "test", "resources", "textSaved.stl");
-        standardBinary = Path.of("src", "test", "resources", "tetrahedronBin.stl");
-        standardText = Path.of("src", "test", "resources", "tetrahedronText.stl");
+    void setUp() {
+
+        binarySaved = new File(temporaryFolder, "binarySaved.stl").toPath();
+        textSaved = new File(temporaryFolder, "textSaved.stl").toPath();
+        standardBinary = Path.of(this.getClass().getResource("/tetrahedronBin.stl").getPath().substring(1));
+        standardText = Path.of(this.getClass().getResource("/tetrahedronText.stl").getPath().substring(1));
 
         name = "Tetrahedron";
         solid = new Solid(name);
@@ -82,10 +78,11 @@ class ManageSTLTest {
 
     @Test
     @DisplayName("Save solid to text STL file")
-    void saveTextSTLTest() throws IOException, NoSuchAlgorithmException {
-        saveTextSTL(textSaved, solid);
-        assertEquals(checkSumMD5(new File(textSaved.toUri())), checkSumMD5(new File(standardText.toUri())));
-        assertEquals(checkSumSHA1(new File(textSaved.toUri())), checkSumSHA1(new File(standardText.toUri())));
+    void saveTextSTLTest() throws IOException {
+        assertTrue(saveTextSTL(textSaved, solid));
+        byte[] original = this.getClass().getResourceAsStream("/tetrahedronText.stl").readAllBytes();
+        byte[] saved = Files.readAllBytes(textSaved);
+        assertArrayEquals(original, saved);
     }
 
     @Test
@@ -96,10 +93,11 @@ class ManageSTLTest {
 
     @Test
     @DisplayName("Save solid to binary STL file")
-    void saveBinarySTLTest() throws IOException, NoSuchAlgorithmException {
-        saveBinarySTL(binarySaved, solid);
-        assertEquals(checkSumMD5(new File(binarySaved.toUri())), checkSumMD5(new File(standardBinary.toUri())));
-        assertEquals(checkSumSHA1(new File(binarySaved.toUri())), checkSumSHA1(new File(standardBinary.toUri())));
+    void saveBinarySTLTest() throws IOException {
+        assertTrue(saveBinarySTL(binarySaved, solid));
+        byte[] original = this.getClass().getResourceAsStream("/tetrahedronBin.stl").readAllBytes();
+        byte[] saved = Files.readAllBytes(binarySaved);
+        assertArrayEquals(original, saved);
     }
 
     @Test
@@ -113,52 +111,5 @@ class ManageSTLTest {
     void loadSTLTest() {
         assertEquals(solid, loadSTL(standardText));
         assertEquals(solid, loadSTL(standardBinary));
-    }
-
-
-    private static String checkSumMD5(File file) throws IOException, NoSuchAlgorithmException {
-        //Use MD5 algorithm
-        MessageDigest md5Digest = MessageDigest.getInstance("MD5");
-
-        //Get the checksum
-        return getFileChecksum(md5Digest, file);
-    }
-
-    private static String checkSumSHA1(File file) throws IOException, NoSuchAlgorithmException {
-        //Use SHA-1 algorithm
-        MessageDigest shaDigest = MessageDigest.getInstance("SHA-256");
-
-        //SHA-1 checksum
-        return getFileChecksum(shaDigest, file);
-    }
-
-    private static String getFileChecksum(MessageDigest digest, File file) throws IOException {
-        //Get file input stream for reading the file content
-        FileInputStream fis = new FileInputStream(file);
-
-        //Create byte array to read data in chunks
-        byte[] byteArray = new byte[1024];
-        int bytesCount = 0;
-
-        //Read file data and update in message digest
-        while ((bytesCount = fis.read(byteArray)) != -1) {
-            digest.update(byteArray, 0, bytesCount);
-        }
-
-        //close the stream; We don't need it now.
-        fis.close();
-
-        //Get the hash's bytes
-        byte[] bytes = digest.digest();
-
-        //This bytes[] has bytes in decimal format;
-        //Convert it to hexadecimal format
-        StringBuilder sb = new StringBuilder();
-        for (byte aByte : bytes) {
-            sb.append(Integer.toString((aByte & 0xff) + 0x100, 16).substring(1));
-        }
-
-        //return complete hash
-        return sb.toString();
     }
 }

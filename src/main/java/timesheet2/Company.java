@@ -106,7 +106,7 @@ public class Company {
     }
 
     private void loadEmployees() {
-        try (BufferedReader br = new BufferedReader(Files.newBufferedReader(Path.of("src", "main", "java", "timesheet", "files", "employees.txt")))) {
+        try (BufferedReader br = new BufferedReader(Files.newBufferedReader(Path.of("src", "main", "java", "timesheet2", "files", "employees.txt")))) {
             String line;
             while ((line = br.readLine()) != null) {
                 String[] data = line.split(" ");
@@ -119,7 +119,7 @@ public class Company {
     }
 
     private void loadProjects() {
-        try (BufferedReader br = new BufferedReader(Files.newBufferedReader(Path.of("src", "main", "java", "timesheet", "files", "projects.txt")))) {
+        try (BufferedReader br = new BufferedReader(Files.newBufferedReader(Path.of("src", "main", "java", "timesheet2", "files", "projects.txt")))) {
             String line;
             while ((line = br.readLine()) != null) {
                 projects.add(new Project(line));

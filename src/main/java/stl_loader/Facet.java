@@ -7,7 +7,7 @@ import java.util.Objects;
 
 public class Facet implements Serializable {
     private Normal normal;
-    private List<Vertex> vertices;
+    private final List<Vertex> vertices;
 
     public Facet() {
         this.vertices = new ArrayList<>();
@@ -33,7 +33,7 @@ public class Facet implements Serializable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         for (Vertex item : vertices) {
-            sb.append(item + "\n");
+            sb.append(item).append('\n');
         }
         return " facet " + normal + "\n  outer loop\n" + sb.toString() + "  endloop\n endfacet";
     }

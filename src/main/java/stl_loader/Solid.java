@@ -30,27 +30,20 @@ public class Solid implements Serializable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         for (Facet item : facets) {
-            sb.append(item + "\n");
+            sb.append(item).append('\n');
         }
-        return "solid " + name.trim() + '\n' +
+        return "solid " + name + '\n' +
                 sb.toString() +
-                "endsolid " + name.trim() + '\n';
+                "endsolid " + name + '\n';
     }
 
     public String info() {
-        StringBuilder stringBuilder = new StringBuilder("Solid name: ");
-        stringBuilder.append(name);
-        stringBuilder.append("\n");
-        stringBuilder.append("Facets: ");
-        stringBuilder.append(facets.size());
-        stringBuilder.append("\n");
-        stringBuilder.append("Global material: True/False");
-        stringBuilder.append("\n");
-        stringBuilder.append("Global Colour: True/False");
-        stringBuilder.append("\n");
-        stringBuilder.append("Local colour: True/False");
-        stringBuilder.append("\n");
-        return stringBuilder.toString();
+        return "Solid name: " + name +
+                "\nFacets: " + facets.size() +
+                "\nGlobal material: True/False" +
+                "\nGlobal colour: True/False" +
+                "\nLocal colour: True/False" +
+                '\n';
     }
 
     @Override

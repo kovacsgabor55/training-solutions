@@ -179,7 +179,7 @@ public final class ManageSTL {
         StringBuilder name = new StringBuilder();
         if (line.length >= 2) {
             for (int i = 1; i < line.length; i++) {
-                name.append(" " + line[i]);
+                name.append(" ").append(line[i]);
             }
         }
         return name.toString().trim();
