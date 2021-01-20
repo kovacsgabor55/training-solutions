@@ -25,7 +25,7 @@ public class Hiking {
     public static Difference getPlusElevation(InputStream is) {
         try (DataInputStream dis = new DataInputStream(is)) {
             String line;
-            double sumEletvation = 0;
+            double sumElevation = 0;
             double sumDepth = 0;
             List<Integer> elevations = new ArrayList<>();
             while ((line = dis.readLine()) != null) {
@@ -34,13 +34,13 @@ public class Hiking {
             int actual = elevations.get(0);
             for (int item : elevations) {
                 if (actual < item) {
-                    sumEletvation += item - actual;
+                    sumElevation += item - actual;
                 } else {
                     sumDepth += actual - item;
                 }
                 actual = item;
             }
-            return new Difference(sumEletvation, sumDepth);
+            return new Difference(sumElevation, sumDepth);
         } catch (IOException e) {
             e.printStackTrace();
         }

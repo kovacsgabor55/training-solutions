@@ -3,10 +3,12 @@ package stl_loader;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.io.TempDir;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.nio.file.Path;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -22,12 +24,17 @@ class ManageSTLTest {
     String name;
     Path binarySaved, textSaved, standardBinary, standardText;
 
+    @TempDir
+    public File temporaryFolder;
+
     @BeforeEach
-    void setUp() {
-        binarySaved = Path.of("src", "main", "resources", "binarySaved.stl");
-        textSaved = Path.of("src", "main", "resources", "textSaved.stl");
-        standardBinary = Path.of("src", "main", "resources", "tetrahedronBin.stl");
-        standardText = Path.of("src", "main", "resources", "tetrahedronText.stl");
+    void setUp() throws URISyntaxException {
+       Path aa= Path.of(ManageSTLTest.class.getResource("/tetrahedronBin.stl").toString());
+        System.out.println(aa.toString());
+        binarySaved = Path.of("src", "test", "resources", "binarySaved.stl");
+        textSaved = Path.of("src", "test", "resources", "textSaved.stl");
+        standardBinary = Path.of("src", "test", "resources", "tetrahedronBin.stl");
+        standardText = Path.of("src", "test", "resources", "tetrahedronText.stl");
 
         name = "Tetrahedron";
         solid = new Solid(name);
