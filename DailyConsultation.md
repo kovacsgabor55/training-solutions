@@ -561,3 +561,18 @@ Bónusz: Módosítsd az osztályt. Legyen egy egész számokból álló lista at
 ### Senior :x:
 
 Készítsünk egy osztályt `AgeSorter` néven, melynek van egy `int[] sortAges(int[] ages)` metódusa. Az `ages` tömbben emberek életkorai szerepelnek. A feladat az, hogy visszaadjunk egy tömböt, mely az életkorokat tartalmazza sorrendbe rendezve. Ne használjunk beépített sorrendbe rendező algoritmusokat (`Collections.sort`) a feladat megoldásához!
+
+## 2021-01-21 (`week12d04`)
+
+### Junior/Medior :heavy_check_mark: :x:
+
+
+Töltsd le a példa bináris állomány a https://github.com/Training360/strukturavalto-java-public/raw/master/examples/week12d04/src/main/resources/secret.dat címről!
+Ez bájtokat tartalmaz, egy szöveg van titkosítva benne. Olvasd be bájtonként, és mindegyik bájthoz adjál hozzá tízet! Ez valójában egy karakterkód, ezt alakítsd át `char` típusú értékké!
+
+
+### Senior :x:
+
+A `Client` osztály reprezentál egy ügyfelet `name` és `regNumber` attribútummal (`String`). Az második a regisztrációs száma, mely egyedileg azonosít egy ügyfelet.  Írj egy `Clients` osztályt, mely az ügyfeleket tartja nyilván.
+Regisztrációs szám alapján le kell tudni kérdezni egy ügyfelet a `findByRegNumber(String)` metódussal. Dobjon `IllegalArgumentException`-t, ha nincs. Fontos, hogy nagyon gyors legyen a lekérdezés a regisztrációs szám alapján!
+Ezen kívül legyen benne egy `List<Client> findByName(String)` metódus is, ami pedig névtöredék alapján keres! Ez lehet lassabb.
