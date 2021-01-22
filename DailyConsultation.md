@@ -566,7 +566,6 @@ Készítsünk egy osztályt `AgeSorter` néven, melynek van egy `int[] sortAges(
 
 ### Junior/Medior :heavy_check_mark: :x:
 
-
 Töltsd le a példa bináris állomány a https://github.com/Training360/strukturavalto-java-public/raw/master/examples/week12d04/src/main/resources/secret.dat címről!
 Ez bájtokat tartalmaz, egy szöveg van titkosítva benne. Olvasd be bájtonként, és mindegyik bájthoz adjál hozzá tízet! Ez valójában egy karakterkód, ezt alakítsd át `char` típusú értékké!
 
@@ -576,3 +575,24 @@ Ez bájtokat tartalmaz, egy szöveg van titkosítva benne. Olvasd be bájtonkén
 A `Client` osztály reprezentál egy ügyfelet `name` és `regNumber` attribútummal (`String`). Az második a regisztrációs száma, mely egyedileg azonosít egy ügyfelet.  Írj egy `Clients` osztályt, mely az ügyfeleket tartja nyilván.
 Regisztrációs szám alapján le kell tudni kérdezni egy ügyfelet a `findByRegNumber(String)` metódussal. Dobjon `IllegalArgumentException`-t, ha nincs. Fontos, hogy nagyon gyors legyen a lekérdezés a regisztrációs szám alapján!
 Ezen kívül legyen benne egy `List<Client> findByName(String)` metódus is, ami pedig névtöredék alapján keres! Ez lehet lassabb.
+
+## 2021-01-22 (`week12d05`)
+
+### Junior/Medior :heavy_check_mark: :x:
+
+Töltsd le az index.hu nyitólapját böngészőből, ez egy html állomány! Másold be a projektedbe (`index.html`) néven! Ez egy szöveges állomány. Olvasd be, és számold meg, hány sorban szerepel a `koronavírus`
+
+
+### Senior :x:
+
+Adott az alábbi osztály:
+```java
+public class Employee {
+    private int age;
+    private int skillLevel;
+    private String name;
+    private List<String> skills;
+}
+```
+Készítsetek az `EmployeeFilter` osztályba egy `List<Employee> countSeniorDevs(List<Employee> employees)` metótust, mely a megadott employees-ből kiválogatja a senior (ahol a skill level nagyobb, vagy egyenlő, mint 3) fejlesztőket. A fejlesztők rendelkeznek a `programming` skill-lel.
+
