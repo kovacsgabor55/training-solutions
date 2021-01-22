@@ -86,6 +86,7 @@ public final class ManageSTL {
                 for (Vertex vertex : facet.getVertices()) {
                     put3Coordinate(dos, vertex.getX(), vertex.getY(), vertex.getZ());
                 }
+                //color material
                 dos.write(new byte[2]);
             }
             dos.flush();
@@ -127,7 +128,9 @@ public final class ManageSTL {
                     float z = Float.intBitsToFloat(getIntWithLittleEndian(buffer, 0));
                     facet.appendVertex(new Vertex(x, y, z));
                 }
-                dis.skip(2);
+                //colormaterial
+                //dis.skip(2);
+                matter(dis.readNBytes(2));
                 solid.appendFacet(facet);
             }
         } catch (IOException e) {
@@ -135,6 +138,22 @@ public final class ManageSTL {
         }
         return solid;
     }
+    //
+
+    private static void matter(byte[] mat) {
+        if (mat[0] != 0 && mat[1] != 0) {
+            int a = Byte.toUnsignedInt(mat[0]);
+            int b = Byte.toUnsignedInt(mat[1]);
+            //0123 4567 8901 2345
+            //1111 1111 0000 0001
+            System.out.println(a + " " + b);
+        } else {
+            System.out.println("emitt");
+        }
+    }
+
+
+    //
 
     /**
      * Egy 4 elemű bájt tömböt little edian szerint alakít egy int számmá.

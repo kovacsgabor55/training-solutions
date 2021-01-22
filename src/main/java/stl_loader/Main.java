@@ -1,5 +1,7 @@
 package stl_loader;
 
+import java.nio.file.Path;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -13,5 +15,6 @@ public class Main {
          * Nem vizsgálja a betöltendő fájl integritását.
          * Nem vizsgálja hogy a név 80 bájt hossznál nem több-e
          */
+        ManageSTL.loadBinarySTL(Path.of("src","main","resources","colored.stl"));
     }
 }
