@@ -20,6 +20,7 @@ public class Lottery {
         for (Integer item : lottery) {
             res.add(item);
         }
+        Collections.sort(res);
         return res;
     }
 }
