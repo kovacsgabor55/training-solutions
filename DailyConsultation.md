@@ -596,3 +596,18 @@ public class Employee {
 ```
 Készítsetek az `EmployeeFilter` osztályba egy `List<Employee> countSeniorDevs(List<Employee> employees)` metótust, mely a megadott employees-ből kiválogatja a senior (ahol a skill level nagyobb, vagy egyenlő, mint 3) fejlesztőket. A fejlesztők rendelkeznek a `programming` skill-lel.
 
+
+## 2021-01-25 (`week13d01`)
+
+### Junior/Medior :x:
+
+A GitHubon a `examples\week13d01\src\main\resources\iranyitoszamok-varosok-2021.csv` fájl tartalmazza a magyar városok listáját.
+Add vissza a leghosszabb nevű várost!
+
+
+### Senior :x:
+
+A GitHubon a `examples\week13d01\src\main\resources\iranyitoszamok-varosok-2021.csv` fájl tartalmazza a magyar városok listáját.
+Add vissza az ábécésorrendben első város nevét és irányítószámát!
+8:36
+A fájl itt: https://github.com/Training360/strukturavalto-java-public/blob/master/examples/week13d01/src/main/resources/iranyitoszamok-varosok-2021.csv
