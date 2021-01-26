@@ -9,7 +9,7 @@ public class Dictionary {
 
     public void addItem(String word, List<String> translations) {
         boolean found = false;
-        for (DictionaryItem item: dictionaryItems) {
+        for (DictionaryItem item : dictionaryItems) {
             if (item.getWord().equals(word)) {
                 item.addTranslations(translations);
                 found = true;
@@ -23,7 +23,7 @@ public class Dictionary {
     }
 
     public List<String> findTranslations(String word) {
-        for (DictionaryItem item: dictionaryItems) {
+        for (DictionaryItem item : dictionaryItems) {
             if (item.getWord().equals(word)) {
                 return item.getTranslations();
             }
