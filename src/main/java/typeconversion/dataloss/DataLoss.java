@@ -3,7 +3,8 @@ package typeconversion.dataloss;
 public class DataLoss {
     public void dataLoss() {
         long original = 0;
-        for (long counter = 0; counter < 3; ) {
+        long counter = 0;
+        while (counter < 3) {
             long converted = (long) (float) original;
             if (converted != original) {
                 System.out.println("Original : " + original + " in binary: " + Long.toBinaryString(original));
