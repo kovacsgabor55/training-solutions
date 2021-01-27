@@ -1,7 +1,5 @@
 package controlselection.month;
 
-import java.time.LocalDate;
-
 public class DayInMonth {
     int numberOfDays(int year, String month) {
         switch (month.toLowerCase()) {

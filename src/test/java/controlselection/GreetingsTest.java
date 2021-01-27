@@ -1,4 +1,4 @@
-package controllselections;
+package controlselection;
 
 import org.junit.jupiter.api.Test;
 

@@ -20,7 +20,6 @@ public class LogParser {
                     throw new IllegalArgumentException("Incorrect log: incorrect number of fields");
                 }
                 entries.add(new Entry(data[0], LocalDate.parse(data[1]), data[2]));
-                System.out.println(item);
             }
             ret.put(entries.get(0).getIpAddress(), entries);
             return ret;

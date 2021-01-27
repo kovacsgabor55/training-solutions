@@ -1,7 +1,6 @@
-package controllselections;
+package controlselection;
 
 public class Greetings {
-    //5 9-1830 20
 
     public String sayGreeting(int hour, int minute) {
 

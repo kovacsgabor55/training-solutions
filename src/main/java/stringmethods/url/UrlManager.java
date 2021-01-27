@@ -1,4 +1,4 @@
-package stringurlmethods.url;
+package stringmethods.url;
 
 public class UrlManager {
     private String protocol;
