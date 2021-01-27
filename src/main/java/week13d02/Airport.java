@@ -5,11 +5,10 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class Airport {
-    private List<Catalog> catalogs = new ArrayList<>();
+    private final List<Catalog> catalogs = new ArrayList<>();
 
     public List<Catalog> getCatalogs() {
         return new ArrayList<>(catalogs);
@@ -33,7 +32,6 @@ public class Airport {
     }
 
     private void addCatalog(String[] data) {
-        //FC5354 Arrival Dublin 18:16
         String flyNumber = data[0];
         String direction = data[1];
         String city = data[2];
@@ -100,11 +98,11 @@ public class Airport {
 
     public static void main(String[] args) {
         Airport ari = new Airport();
-        ari.loadFile("cities.txt");
-        //System.out.println(ari.getCatalogs());
-        //System.out.println(ari.getCatalogs().size());
-        // System.out.println(ari.moreDirection());
-        //System.out.println(ari.searchFlyNumber("JO3963"));
+        ari.loadFile("src/main/resources/cities.txt");
+        System.out.println(ari.getCatalogs());
+        System.out.println(ari.getCatalogs().size());
+        System.out.println(ari.moreDirection());
+        System.out.println(ari.searchFlyNumber("JO3963"));
         System.out.println(ari.getCityToDirection("Bucharest", "Arrival").size());
         System.out.println(ari.getFirstDepartures());
     }

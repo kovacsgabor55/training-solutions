@@ -7,7 +7,7 @@ import java.nio.file.Path;
 
 public class Teacher {
     public int getTeachingTime(String teacherName) {
-        try (BufferedReader br = Files.newBufferedReader(Path.of("beosztas.txt"))) {
+        try (BufferedReader br = Files.newBufferedReader(Path.of("src/main/resources/beosztas.txt"))) {
             String line;
             int hour = 0;
             while ((line = br.readLine()) != null) {
