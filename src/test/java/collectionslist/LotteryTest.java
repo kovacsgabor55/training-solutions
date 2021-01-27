@@ -1,4 +1,4 @@
-package collectionsarraylist;
+package collectionslist;
 
 
 import org.junit.jupiter.api.Test;

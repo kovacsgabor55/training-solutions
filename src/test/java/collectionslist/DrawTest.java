@@ -1,4 +1,4 @@
-package collectionslinkedlist;
+package collectionslist;
 
 import org.junit.jupiter.api.Test;
 

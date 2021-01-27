@@ -1,4 +1,4 @@
-package collectionsarraylist;
+package collectionslist;
 
 import java.util.*;
 
