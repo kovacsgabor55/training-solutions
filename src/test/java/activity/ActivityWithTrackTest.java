@@ -21,7 +21,6 @@ public class ActivityWithTrackTest {
         track.addTrackPoint(new TrackPoint(new Coordinate(13.7, -6.0), 0));
         track.addTrackPoint(new TrackPoint(new Coordinate(3.67, -42.789), 200));
 
-        System.out.println(activityWithTrack.getDistance());
         assertTrue(activityWithTrack.getDistance() > 13611579.57 && activityWithTrack.getDistance() < 13611579.67);
     }
 

@@ -10,6 +10,7 @@ public class Job implements Comparable<Job> {
     public Job(int priority, String jobDescription) {
         this.priority = priority;
         this.jobDescription = jobDescription;
+        this.urgent = priority < 5;
     }
 
     public int getPriority() {

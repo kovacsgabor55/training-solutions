@@ -1,6 +1,6 @@
 package collectionsqueue;
 
-public class NoJobException extends RuntimeException {
+public class NoJobException extends Exception {
     /**
      * Constructs a new runtime exception with {@code null} as its
      * detail message.  The cause is not initialized, and may subsequently be
