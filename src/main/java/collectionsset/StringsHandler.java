@@ -17,6 +17,7 @@ public class StringsHandler {
         Set<String> ret = new HashSet<>(setA);
         for (String item : setB) {
             ret.add(item);
-        }return ret;
+        }
+        return ret;
     }
 }
