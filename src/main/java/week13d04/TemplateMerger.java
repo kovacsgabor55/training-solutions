@@ -6,11 +6,10 @@ import java.nio.file.Path;
 import java.util.List;
 
 public class TemplateMerger {
-    private String sablon;
 
     public String merge(Path file, List<Employee> employees) {
         try {
-            sablon = Files.readString(file);
+            String sablon = Files.readString(file);
             return parse(sablon, employees);
         } catch (IOException e) {
             e.printStackTrace();
