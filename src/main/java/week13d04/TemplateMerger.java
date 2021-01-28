@@ -12,8 +12,7 @@ public class TemplateMerger {
             String sablon = Files.readString(file);
             return parse(sablon, employees);
         } catch (IOException e) {
-            e.printStackTrace();
-            throw new IllegalArgumentException("something happened!");
+            throw new IllegalArgumentException("something happened!", e);
         }
     }
 
@@ -27,6 +26,6 @@ public class TemplateMerger {
 
     public static void main(String[] args) {
         List<Employee> emp = List.of(new Employee("John Doe", 1980), new Employee("Jack Doe", 1990));
-        System.out.println(new TemplateMerger().merge(Path.of("template.txt"), emp));
+        System.out.println(new TemplateMerger().merge(Path.of("src/main/resources/template.txt"), emp));
     }
 }
