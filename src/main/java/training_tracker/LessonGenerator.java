@@ -34,7 +34,7 @@ public class LessonGenerator {
     }
 
     public void generateHTML() {
-        StringBuilder sb = new StringBuilder(STAHTML.replace("{type}", "Daily"));
+        StringBuilder sb = new StringBuilder(STAHTML.replace("{type}", "Lessons"));
         sb.append(LESTHHTML).append(THFINALHTML);
         for (LessonData item : data) {
             if (item.isExist()) {

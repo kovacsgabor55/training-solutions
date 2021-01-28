@@ -32,7 +32,7 @@ public class DailyGenerator {
     }
 
     public void generateHTML() {
-        StringBuilder sb = new StringBuilder(STAHTML.replace("{type}", "Lessons"));
+        StringBuilder sb = new StringBuilder(STAHTML.replace("{type}", "Daily"));
         sb.append(DAITHHTML).append(THFINALHTML);
         for (DailyData item : data) {
             if (item.isExist()) {
