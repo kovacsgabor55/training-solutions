@@ -8,20 +8,23 @@ import java.util.List;
 public class TemplateMerger {
 
     public String merge(Path file, List<Employee> employees) {
+        return parse(loadTemplate(file), employees);
+    }
+
+    private String parse(String template, List<Employee> employees) {
+        StringBuilder stringBuilder = new StringBuilder();
+        for (Employee item : employees) {
+            stringBuilder.append(template.replace("{nev}", item.getName()).replace("{ev}", Integer.toString(item.getYearOfBirth())));
+        }
+        return stringBuilder.toString();
+    }
+
+    private String loadTemplate(Path file) {
         try {
-            String sablon = Files.readString(file);
-            return parse(sablon, employees);
+            return Files.readString(file);
         } catch (IOException e) {
             throw new IllegalArgumentException("something happened!", e);
         }
-    }
-
-    private String parse(String sablon, List<Employee> employees) {
-        StringBuilder stringBuilder = new StringBuilder();
-        for (Employee item : employees) {
-            stringBuilder.append(sablon.replace("{nev}", item.getName()).replace("{ev}", Integer.toString(item.getYearOfBirth())) + "\n");
-        }
-        return stringBuilder.toString();
     }
 
     public static void main(String[] args) {
