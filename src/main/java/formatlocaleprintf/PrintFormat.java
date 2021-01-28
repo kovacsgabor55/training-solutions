@@ -6,10 +6,6 @@ public class PrintFormat {
         throw new IllegalArgumentException("Less objects then expected in format String!");
     }
 
-    public String checkException(String formatString, Integer i, Integer j) {
-        return null;
-    }
-
     public String printFormattedText(Double number) {
         return String.format("Total is: %,.2f Ft", number);
     }
