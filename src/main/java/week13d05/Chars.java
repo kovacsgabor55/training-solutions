@@ -3,7 +3,6 @@ package week13d05;
 import java.util.*;
 
 public class Chars {
-    List<CountedChar> countedChars = new ArrayList<>();
 
     public int sumOfLetters(String str) {
         Set<Character> characters = new HashSet<>();
