@@ -7,7 +7,7 @@ import static stl_loader.GraphicMath.*;
 
 class GraphicMathTest {
     Vertex v1, v2, v3, v4, v5, v6, v7, v8;
-    Normal nn001, nn010, nn100, ni001, ni010, ni100;
+    Vector nn001, nn010, nn100, ni001, ni010, ni100;
 
     @BeforeEach
     void setUp() {
@@ -19,12 +19,12 @@ class GraphicMathTest {
         v2 = new Vertex(12.7f, -12.7f, 25.4f);
         v6 = new Vertex(12.7f, 12.7f, 0.0f);
         v5 = new Vertex(12.7f, 12.7f, 25.4f);
-        ni100 = new Normal(-1.0f, 0.0f, 0.0f);
-        ni010 = new Normal(0.0f, -1.0f, 0.0f);
-        ni001 = new Normal(0.0f, 0.0f, -1.0f);
-        nn001 = new Normal(0.0f, 0.0f, 1.0f);
-        nn010 = new Normal(0.0f, 1.0f, 0.0f);
-        nn100 = new Normal(1.0f, 0.0f, 0.0f);
+        ni100 = new Vector(-1.0f, 0.0f, 0.0f);
+        ni010 = new Vector(0.0f, -1.0f, 0.0f);
+        ni001 = new Vector(0.0f, 0.0f, -1.0f);
+        nn001 = new Vector(0.0f, 0.0f, 1.0f);
+        nn010 = new Vector(0.0f, 1.0f, 0.0f);
+        nn100 = new Vector(1.0f, 0.0f, 0.0f);
     }
 
     @Test

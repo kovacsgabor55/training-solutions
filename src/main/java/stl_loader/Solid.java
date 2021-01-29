@@ -26,17 +26,6 @@ public class Solid implements Serializable {
         facets.add(facet);
     }
 
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        for (Facet item : facets) {
-            sb.append(item).append('\n');
-        }
-        return "solid " + name + '\n' +
-                sb.toString() +
-                "endsolid " + name + '\n';
-    }
-
     public String info() {
         return "Solid name: " + name +
                 "\nFacets: " + facets.size() +
@@ -57,5 +46,10 @@ public class Solid implements Serializable {
     @Override
     public int hashCode() {
         return Objects.hash(name, facets);
+    }
+
+    @Override
+    public String toString() {
+        return "Solid{" + "name='" + name + '\'' + ", facets=" + facets + '}';
     }
 }

@@ -15,7 +15,7 @@ import static stl_loader.ManageSTL.*;
 
 class ManageSTLTest {
     Vertex v1, v2, v3, v4;
-    Normal n1, n2, n3, n4;
+    Vector n1, n2, n3, n4;
     Facet f1, f2, f3, f4;
     Solid solid;
     String name;
@@ -44,10 +44,10 @@ class ManageSTLTest {
         f3 = new Facet();
         f4 = new Facet();
 
-        n1 = new Normal(-7.798948E-6f, 4.677411E-6f, -1.0f);
-        n2 = new Normal(0.4707968f, -0.81561923f, 0.33632675f);
-        n3 = new Normal(0.47095105f, 0.8155276f, 0.3363327f);
-        n4 = new Normal(-0.94173944f, 8.6628985E-5f, 0.33634335f);
+        n1 = new Vector(-7.798948E-6f, 4.677411E-6f, -1.0f);
+        n2 = new Vector(0.4707968f, -0.81561923f, 0.33632675f);
+        n3 = new Vector(0.47095105f, 0.8155276f, 0.3363327f);
+        n4 = new Vector(-0.94173944f, 8.6628985E-5f, 0.33634335f);
 
         f1.appendVertex(v1);
         f1.appendVertex(v2);

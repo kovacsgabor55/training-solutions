@@ -1,6 +1,9 @@
 package stl_loader;
 
-public class Vector {
+import java.io.Serializable;
+import java.util.Objects;
+
+public class Vector implements Serializable {
     private final float i;
     private final float j;
     private final float k;
@@ -24,11 +27,20 @@ public class Vector {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Vector vector = (Vector) o;
+        return Float.compare(vector.i, i) == 0 && Float.compare(vector.j, j) == 0 && Float.compare(vector.k, k) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(i, j, k);
+    }
+
+    @Override
     public String toString() {
-        return "Vector{" +
-                "i=" + i +
-                ", j=" + j +
-                ", k=" + k +
-                '}';
+        return "Vector{" + "i=" + i + ", j=" + j + ", k=" + k + '}';
     }
 }

@@ -6,14 +6,14 @@ import java.util.List;
 import java.util.Objects;
 
 public class Facet implements Serializable {
-    private Normal normal;
+    private Vector normal;
     private final List<Vertex> vertices;
 
     public Facet() {
         this.vertices = new ArrayList<>();
     }
 
-    public Normal getNormal() {
+    public Vector getNormal() {
         return normal;
     }
 
@@ -21,21 +21,12 @@ public class Facet implements Serializable {
         return new ArrayList<>(vertices);
     }
 
-    public void appendNormal(Normal normal) {
+    public void appendNormal(Vector normal) {
         this.normal = normal;
     }
 
     public void appendVertex(Vertex vertex) {
         this.vertices.add(vertex);
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        for (Vertex item : vertices) {
-            sb.append(item).append('\n');
-        }
-        return " facet " + normal + "\n  outer loop\n" + sb.toString() + "  endloop\n endfacet";
     }
 
     @Override
@@ -49,5 +40,10 @@ public class Facet implements Serializable {
     @Override
     public int hashCode() {
         return Objects.hash(normal, vertices);
+    }
+
+    @Override
+    public String toString() {
+        return "Facet{" + "normal=" + normal + ", vertices=" + vertices + '}';
     }
 }
