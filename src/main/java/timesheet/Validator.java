@@ -1,4 +1,6 @@
-package timesheet2;
+package timesheet;
+
+import timesheet.Employee;
 
 import java.time.LocalDateTime;
 import java.util.List;

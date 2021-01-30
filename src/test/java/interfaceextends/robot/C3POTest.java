@@ -1,9 +1,8 @@
 package interfaceextends.robot;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class C3POTest {
 
@@ -16,10 +15,10 @@ public class C3POTest {
         //When
         c3PO.moveTo(targetPoint);
         //Then
-        assertThat(c3PO.getPosition(), is(targetPoint));
-        assertThat(c3PO.getPath().get(0).getX(), is(targetPoint.getX()));
-        assertThat(c3PO.getPath().get(0).getY(), is(targetPoint.getY()));
-        assertThat(c3PO.getPath().get(0).getZ(), is(targetPoint.getZ()));
+        assertEquals(targetPoint, c3PO.getPosition());
+        assertEquals(targetPoint.getX(), c3PO.getPath().get(0).getX());
+        assertEquals(targetPoint.getY(), c3PO.getPath().get(0).getY());
+        assertEquals(targetPoint.getZ(), c3PO.getPath().get(0).getZ());
     }
 
     @Test
@@ -31,10 +30,10 @@ public class C3POTest {
         //When
         c3PO.fastMoveTo(targetPoint);
         //Then
-        assertThat(c3PO.getPosition(), is(targetPoint));
-        assertThat(c3PO.getPath().get(0).getX(), is(targetPoint.getX()));
-        assertThat(c3PO.getPath().get(0).getY(), is(targetPoint.getY()));
-        assertThat(c3PO.getPath().get(0).getZ(), is(targetPoint.getZ()));
+        assertEquals(targetPoint, c3PO.getPosition());
+        assertEquals(targetPoint.getX(), c3PO.getPath().get(0).getX());
+        assertEquals(targetPoint.getY(), c3PO.getPath().get(0).getY());
+        assertEquals(targetPoint.getZ(), c3PO.getPath().get(0).getZ());
     }
 
     @Test
@@ -46,6 +45,6 @@ public class C3POTest {
         //When
         c3PO.rotate(angle);
         //Then
-        assertThat(c3PO.getAngle(), is(angle));
+        assertEquals(angle, c3PO.getAngle());
     }
 }

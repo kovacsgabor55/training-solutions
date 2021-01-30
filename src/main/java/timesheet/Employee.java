@@ -1,4 +1,4 @@
-package timesheet2;
+package timesheet;
 
 public class Employee {
     private String firstname;

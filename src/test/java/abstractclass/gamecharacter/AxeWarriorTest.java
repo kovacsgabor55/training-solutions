@@ -1,12 +1,12 @@
 package abstractclass.gamecharacter;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.Random;
 
-import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.Matchers.greaterThanOrEqualTo;
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 
 public class AxeWarriorTest {
 
@@ -15,10 +15,10 @@ public class AxeWarriorTest {
         Random random = new Random(123);
         Character character = new AxeWarrior(new Point(5, 10), random);
 
-        assertThat(character.getHitPoint(), is(100));
-        assertThat(character.isAlive(), is(true));
-        assertThat(character.getPosition().getX(), is(5L));
-        assertThat(character.getPosition().getY(), is(10L));
+        assertEquals(100, character.getHitPoint());
+        assertTrue(character.isAlive());
+        assertEquals(5L, character.getPosition().getX());
+        assertEquals(10L, character.getPosition().getY());
     }
 
     @Test
@@ -28,7 +28,7 @@ public class AxeWarriorTest {
         Character defender = new AxeWarrior(new Point(0, 0), random);
         offender.secondaryAttack(defender);
 
-        assertThat(offender.getHitPoint(), is(100));
-        assertThat(defender.getHitPoint(), greaterThanOrEqualTo(80));
+        assertEquals(100, offender.getHitPoint());
+        assertTrue(defender.getHitPoint() >= 80);
     }
 }

@@ -1,4 +1,6 @@
-package timesheet2;
+package timesheet;
+
+import timesheet.Project;
 
 public class ReportLine {
     private Project project;

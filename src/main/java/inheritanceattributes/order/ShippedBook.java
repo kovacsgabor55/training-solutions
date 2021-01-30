@@ -1,4 +1,6 @@
-package inheritanceattributes.book;
+package inheritanceattributes.order;
+
+import inheritanceattributes.book.Book;
 
 public class ShippedBook extends Book {
     private int shippingCost;

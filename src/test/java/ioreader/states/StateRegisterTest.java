@@ -1,18 +1,14 @@
 package ioreader.states;
 
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.rules.ExpectedException;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class StateRegisterTest {
 
     private StateRegister stateRegister = new StateRegister();
 
-
-    @Rule
-    public ExpectedException ee = ExpectedException.none();
 
     @Test
     public void testGetStates() {
@@ -24,9 +20,8 @@ public class StateRegisterTest {
 
     @Test
     public void testWithWrongFileName() {
-        ee.expect(IllegalStateException.class);
-        ee.expectMessage("Can't read file!");
-        stateRegister.readStatesFromFile("myFile.txt");
+        Exception ex = assertThrows(IllegalStateException.class, () -> stateRegister.readStatesFromFile("myFile.txt"));
+        assertEquals("Can't read file!", ex.getMessage());
     }
 
     @Test
@@ -42,10 +37,11 @@ public class StateRegisterTest {
 
     @Test
     public void wrongStateNameTest() {
-        ee.expect(IllegalArgumentException.class);
-        ee.expectMessage("No state with this name!");
-        stateRegister.readStatesFromFile("stateregister.txt");
-        stateRegister.findCapitalByStateName("Canada");
+        Exception ex = assertThrows(IllegalArgumentException.class, () -> {
+            stateRegister.readStatesFromFile("stateregister.txt");
+            stateRegister.findCapitalByStateName("Canada");
+        });
+        assertEquals("No state with this name!", ex.getMessage());
     }
 
     @Test

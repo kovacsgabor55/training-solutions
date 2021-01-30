@@ -1,7 +1,5 @@
 package collectionsqueue;
 
-import org.jetbrains.annotations.NotNull;
-
 public class Job implements Comparable<Job> {
     int priority; // 1 - 10 skálán osztályozzuk a prioritást
     String jobDescription;
@@ -65,7 +63,7 @@ public class Job implements Comparable<Job> {
      *                              from being compared to this object.
      */
     @Override
-    public int compareTo(@NotNull Job o) {
+    public int compareTo(Job o) {
         if (this.priority > o.priority) {
             return 1;
         } else {

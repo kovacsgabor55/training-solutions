@@ -1,8 +1,8 @@
 package classstructureintegrate;
-import org.jetbrains.annotations.NotNull;
+
 public class BankAccount {
-    private String accountNumber;
-    private String owner;
+    private final String accountNumber;
+    private final String owner;
     private int balance;
 
     public BankAccount(String accountNumber, String owner, int balance) {
@@ -19,7 +19,7 @@ public class BankAccount {
         this.balance -= amount;
     }
 
-    public static void transfer(@NotNull BankAccount accFrom, BankAccount accTo, int amount) {
+    public static void transfer(BankAccount accFrom, BankAccount accTo, int amount) {
         accFrom.withdraw(amount);
         accTo.deposit(amount);
     }

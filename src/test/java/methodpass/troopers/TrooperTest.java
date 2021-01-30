@@ -1,15 +1,11 @@
 package methodpass.troopers;
 
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.rules.ExpectedException;
 
-import static org.junit.Assert.assertEquals;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class TrooperTest {
-
-    @Rule
-    public ExpectedException exception = ExpectedException.none();
 
 
     @Test
@@ -23,10 +19,10 @@ public class TrooperTest {
 
     @Test
     public void testCreateWithEmptyName() {
-        exception.expect(IllegalArgumentException.class);
-        exception.expectMessage("Name must not be empty.");
 
-        Trooper trooper = new Trooper("");
+        Exception ex = assertThrows(IllegalArgumentException.class, () -> new Trooper(""));
+        assertEquals("Name must not be empty.", ex.getMessage());
+
     }
 
     @Test
@@ -42,10 +38,8 @@ public class TrooperTest {
     @Test
     public void testChangePositionToNowhere() {
         Trooper trooper = new Trooper("John Doe");
+        Exception ex = assertThrows(IllegalArgumentException.class, () -> trooper.changePosition(null));
 
-        exception.expect(IllegalArgumentException.class);
-
-        trooper.changePosition(null);
     }
 
     @Test

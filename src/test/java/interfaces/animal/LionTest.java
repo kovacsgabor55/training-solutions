@@ -1,21 +1,21 @@
 package interfaces.animal;
 
-import org.junit.Test;
 
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.*;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class LionTest {
     @Test
     public void getNumberofLegs() {
         Lion lion = new Lion();
-        assertThat(lion.getNumberOfLegs(), is(4));
+        assertEquals(4, lion.getNumberOfLegs());
     }
 
     @Test
     public void getName() {
         Lion lion = new Lion();
-        assertThat(lion.getName(), is("Lion"));
+        assertEquals("Lion", lion.getName());
     }
 
 }

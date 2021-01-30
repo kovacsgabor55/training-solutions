@@ -1,8 +1,8 @@
 package interfacedefaultmethods.print;
 
 public class TestPrintable implements Printable {
-/*
-    @Override
+
+   /* @Override
     public int getLength() {
         return 0;
     }

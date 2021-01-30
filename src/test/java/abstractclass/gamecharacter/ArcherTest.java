@@ -1,13 +1,12 @@
 package abstractclass.gamecharacter;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.Random;
 
-import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.Matchers.greaterThanOrEqualTo;
-import static org.hamcrest.Matchers.lessThanOrEqualTo;
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 
 public class ArcherTest {
@@ -17,10 +16,10 @@ public class ArcherTest {
         Random random = new Random(123);
         Character character = new Archer(new Point(5, 10), random);
 
-        assertThat(character.getHitPoint(), is(100));
-        assertThat(character.isAlive(), is(true));
-        assertThat(character.getPosition().getX(), is(5L));
-        assertThat(character.getPosition().getY(), is(10L));
+        assertEquals(100, character.getHitPoint());
+        assertTrue(character.isAlive());
+        assertEquals(5L, character.getPosition().getX());
+        assertEquals(10L, character.getPosition().getY());
     }
 
     @Test
@@ -33,8 +32,8 @@ public class ArcherTest {
             offender.secondaryAttack(defender);
         }
 
-        assertThat(defender.getHitPoint(), lessThanOrEqualTo(0));
-        assertThat(defender.isAlive(), is(false));
+        assertTrue(defender.getHitPoint() <= 0);
+        assertFalse(defender.isAlive());
     }
 
     @Test
@@ -45,9 +44,9 @@ public class ArcherTest {
 
         offender.secondaryAttack(defender);
 
-        assertThat(offender.getHitPoint(), is(100));
-        assertThat(defender.getHitPoint(), greaterThanOrEqualTo(96));
-        assertThat(offender.getNumberOfArrow(), is(99));
+        assertEquals(100, offender.getHitPoint());
+        assertTrue(defender.getHitPoint() >= 96);
+        assertEquals(99, offender.getNumberOfArrow());
     }
 
 }

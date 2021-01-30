@@ -1,10 +1,10 @@
 package iofilestest;
 
-import org.junit.Rule;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.rules.TemporaryFolder;
+import org.junit.jupiter.api.io.TempDir;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 
@@ -14,8 +14,8 @@ class LibraryTest {
     Book b1, b2;
     Library library=new Library();
 
-    @Rule
-    TemporaryFolder temporaryFolder = new TemporaryFolder();
+    @TempDir
+    public File temporaryFolder;
 
     @BeforeEach
     void setUp() {

@@ -1,7 +1,5 @@
 package collectionscomp;
 
-import org.jetbrains.annotations.NotNull;
-
 import java.util.Comparator;
 import java.util.Objects;
 
@@ -81,7 +79,7 @@ public class Book implements Comparable<Book> {
      *                              from being compared to this object.
      */
     @Override
-    public int compareTo(@NotNull Book o) {
+    public int compareTo(Book o) {
         return this.title.compareTo(o.title);
     }
 

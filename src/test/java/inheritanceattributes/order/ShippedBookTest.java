@@ -1,10 +1,8 @@
 package inheritanceattributes.order;
 
-import inheritanceattributes.book.ShippedBook;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.junit.Assert.assertThat;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ShippedBookTest {
 
@@ -13,15 +11,15 @@ public class ShippedBookTest {
         //Given
         ShippedBook book = new ShippedBook("Gyűrűk ura", 3000, 1200);
         //Then
-        assertThat(book.toString(), equalTo("Gyűrűk ura:3000 - 1200"));
+        assertEquals("Gyűrűk ura:3000 - 1200", book.toString());
     }
 
     @Test
-    public void orderTest()  {
+    public void orderTest() {
         //Given
         ShippedBook book = new ShippedBook("Gyűrűk ura", 3000, 1200);
         //Then
-        assertThat(book.order(2), equalTo(7200));
+        assertEquals(7200, book.order(2));
     }
 
 }

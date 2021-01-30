@@ -1,9 +1,9 @@
 package virtualmethod.vehicle;
 
-import org.junit.Test;
 
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.*;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class FerryBoatTest {
     @Test
@@ -11,11 +11,12 @@ public class FerryBoatTest {
         FerryBoat ferryBoat = new FerryBoat(2000);
         Car car = new Car(1200, 0);
 
-        assertThat(ferryBoat.canCarry(car), is(true));
+        assertTrue(ferryBoat.canCarry(car));
 
         car = new Van(1, 1200, 200);
 
-        assertThat(ferryBoat.canCarry(car), is(true));
+        assertTrue(ferryBoat.canCarry(car));
+
     }
 
     @Test
@@ -23,11 +24,11 @@ public class FerryBoatTest {
         FerryBoat ferryBoat = new FerryBoat(2000);
         Car car = new Car(2000, 0);
 
-        assertThat(ferryBoat.canCarry(car), is(false));
+        assertFalse(ferryBoat.canCarry(car));
 
         car = new Van(1, 2000, 200);
 
-        assertThat(ferryBoat.canCarry(car), is(false));
+        assertFalse(ferryBoat.canCarry(car));
     }
 
     @Test
@@ -35,7 +36,7 @@ public class FerryBoatTest {
         FerryBoat ferryBoat = new FerryBoat(2000);
         Car car = new Car(1200, 0);
 
-        assertThat(ferryBoat.load(car), is(true));
+        assertTrue(ferryBoat.load(car));
     }
 
     @Test
@@ -43,7 +44,7 @@ public class FerryBoatTest {
         FerryBoat ferryBoat = new FerryBoat(2000);
         Car car = new Car(2000, 0);
 
-        assertThat(ferryBoat.load(car), is(false));
+        assertFalse(ferryBoat.load(car));
     }
 
     @Test
@@ -53,7 +54,7 @@ public class FerryBoatTest {
 
         ferryBoat.load(car);
 
-        assertThat(ferryBoat.getGrossLoad(), is(2000 + FerryBoat.PERSON_AVERAGE_WEIGHT + car.getGrossLoad()));
+        assertEquals(2000 + FerryBoat.PERSON_AVERAGE_WEIGHT + car.getGrossLoad(), ferryBoat.getGrossLoad());
     }
 
     @Test
@@ -63,12 +64,10 @@ public class FerryBoatTest {
 
         ferryBoat.load(car);
 
-        assertThat(ferryBoat.toString(),
-                is("FerryBoat{" +
-                        "car=" +
-                        "Car{numberOfPassenger=" + 0 + ", vehicleWeight=" + 1234 + '}' +
-                        '}')
-        );
+        assertEquals("FerryBoat{" +
+                "car=" +
+                "Car{numberOfPassenger=" + 0 + ", vehicleWeight=" + 1234 + '}' +
+                '}', ferryBoat.toString());
     }
 
     @Test
@@ -78,9 +77,7 @@ public class FerryBoatTest {
 
         ferryBoat.load(van);
 
-        assertThat(ferryBoat.toString(),
-                is("FerryBoat{car=Van{cargoWeight=" + 200 + ", numberOfPassenger=" + 1 + ", vehicleWeight=" + 1200 + "}}")
-        );
+        assertEquals("FerryBoat{car=Van{cargoWeight=" + 200 + ", numberOfPassenger=" + 1 + ", vehicleWeight=" + 1200 + "}}", ferryBoat.toString());
 
     }
 

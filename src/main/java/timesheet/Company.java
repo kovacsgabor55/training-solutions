@@ -1,4 +1,4 @@
-package timesheet2;
+package timesheet;
 
 import java.io.BufferedReader;
 import java.io.IOException;
