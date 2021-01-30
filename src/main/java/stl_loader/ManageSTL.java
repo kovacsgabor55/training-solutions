@@ -1,11 +1,12 @@
 package stl_loader;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.io.*;
 import java.nio.*;
 import java.nio.charset.*;
 import java.nio.file.*;
-import java.util.List;
-import java.util.Locale;
+import java.util.*;
 
 public final class ManageSTL {
 
@@ -19,7 +20,7 @@ public final class ManageSTL {
      * @param solid A fájlba mentendő STL objektum.
      * @return Igaz ha sikeres a mentés.
      */
-    public static boolean saveTextSTL(Path path, Solid solid) {
+    public static boolean saveTextSTL(@NotNull Path path, @NotNull Solid solid) {
         try (BufferedWriter bw = Files.newBufferedWriter(path, StandardCharsets.US_ASCII)) {
 
             bw.write("solid " + solid.getName() + "\n");
@@ -46,7 +47,7 @@ public final class ManageSTL {
      * @param path Az STL fájl elérési útvonala.
      * @return A betöltött modell objektum.
      */
-    public static Solid loadTextSTL(Path path) {
+    public static Solid loadTextSTL(@NotNull Path path) {
         Solid solid = null;
         try (BufferedReader br = Files.newBufferedReader(path, StandardCharsets.US_ASCII)) {
             String str;
@@ -82,7 +83,7 @@ public final class ManageSTL {
      * @param solid A fájlba mentendő STL objektum.
      * @return Igaz ha sikeres a mentés.
      */
-    public static boolean saveBinarySTL(Path path, Solid solid) {
+    public static boolean saveBinarySTL(@NotNull Path path, @NotNull Solid solid) {
         try (DataOutputStream dos = new DataOutputStream(new BufferedOutputStream(Files.newOutputStream(path)))) {
             byte[] head = solid.getName().getBytes(StandardCharsets.US_ASCII);
             dos.write(head);
@@ -114,7 +115,7 @@ public final class ManageSTL {
      * @param path Az STL fájl elérési útvonala.
      * @return A betöltött modell objektum.
      */
-    public static Solid loadBinarySTL(Path path) {
+    public static Solid loadBinarySTL(@NotNull Path path) {
         Solid solid = null;
         try (DataInputStream dis = new DataInputStream(new BufferedInputStream(Files.newInputStream(path)))) {
             byte[] buffer = new byte[4];
@@ -239,11 +240,7 @@ public final class ManageSTL {
      * @param path Az STL fájl elérési útvonala.
      * @return A betöltött modell objektum.
      */
-    public static Solid loadSTL(Path path) {
-        if (isTextSTL(path)) {
-            return loadTextSTL(path);
-        } else {
-            return loadBinarySTL(path);
-        }
+    public static Solid loadSTL(@NotNull Path path) {
+        return isTextSTL(path) ? loadTextSTL(path) : loadBinarySTL(path);
     }
 }
