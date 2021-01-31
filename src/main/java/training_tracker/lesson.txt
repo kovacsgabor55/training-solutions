@@ -106,3 +106,22 @@ searching;Keresés
 sorting;Rendezés
 collectionsclass;Collections osztály (keresésen, rendezésen felüli metódusok)
 clone;A clone() metódus, deep clone
+properties;Properties állományok
+lambdaintro;Bevezetés a lambda kifejezések használatába
+lambdaoptional;Optional használata
+lambdacomparator;Comparator módosítások
+lambdastreams;Streamek
+lambdaintermediate;Intermediate műveletek
+lambdaprimitives;Primitívek használata streamekben
+lambdacollectors;Collectors
+datenewtypes;Új típusok, LocalDate, LocalTime, parse
+dateoldtypes;Régi dátum- és időkezeléssel kapcsolatos típusok
+jvm;JVM
+thirdparty;Third party library-k
+logging;Naplózás
+dpintro;Bevezetés a tervezési minták használatába
+solid;S.O.L.I.D. elvek
+singleton;Singleton tervezési minta
+builder;Builder tervezési minta
+templatemethod;Template method tervezési minta
+simplefactory;Simple factory tervezési minta
