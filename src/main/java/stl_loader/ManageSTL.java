@@ -9,6 +9,8 @@ import java.nio.file.*;
 import java.util.*;
 
 public final class ManageSTL {
+    private static final String SEARCH_COLOR_STING = "COLOR=";
+    private static final String SEARCH_MATERIAL_STING = "MATERIAL=";
 
     private ManageSTL() {
     }
@@ -22,7 +24,6 @@ public final class ManageSTL {
      */
     public static boolean saveTextSTL(@NotNull Path path, @NotNull Solid solid) {
         try (BufferedWriter bw = Files.newBufferedWriter(path, StandardCharsets.US_ASCII)) {
-
             bw.write("solid " + solid.getName() + "\n");
             List<Facet> facets = solid.getFacets();
             for (Facet item : facets) {
@@ -34,7 +35,6 @@ public final class ManageSTL {
                 bw.write("  endloop\n endfacet\n");
             }
             bw.write("endsolid " + solid.getName() + "\n");
-            bw.flush();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -101,7 +101,6 @@ public final class ManageSTL {
                 //color material
                 dos.write(new byte[2]);
             }
-            dos.flush();
             return true;
         } catch (IOException e) {
             e.printStackTrace();
@@ -119,7 +118,7 @@ public final class ManageSTL {
         Solid solid = null;
         try (DataInputStream dis = new DataInputStream(new BufferedInputStream(Files.newInputStream(path)))) {
             byte[] buffer = new byte[4];
-            solid = new Solid(new String(dis.readNBytes(80)));
+            solid = new Solid(headRemoveMaterialsColor(dis.readNBytes(80)));
             dis.read(buffer);
             int numberOfFacet = getIntWithLittleEndian(buffer, 0);
             for (int indexFacet = 0; indexFacet < numberOfFacet; indexFacet++) {
@@ -158,13 +157,61 @@ public final class ManageSTL {
             int b = Byte.toUnsignedInt(mat[1]);
             //0123 4567 8901 2345
             //1111 1111 0000 0001
-            System.out.println(a + " " + b);
+            // System.out.println(a + " " + b);
         } else {
-            System.out.println("emitt");
+            // System.out.println("emitt");
         }
     }
 
+    private static boolean isColorHeader(byte[] head) {
+        return new String(head).contains(SEARCH_COLOR_STING);
+    }
 
+    private static boolean isMaterialHeader(byte[] head) {
+        return new String(head).contains(SEARCH_MATERIAL_STING);
+    }
+
+    private static String headRemoveMaterialsColor(byte[] materializedHead) {
+        String tmp = new String(materializedHead);
+        if (isColorHeader(materializedHead)) {
+            // elokesziti az eltavolitando szin tulajdonsagot
+            String remove = tmp.substring(tmp.indexOf(SEARCH_COLOR_STING), tmp.indexOf(SEARCH_COLOR_STING) + SEARCH_COLOR_STING.length() + 4);
+            // eltavolitja a szin tulajdonsagot a fejlecbol
+            tmp = tmp.replace(remove, "");
+        }
+        if (isMaterialHeader(materializedHead)) {
+            // elokesziti az eltavolitando szin tulajdonsagot
+            String remove = tmp.substring(tmp.indexOf(SEARCH_MATERIAL_STING), (tmp.indexOf(SEARCH_MATERIAL_STING) + SEARCH_MATERIAL_STING.length() + 4) * 4);
+            // eltavolitja a szin tulajdonsagot a fejlecbol
+            tmp = tmp.replace(remove, "");
+        }
+        return tmp;
+    }
+
+    private static RGBAColor headColor(byte[] mat) {
+        String tmp = new String(mat);
+        RGBAColor rgbaColor = null;
+        if (isColorHeader(mat)) {
+            int next = (tmp.indexOf(SEARCH_COLOR_STING) + SEARCH_COLOR_STING.length());
+            // letrehozza a szint RGBA
+            rgbaColor = new RGBAColor(mat[next], mat[next + 1], mat[next + 2], mat[next + 3]);
+        }
+        return rgbaColor;
+    }
+
+    private static Material headMaterial(byte[] mat) {
+        String tmp = new String(mat);
+        Material material = null;
+        if (isMaterialHeader(mat)) {
+            int next = (tmp.indexOf(SEARCH_MATERIAL_STING) + SEARCH_MATERIAL_STING.length());
+            // letrehozza a szint RGBA
+            RGBAColor diffuse = new RGBAColor(mat[next], mat[next + 1], mat[next + 2], mat[next + 3]);
+            RGBAColor specular = new RGBAColor(mat[next + 4], mat[next + 5], mat[next + 6], mat[next + 7]);
+            RGBAColor ambient = new RGBAColor(mat[next + 8], mat[next + 9], mat[next + 10], mat[next + 11]);
+            material = new Material(diffuse, specular, ambient);
+        }
+        return material;
+    }
     //
 
     /**
