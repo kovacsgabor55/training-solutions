@@ -7,7 +7,7 @@ public class Indexer {
         Map<Character, List<String>> result = new HashMap<>();
         List<String> value;
         for (String item : names) {
-            char key = item.toCharArray()[0];
+            char key = item.charAt(0);
             if (result.containsKey(key)) {
                 value = result.get(key);
                 value.add(item);
