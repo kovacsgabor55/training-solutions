@@ -1,6 +1,7 @@
 package properties;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.util.Properties;
 
 public class DatabaseConfiguration {
@@ -19,7 +20,7 @@ public class DatabaseConfiguration {
     private Properties load(InputStream inputStream) {
         properties = new Properties();
         try (
-                InputStreamReader reader = new InputStreamReader(inputStream, "UTF-8");
+                InputStreamReader reader = new InputStreamReader(inputStream, StandardCharsets.UTF_8);
         ) {
             properties.load(reader);
             return properties;
