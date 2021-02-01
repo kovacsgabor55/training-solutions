@@ -5,7 +5,7 @@ import java.util.*;
 public class Indexer {
     public Map<Character, List<String>> index(List<String> names) {
         Map<Character, List<String>> result = new HashMap<>();
-        List<String> value = new ArrayList<>();
+        List<String> value;
         for (String item : names) {
             char key = item.toCharArray()[0];
             if (result.containsKey(key)) {
