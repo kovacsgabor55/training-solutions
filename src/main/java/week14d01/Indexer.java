@@ -5,14 +5,15 @@ import java.util.*;
 public class Indexer {
     public Map<Character, List<String>> index(List<String> names) {
         Map<Character, List<String>> result = new HashMap<>();
+        List<String> value = new ArrayList<>();
         for (String item : names) {
             char key = item.toCharArray()[0];
             if (result.containsKey(key)) {
-                List<String> value = result.get(key);
+                value = result.get(key);
                 value.add(item);
                 result.replace(key, value);
             } else {
-                List<String> value = new ArrayList<>();
+                value = new ArrayList<>();
                 value.add(item);
                 result.put(key, value);
             }
