@@ -7,10 +7,17 @@ import java.util.Collections;
 import java.util.List;
 
 public class ClassNotebook {
-    private final List<Student> students = new ArrayList<>();
+    private final List<Student> students;
+
+    public ClassNotebook(List<Student> students) {
+        this.students = students;
+    }
 
     public List<Student> sortNotebook() {
-        List<Student> result = new ArrayList<>(students);
+        List<Student> result = new ArrayList<>();
+        for (Student s : students) {
+            result.add(new Student(s));
+        }
         Collections.sort(result);
         return result;
     }
@@ -23,7 +30,7 @@ public class ClassNotebook {
         Student query = new Student(name);
         if (students.contains(query)) {
             int index = students.indexOf(query);
-            students.get(index).putNote(subject, note);
+            students.get(index).addNote(subject, note);
         } else {
             throw new IllegalArgumentException();
         }
@@ -31,19 +38,5 @@ public class ClassNotebook {
 
     public List<Student> getStudents() {
         return new ArrayList<>(students);
-    }
-
-    public static void main(String[] args) {
-        ClassNotebook cln = new ClassNotebook();
-        cln.addStudent("Kristóf");
-        cln.addStudent("Arnold");
-        cln.addStudent("István");
-        System.out.println(cln.getStudents().size());
-        cln.gradeNote("Arnold", "Biológia", 3);
-        cln.gradeNote("Kristóf", "Matematika", 5);
-        cln.gradeNote("Kristóf", "Matematika", 4);
-        cln.gradeNote("Kristóf", "Biológia", 2);
-        cln.gradeNote("István", "Kémia", 4);
-        System.out.println(cln.sortNotebook());
     }
 }

@@ -7,20 +7,23 @@ import java.util.*;
 //1340-1404-1421
 public class Student implements Comparable<Student> {
     private final String name;
-    private final Map<String, List<Integer>> notes = new HashMap<>();
+    private final Map<String, List<Integer>> notes;
 
     public Student(@NotNull String name) {
         this.name = name;
+        notes = new HashMap<>();
     }
 
-    public void putNote(@NotNull String subject, int note) {
-        if (notes.containsKey(subject)) {
-            notes.get(subject).add(note);
-        } else {
-            List<Integer> noteList = new ArrayList<>();
-            noteList.add(note);
-            notes.put(subject, noteList);
+    public Student(Student s) {
+        name = s.name;
+        notes = new HashMap<>(s.notes);
+    }
+
+    public void addNote(@NotNull String subject, int note) {
+        if (!notes.containsKey(subject)) {
+            notes.put(subject, new ArrayList<>());
         }
+        notes.get(subject).add(note);
     }
 
     public Map<String, List<Integer>> getNotes() {
