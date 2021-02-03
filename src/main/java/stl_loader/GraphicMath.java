@@ -28,20 +28,13 @@ public class GraphicMath {
     }
 
     public static Vector normalizeVector(@NotNull Vector v) {
-        //NOTE nem szükséges a négyzetösszeg
         float divisor = Math.abs(v.getI() + v.getJ() + v.getK());
         float oneNormalX = v.getI() / divisor;
         float oneNormalY = v.getJ() / divisor;
         float oneNormalZ = v.getK() / divisor;
-        if (oneNormalX == -0.0) {
-            oneNormalX = 0;
-        }
-        if (oneNormalY == -0.0) {
-            oneNormalY = 0;
-        }
-        if (oneNormalZ == -0.0) {
-            oneNormalZ = 0;
-        }
+        oneNormalX = (oneNormalX == -0.0F) ? 0.0F : oneNormalX;
+        oneNormalY = (oneNormalY == -0.0F) ? 0.0F : oneNormalY;
+        oneNormalZ = (oneNormalZ == -0.0F) ? 0.0F : oneNormalZ;
         return new Vector(oneNormalX, oneNormalY, oneNormalZ);
     }
 }
