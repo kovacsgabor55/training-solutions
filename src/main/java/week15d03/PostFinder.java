@@ -2,6 +2,7 @@ package week15d03;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class PostFinder {
@@ -24,5 +25,12 @@ public class PostFinder {
 
     public List<Post> getPosztmen() {
         return new ArrayList<>(posztmen);
+    }
+
+    public static void main(String[] args) {
+        Post ps = new Post("tit", LocalDate.of(2015,02,12), "do", "ow");
+        PostFinder postFinder = new PostFinder(Arrays.asList(ps));
+        System.out.println(postFinder.getPosztmen().size());
+        System.out.println(postFinder.findPosts("ow"));
     }
 }

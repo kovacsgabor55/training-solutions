@@ -33,4 +33,14 @@ public class Post {
     public String getOwner() {
         return owner;
     }
+
+    @Override
+    public String toString() {
+        return "Post{" +
+                "title='" + title + '\'' +
+                ", publishedAt=" + publishedAt +
+                ", content='" + content + '\'' +
+                ", owner='" + owner + '\'' +
+                '}';
+    }
 }
