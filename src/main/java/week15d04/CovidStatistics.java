@@ -45,7 +45,7 @@ public class CovidStatistics {
     }
 
     public static void main(String[] args) {
-        try (BufferedReader br = Files.newBufferedReader(Path.of("data.csv"))) {
+        try (BufferedReader br = Files.newBufferedReader(Path.of("src/main/resources/data.csv"))) {
             CovidStatistics covidStatistics = new CovidStatistics();
             covidStatistics.readFromFile(br);
             System.out.println(covidStatistics.findFirstThree());

@@ -1,10 +1,10 @@
 package week15d02;
 
 public class QuizItem {
-    private String question;
-    private int answer;
-    private int point;
-    private String theme;
+    private final String question;
+    private final int answer;
+    private final int point;
+    private final String theme;
 
     public QuizItem(String question, int answer, int point, String theme) {
         this.question = question;
@@ -31,11 +31,6 @@ public class QuizItem {
 
     @Override
     public String toString() {
-        return "QuizItem{" +
-                "question='" + question + '\'' +
-                ", answer=" + answer +
-                ", point=" + point +
-                ", theme='" + theme + '\'' +
-                '}';
+        return "QuizItem{" + "question='" + question + '\'' + ", answer=" + answer + ", point=" + point + ", theme='" + theme + '\'' + '}';
     }
 }

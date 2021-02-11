@@ -18,7 +18,6 @@ public class PostFinder {
             if (item.getOwner().equals(user) && item.getPublishedAt().isBefore(LocalDate.now())) {
                 result.add(item);
             }
-
         }
         return result;
     }
@@ -26,8 +25,6 @@ public class PostFinder {
     public List<Post> getPosts() {
         return new ArrayList<>(posts);
     }
-
-
 
     public static void main(String[] args) {
         Post ps = new Post("tit", LocalDate.of(2015, 02, 12), "do", "ow");

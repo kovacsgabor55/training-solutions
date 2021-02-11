@@ -76,7 +76,7 @@ public class Quiz {
 
     public static void main(String[] args) {
         Quiz q = new Quiz();
-        q.loadFile("kerdesek.txt");
+        q.loadFile("src/main/resources/kerdesek.txt");
         System.out.println(q.quizItems.size());
         System.out.println(q.sortTheme());
         System.out.println(q.randomQuestion());

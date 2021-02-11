@@ -10,7 +10,7 @@ public class Post {
     private final String owner;
 
     public Post(String title, LocalDate publishedAt, String content, String owner) {
-        Objects.requireNonNull(publishedAt,"");
+        Objects.requireNonNull(publishedAt, "");
         if (content.isBlank() || title.isBlank()) {
             throw new IllegalArgumentException("something happend!");
         }
@@ -38,12 +38,7 @@ public class Post {
 
     @Override
     public String toString() {
-        return "Post{" +
-                "title='" + title + '\'' +
-                ", publishedAt=" + publishedAt +
-                ", content='" + content + '\'' +
-                ", owner='" + owner + '\'' +
-                '}';
+        return "Post{" + "title='" + title + '\'' + ", publishedAt=" + publishedAt + ", content='" + content + '\'' + ", owner='" + owner + '\'' + '}';
     }
 
 }
