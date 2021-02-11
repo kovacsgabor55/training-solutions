@@ -8,8 +8,8 @@ import java.util.List;
 public class PostFinder {
     private final List<Post> posts;
 
-    public PostFinder(List<Post> posztmen) {
-        this.posts = new ArrayList<>(posztmen);
+    public PostFinder(List<Post> posts) {
+        this.posts = new ArrayList<>(posts);
     }
 
     public List<Post> findPosts(String user) {
@@ -26,6 +26,8 @@ public class PostFinder {
     public List<Post> getPosts() {
         return new ArrayList<>(posts);
     }
+
+
 
     public static void main(String[] args) {
         Post ps = new Post("tit", LocalDate.of(2015, 02, 12), "do", "ow");

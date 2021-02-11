@@ -1,6 +1,7 @@
 package week15d03;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 public class Post {
     private final String title;
@@ -9,6 +10,7 @@ public class Post {
     private final String owner;
 
     public Post(String title, LocalDate publishedAt, String content, String owner) {
+        Objects.requireNonNull(publishedAt,"");
         if (content.isBlank() || title.isBlank()) {
             throw new IllegalArgumentException("something happend!");
         }
@@ -43,4 +45,5 @@ public class Post {
                 ", owner='" + owner + '\'' +
                 '}';
     }
+
 }
