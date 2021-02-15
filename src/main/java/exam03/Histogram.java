@@ -10,10 +10,7 @@ public class Histogram {
             String line;
             while ((line = reader.readLine()) != null) {
                 int data = Integer.parseInt(line);
-                for (int i = 0; i < data; i++) {
-                    sb.append('*');
-                }
-                sb.append('\n');
+                sb.append("*".repeat(Math.max(0, data))).append('\n');
             }
         } catch (IOException e) {
             throw new IllegalStateException("Something happened!");
