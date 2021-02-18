@@ -1,0 +1,12 @@
+SELECT forvaros FROM orszagok WHERE orszag='MADAGASZKÁR';
+SELECT orszag FROM orszagok WHERE forvaros='OUAGADOUGOU';
+SELECT orszag FROM orszagok WHERE Autojel='TT';
+SELECT orszag FROM orszagok WHERE penzjel='SGD';
+SELECT orszag FROM orszagok WHERE telefon=61;
+SELECT terulet FROM orszagok WHERE orszag='Monaco';
+SELECT nepesseg*1000 AS nepesseg FROM orszagok WHERE orszag='Málta';
+SELECT nepesseg*1000/terulet AS nepsuruseg FROM orszagok WHERE orszag='Japán';
+SELECT orszag FROM orszagok WHERE (nepesseg/terulet)>0.5;
+SELECT orszag FROM orszagok WHERE foldr_hely LIKE '%sziget%';
+SELECT orszag FROM orszagok ORDER BY terulet DESC LIMIT 6;
+SELECT orszag FROM orszagok ORDER BY terulet ASC LIMIT 3;

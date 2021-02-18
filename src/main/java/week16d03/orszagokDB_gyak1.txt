@@ -1,0 +1,38 @@
+  A Föld országainak adatait tartalmazó adatbázis struktúrája a következő:
+
+
+	Orszag		C 27	az ország neve
+	Fovaros		C 19	az ország fővárosa
+	Foldr_hely	C 37	földrajzi elhelyezkedés
+	Terulet		N 11,2	terület km2-ben
+	Allamforma	C 30	államforma
+	Nepesseg	N 8	népesség 1000 főben
+	Autojel		C 3	autójel
+	Country		C 31	országnév ékezetes írás nélkül, idegen elnevezésekkel is
+	Capital		C 19	főváros ékezetes írás nélkül, idegen elnevezésekkel is
+	Penznem		C 20	pénznem
+	Penzjel		C 3	pénzjel
+	Valtopenz	C 18	váltópénz a váltószámmal együtt
+	Telefon		N 3	nemzetközi telefon-hívószám
+	GDP		N 5	egy főre jutó GDP
+	Kat		N 1	ismertségi kategória (1,2,3)
+
+
+Kérdések:
+
+
+	  1.  Mi MADAGASZKÁR fővárosa?
+	  2.  Melyik ország fővárosa OUAGADOUGOU?
+	  3.  Melyik ország autójele a TT?
+	  4.  Melyik ország pénzének jele az SGD?
+	  5.  Melyik ország nemzetközi telefon-hívószáma a 61?
+	  6.  Mekkora területű Monaco?
+	  7.  Hányan laknak Máltán?
+	  8.  Mennyi Japán népsűrűsége?
+	  9.  Mely országok népsűrűsége nagyobb 500 fő/km2-nél?
+	 10.  Melyek a szigetországok?
+	 11.  Melyik a első hat legnagyobb területű ország?
+	 12.  Melyik három ország területe a legkisebb?
+
+
+
