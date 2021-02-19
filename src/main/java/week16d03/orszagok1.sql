@@ -3,7 +3,7 @@ USE `orszagok`;
 
 CREATE TABLE `orszagok` (
 	`orszag` VARCHAR(27),
-	`forvaros` VARCHAR(19),
+	`fovaros` VARCHAR(19),
 	`foldr_hely` VARCHAR(37),
 	`terulet` DECIMAL(11,2),
 	`allamforma` VARCHAR(30),
