@@ -56,7 +56,7 @@ SELECT COUNT(orszag) AS `nem_szaz_valto` FROM orszagok WHERE valtopenz NOT LIKE 
 -- 15.  Hány országnak nagyobb a népessége, mint Romániának?
 SELECT COUNT(orszag) AS `nagyobb_mint_roman` FROM orszagok WHERE nepesseg > (SELECT nepesseg FROM orszagok WHERE orszag = 'ROMÁNIA');
 -- 16.  Mennyi Európa népessége és mennyi ország van Európában?
-SELECT SUM(nepesseg)*1000 AS europa_nepessege, COUNT(orszag) AS europa_orszagok FROM orszagok  WHERE foldr_hely LIKE '%Európa%';
+SELECT SUM(nepesseg)*1000 AS europa_nepessege, COUNT(orszag) AS europa_orszagok FROM orszagok WHERE foldr_hely LIKE '%Európa%';
 -- 17.  Mennyi olyan ország van, aminek a területe kisebb, mint Törökország
 SELECT COUNT(orszag) AS `kisebb_mint_torok` FROM orszagok WHERE terulet < (SELECT terulet FROM orszagok WHERE orszag = 'TÖRÖKORSZÁG');
 
@@ -66,7 +66,7 @@ SELECT COUNT(orszag) AS `kisebb_mint_torok` FROM orszagok WHERE terulet < (SELEC
 SELECT COUNT(`orszag`) FROM `orszagok` WHERE `terulet` < (SELECT `terulet`FROM `orszagok` WHERE `orszag` = 'MAGYARORSZÁG');
 -- 2.  Melyik a legnagyobb területű ország, és mennyi a területe?
 SELECT orszag,terulet FROM orszagok ORDER BY terulet DESC LIMIT 1;
--- 3.  Melyik a legkisebb  területű ország, és mennyi a területe?
+-- 3.  Melyik a legkisebb területű ország, és mennyi a területe?
 SELECT orszag,terulet FROM orszagok ORDER BY terulet ASC LIMIT 1;
 -- 4.  Melyik a legnépesebb ország, és hány lakosa van?
 SELECT orszag,nepesseg*1000 AS lakossag FROM orszagok ORDER BY nepesseg DESC LIMIT 1;
