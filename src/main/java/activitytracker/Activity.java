@@ -3,7 +3,7 @@ package activitytracker;
 import java.time.LocalDateTime;
 
 public class Activity {
-    private long id;
+    private final long id;
     private final LocalDateTime startTime;
     private final String desc;
     private final ActivityType type;
@@ -16,9 +16,7 @@ public class Activity {
     }
 
     public Activity(LocalDateTime startTime, String desc, ActivityType type) {
-        this.startTime = startTime;
-        this.desc = desc;
-        this.type = type;
+        this(0L, startTime, desc, type);
     }
 
     public long getId() {
@@ -39,11 +37,6 @@ public class Activity {
 
     @Override
     public String toString() {
-        return "Activity{" +
-                "id=" + id +
-                ", startTime=" + startTime +
-                ", desc='" + desc + '\'' +
-                ", type=" + type +
-                '}';
+        return "Activity{" + "id=" + id + ", startTime=" + startTime + ", desc='" + desc + '\'' + ", type=" + type + '}';
     }
 }
