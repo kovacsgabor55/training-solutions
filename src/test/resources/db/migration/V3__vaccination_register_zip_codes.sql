@@ -1,10 +1,10 @@
 CREATE TABLE `zip_codes` (
-  `IRSZ` int(4) NOT NULL,
-  `Telepules` varchar(23) NOT NULL,
-  `Telepulesresz` varchar(23)
+  `zip_code` int(4) NOT NULL,
+  `city` varchar(23) NOT NULL,
+  `district` varchar(23)
 );
 
-INSERT INTO `zip_codes` (`IRSZ`, `Telepules`, `Telepulesresz`) VALUES
+INSERT INTO `zip_codes` (`zip_code`, `city`, `district`) VALUES
 (2000,'Szentendre',''),
 (2009,'Pilisszentlászló',''),
 (2011,'Budakalász',''),

@@ -9,11 +9,9 @@ import java.util.List;
 
 public class CitizenDAO {
     private final DataSource dataSource;
-    private List<IRSZ> irsz;
 
     public CitizenDAO(DataSource dataSource) {
         this.dataSource = dataSource;
-        //this.irsz = findZip();
     }
 
     public Citizen insertCitizen(Citizen citizen) {
@@ -111,26 +109,7 @@ public class CitizenDAO {
         return result;
     }
 
-    public List<IRSZ> findZip() {
-        try (Connection conn = dataSource.getConnection();
-             PreparedStatement stmt = conn.prepareStatement("SELECT IRSZ, Telepules FROM zip_codes")) {
-            List<IRSZ> result = selectSettlementsPreparedStatement(stmt);
-            return result;
-            // throw new IllegalArgumentException("Not found");
-        } catch (SQLException e) {
-            throw new IllegalStateException("Cannot connect!", e);
-        }
-    }
-
-    private List<IRSZ> selectSettlementsPreparedStatement(PreparedStatement stmt) {
-        List<IRSZ> result = new ArrayList<>();
-        try (ResultSet rs = stmt.executeQuery()) {
-            while (rs.next()) {
-                result.add(new IRSZ(rs.getInt("IRSZ"), rs.getString("Telepules")));
-            }
-            return result;
-        } catch (SQLException e) {
-            throw new IllegalArgumentException("Execute failed!", e);
-        }
+    public void saveCitizenToFile(int zipCode, String fileName) {
+//TODO megírni
     }
 }

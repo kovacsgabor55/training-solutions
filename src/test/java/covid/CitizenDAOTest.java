@@ -3,12 +3,11 @@ package covid;
 import org.flywaydb.core.Flyway;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mariadb.jdbc.MariaDbDataSource;
 
+import javax.sql.DataSource;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.sql.SQLException;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -18,21 +17,13 @@ class CitizenDAOTest {
 
     @BeforeEach
     void setUp() {
-        MariaDbDataSource dataSource;
-        try {
-            dataSource = new MariaDbDataSource();
-            dataSource.setUrl("jdbc:mariadb://localhost:3306/vaccination_register?useUnicode=true");
-            dataSource.setUser("vaccination_register");
-            dataSource.setPassword("vaccination_register");
-        } catch (SQLException e) {
-            throw new IllegalStateException("Cannot connect!", e);
-        }
+        DataSource config = new DatabaseConfig().getConfig();
 
-        Flyway flyway = Flyway.configure().dataSource(dataSource).load();
+        Flyway flyway = Flyway.configure().dataSource(config).load();
         flyway.clean();
         flyway.migrate();
 
-        citizenDAO = new CitizenDAO(dataSource);
+        citizenDAO = new CitizenDAO(config);
     }
 
     @Test
@@ -58,14 +49,4 @@ class CitizenDAOTest {
             assertEquals(expected, actual);
         }
     }
-
-    @Test
-    void insertCitizensToFileTest2() throws IOException {
-
-        try (BufferedReader reader = new BufferedReader(new InputStreamReader(CitizenDAOTest.class.getResourceAsStream("MOCK_DATA.csv")))) {
-            List<Citizen> citizens = citizenDAO.loadCitizenToFile(reader);
-            List<Citizen> actual = citizenDAO.insertCitizens(citizens);
-        }
-    }
-
 }

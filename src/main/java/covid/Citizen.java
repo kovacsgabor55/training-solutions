@@ -4,21 +4,21 @@ import java.util.Objects;
 
 public class Citizen {
 
-    private long id;
-    private String fullName;
-    private int zipCode;
-    private int age;
-    private String email;
-    private String medicalRecord;
+    private final long id;
+    private final String fullName;
+    private final int zipCode;
+    private final int age;
+    private final String email;
+    private final String medicalRecord;
     private final Validator validator = new Validator();
 
     public Citizen(long id, String fullName, int zipCode, int age, String email, String medicalRecord) {
         if (!validator.isValidName(fullName)) {
             throw new IllegalArgumentException("Name cannot be empty or blank!");
         }
-        /*if (!validator.isValidZip(zipCode)) {
+        if (!validator.isValidZip(zipCode)) {
             throw new IllegalArgumentException("Invalid ZIP code!");
-        }*/
+        }
         if (!validator.isValidAge(age)) {
             throw new IllegalArgumentException("Age must between 10 or 150!");
         }
@@ -40,6 +40,10 @@ public class Citizen {
         this(0L, fullName, zipCode, age, email, medicalRecord);
     }
 
+    public long getId() {
+        return id;
+    }
+
     public String getFullName() {
         return fullName;
     }
@@ -58,10 +62,6 @@ public class Citizen {
 
     public String getMedicalRecord() {
         return medicalRecord;
-    }
-
-    public Validator getValidator() {
-        return validator;
     }
 
     @Override

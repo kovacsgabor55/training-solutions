@@ -1,5 +1,6 @@
 package covid;
 
+import org.flywaydb.core.Flyway;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -10,6 +11,11 @@ class ValidatorTest {
 
     @BeforeEach
     void setUp() {
+        DatabaseConfig config = new DatabaseConfig();
+
+        Flyway flyway = Flyway.configure().dataSource(config.getConfig()).load();
+        flyway.clean();
+        flyway.migrate();
         validator = new Validator();
     }
 
@@ -65,5 +71,10 @@ class ValidatorTest {
 
     @Test
     void isValidZipTest() {
+        assertTrue(validator.isValidZip(3855));
+        assertTrue(validator.isValidZip(3347));
+        assertFalse(validator.isValidZip(110));
+        assertFalse(validator.isValidZip(485));
+
     }
 }
