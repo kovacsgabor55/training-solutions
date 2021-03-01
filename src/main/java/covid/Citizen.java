@@ -17,16 +17,16 @@ public class Citizen {
             throw new IllegalArgumentException("Name cannot be empty or blank!");
         }
         if (!validator.isValidZip(zipCode)) {
-            throw new IllegalArgumentException("Invalid ZIP code!");
+            throw new IllegalArgumentException("Invalid ZIP code! " + zipCode);
         }
         if (!validator.isValidAge(age)) {
-            throw new IllegalArgumentException("Age must between 10 or 150!");
+            throw new IllegalArgumentException("Age must between 10 or 150! " + age);
         }
         if (!validator.isValidEmail(email)) {
-            throw new IllegalArgumentException("E-mail most RFC822 pattern!");
+            throw new IllegalArgumentException("E-mail most RFC822 pattern! " + email);
         }
         if (!validator.isValidMr(medicalRecord)) {
-            throw new IllegalArgumentException("Medical Record is invalid!");
+            throw new IllegalArgumentException("Medical Record is invalid! " + medicalRecord);
         }
         this.id = id;
         this.fullName = fullName.trim();

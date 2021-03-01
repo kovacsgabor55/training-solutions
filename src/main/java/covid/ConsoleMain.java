@@ -106,7 +106,7 @@ public class ConsoleMain {
         }
         System.out.println("File name:");
         String fileName = scanner.nextLine();
-        citizenDAO.saveCitizenToFile(zipCode, fileName);
+        citizenDAO.generateCitizenVaccineWhitZipCode(zipCode, 16, 2, 15);
     }
 
     private void vaccination() {
@@ -138,8 +138,8 @@ public class ConsoleMain {
         DataSource config = new DatabaseConfig().getConfig();
 
         //Flyway flyway = Flyway.configure().dataSource(config).load();
-       // flyway.clean();
-       // flyway.migrate();
+        // flyway.clean();
+        // flyway.migrate();
 
         citizenDAO = new CitizenDAO(config);
         zipCodeDAO = new ZipCodeDAO(config);

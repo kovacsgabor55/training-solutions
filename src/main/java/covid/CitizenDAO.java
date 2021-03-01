@@ -2,8 +2,12 @@ package covid;
 
 import javax.sql.DataSource;
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.sql.*;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,7 +20,7 @@ public class CitizenDAO {
 
     public Citizen insertCitizen(Citizen citizen) {
         try (Connection conn = dataSource.getConnection();
-             PreparedStatement stmt = conn.prepareStatement("INSERT INTO Citizens(citizen_name, zip, age, email,taj) VALUES(?,?,?,?,?)", Statement.RETURN_GENERATED_KEYS)) {
+             PreparedStatement stmt = conn.prepareStatement("INSERT INTO citizens(citizen_name, zip_code, age, email,medical_record) VALUES(?,?,?,?,?)", Statement.RETURN_GENERATED_KEYS)) {
             stmt.setString(1, citizen.getFullName());
             stmt.setLong(2, citizen.getZipCode());
             stmt.setLong(3, citizen.getAge());
@@ -59,7 +63,7 @@ public class CitizenDAO {
             throw new IllegalArgumentException("Citizens list cannot be empty");
         }
         List<Citizen> result = new ArrayList<>();
-        String sql = "INSERT INTO Citizens(citizen_name, zip, age, email, taj) VALUES" + "(?,?,?,?,?),".repeat(citizens.size());
+        String sql = "INSERT INTO citizens(citizen_name, zip_code, age, email, medical_record) VALUES" + "(?,?,?,?,?),".repeat(citizens.size());
         sql = sql.substring(0, sql.length() - 1);
         try (Connection conn = dataSource.getConnection();
              PreparedStatement stmt = conn.prepareStatement(
@@ -109,7 +113,65 @@ public class CitizenDAO {
         return result;
     }
 
-    public void saveCitizenToFile(int zipCode, String fileName) {
-//TODO megírni
+    private void saveCitizenToFile(List<Citizen> citizens, int zipCode) {
+        LocalTime time = LocalTime.of(8, 0);
+        try (BufferedWriter bw = Files.newBufferedWriter(Path.of(zipCode + ".csv"))) {
+            bw.write("Időpont;Név;Irányítószám;Életkor;E-mail cím;TAJ szám\n");
+            for (Citizen item : citizens) {
+                bw.write(String.format("%02d", time.getHour()));
+                bw.write(":");
+                bw.write(String.format("%02d", time.getMinute()));
+                bw.write(";");
+                bw.write(item.getFullName());
+                bw.write(";");
+                bw.write(String.valueOf(item.getZipCode()));
+                bw.write(";");
+                bw.write(String.valueOf(item.getAge()));
+                bw.write(";");
+                bw.write(item.getEmail());
+                bw.write(";");
+                bw.write(item.getMedicalRecord());
+                bw.newLine();
+                time = time.plusMinutes(30);
+            }
+        } catch (IOException e) {
+            throw new IllegalStateException("Cannot save file", e);
+        }
+    }
+
+    private List<Citizen> getAmountCitizenByZipCode(int zipCode, int amount, int maxVaccination, int dayOffset) {
+        List<Citizen> result = new ArrayList<>();
+        try (Connection conn = dataSource.getConnection();
+             PreparedStatement stmt = conn.prepareStatement("SELECT * FROM citizens WHERE zip_code = ? AND number_of_vaccination < ? AND (last_vaccination is NULL OR DATE_ADD(last_vaccination, INTERVAL ? DAY) < CURRENT_DATE()) ORDER BY age DESC, citizen_name ASC LIMIT ?")) {
+            stmt.setInt(1, zipCode);
+            stmt.setInt(2, maxVaccination);
+            stmt.setInt(3, dayOffset);
+            stmt.setInt(4, amount);
+            return result = selectCitizensPreparedStatement(stmt);
+        } catch (SQLException e) {
+            throw new IllegalStateException("Cannot connect!", e);
+        }
+    }
+
+    private List<Citizen> selectCitizensPreparedStatement(PreparedStatement stmt) {
+        List<Citizen> result = new ArrayList<>();
+        try (ResultSet rs = stmt.executeQuery()) {
+            while (rs.next()) {
+                long id = rs.getLong("citizen_id");
+                String name = rs.getString("citizen_name");
+                int zip = rs.getInt("zip_code");
+                int age = rs.getInt("age");
+                String email = rs.getString("email");
+                String mr = rs.getString("medical_record");
+                result.add(new Citizen(id, name, zip, age, email, mr));
+            }
+            return result;
+        } catch (SQLException e) {
+            throw new IllegalArgumentException("Execute failed!", e);
+        }
+    }
+
+    public void generateCitizenVaccineWhitZipCode(int zipCode, int amount, int maxVaccination, int dayOffset) {
+        saveCitizenToFile(getAmountCitizenByZipCode(zipCode, amount, maxVaccination, dayOffset), zipCode);
     }
 }

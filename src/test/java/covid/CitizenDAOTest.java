@@ -49,4 +49,13 @@ class CitizenDAOTest {
             assertEquals(expected, actual);
         }
     }
+
+    @Test
+    void generateCitizenVaccineWhitZipCodeTest() throws IOException {
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(CitizenDAOTest.class.getResourceAsStream("MOCK_DATA.csv")))) {
+            List<Citizen> citizens = citizenDAO.loadCitizenToFile(reader);
+            List<Citizen> actual = citizenDAO.insertCitizens(citizens);
+        }
+        citizenDAO.generateCitizenVaccineWhitZipCode(8712, 16, 2, 15);
+    }
 }
