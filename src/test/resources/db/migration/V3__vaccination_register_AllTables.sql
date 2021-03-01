@@ -7,7 +7,9 @@ CREATE TABLE `citizens` (
 	`medical_record` CHAR(9) NOT NULL,
 	`number_of_vaccination` int(1) unsigned NOT NULL DEFAULT '0',
 	`last_vaccination` date NULL,
-	PRIMARY KEY (`citizen_id`)
+	PRIMARY KEY (`citizen_id`),
+	UNIQUE KEY `medical_record` (`medical_record`),
+    UNIQUE KEY `email` (`email`)
 );
 
 CREATE TABLE `vaccinations` (
@@ -26,3 +28,4 @@ CREATE TABLE `zip_codes` (
 	`city` varchar(23) NOT NULL,
 	`district` varchar(26)
 );
+

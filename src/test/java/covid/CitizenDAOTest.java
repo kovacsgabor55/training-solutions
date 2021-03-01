@@ -56,6 +56,6 @@ class CitizenDAOTest {
             List<Citizen> citizens = citizenDAO.loadCitizenToFile(reader);
             List<Citizen> actual = citizenDAO.insertCitizens(citizens);
         }
-        citizenDAO.generateCitizenVaccineWhitZipCode(8712, 16, 2, 15);
+        citizenDAO.generateCitizenVaccineWhitZipCode(6100, 16, 2, 15);
     }
 }
