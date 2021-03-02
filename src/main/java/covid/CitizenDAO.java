@@ -65,31 +65,31 @@ public class CitizenDAO {
         List<Citizen> result = new ArrayList<>();
         String sql = "INSERT INTO citizens(citizen_name, zip_code, age, email, medical_record) VALUES" + "(?,?,?,?,?),".repeat(citizens.size());
         sql = sql.substring(0, sql.length() - 1);
-        try (Connection conn = dataSource.getConnection();
-             PreparedStatement stmt = conn.prepareStatement(
-                     sql,
-                     Statement.RETURN_GENERATED_KEYS
-             )) {
-            conn.setAutoCommit(false);
-            int count = 0;
-            for (Citizen item : citizens) {
-                stmt.setString(1 + count, item.getFullName());
-                stmt.setLong(2 + count, item.getZipCode());
-                stmt.setLong(3 + count, item.getAge());
-                stmt.setString(4 + count, item.getEmail());
-                stmt.setString(5 + count, item.getMedicalRecord());
-                count += 5;
+        try (Connection conn = dataSource.getConnection()) {
+            try (PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
+                conn.setAutoCommit(false);
+                int count = 0;
+                for (Citizen item : citizens) {
+                    stmt.setString(1 + count, item.getFullName());
+                    stmt.setLong(2 + count, item.getZipCode());
+                    stmt.setLong(3 + count, item.getAge());
+                    stmt.setString(4 + count, item.getEmail());
+                    stmt.setString(5 + count, item.getMedicalRecord());
+                    count += 5;
+                }
+                stmt.executeUpdate();
+                List<Long> id = executeAndGetGeneratedKeys(stmt);
+                for (int i = 0; i < citizens.size(); i++) {
+                    result.add(new Citizen(id.get(i), citizens.get(i).getFullName(), citizens.get(i).getZipCode(), citizens.get(i).getAge(), citizens.get(i).getEmail(), citizens.get(i).getMedicalRecord()));
+                }
+                conn.commit();
+                return result;
+            } catch (Exception sqlException) {
+                conn.rollback();
+                throw new IllegalArgumentException("Cannot insert", sqlException);
             }
-            stmt.executeUpdate();
-            List<Long> id = executeAndGetGeneratedKeys(stmt);
-            for (int i = 0; i < citizens.size(); i++) {
-                result.add(new Citizen(id.get(i), citizens.get(i).getFullName(), citizens.get(i).getZipCode(), citizens.get(i).getAge(), citizens.get(i).getEmail(), citizens.get(i).getMedicalRecord()));
-            }
-            conn.commit();
-            return result;
-        } catch (Exception sqlException) {
-            //conn.rollback();
-            throw new IllegalArgumentException("Cannot insert", sqlException);
+        } catch (SQLException e) {
+            throw new IllegalStateException("Cannot connect", e);
         }
     }
 
@@ -108,7 +108,7 @@ public class CitizenDAO {
                 result.add(new Citizen(name, zip, age, email, mr));
             }
         } catch (IOException e) {
-            throw new IllegalStateException("Something happened!");
+            throw new IllegalStateException("File error", e);
         }
         return result;
     }
@@ -140,14 +140,13 @@ public class CitizenDAO {
     }
 
     private List<Citizen> getAmountCitizenByZipCode(int zipCode, int amount, int maxVaccination, int dayOffset) {
-        List<Citizen> result = new ArrayList<>();
         try (Connection conn = dataSource.getConnection();
              PreparedStatement stmt = conn.prepareStatement("SELECT * FROM citizens WHERE zip_code = ? AND number_of_vaccination < ? AND (last_vaccination is NULL OR DATE_ADD(last_vaccination, INTERVAL ? DAY) < CURRENT_DATE()) ORDER BY age DESC, citizen_name ASC LIMIT ?")) {
             stmt.setInt(1, zipCode);
             stmt.setInt(2, maxVaccination);
             stmt.setInt(3, dayOffset);
             stmt.setInt(4, amount);
-            return result = selectCitizensPreparedStatement(stmt);
+            return selectCitizensPreparedStatement(stmt);
         } catch (SQLException e) {
             throw new IllegalStateException("Cannot connect!", e);
         }

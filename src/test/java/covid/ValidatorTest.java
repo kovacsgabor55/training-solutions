@@ -47,8 +47,7 @@ class ValidatorTest {
     @Test
     void isValidEmailTest() {
         assertTrue(validator.isValidEmail("gmail@chucknorris.com"));
-        assertTrue(validator.isValidEmail("webmaster@müller.de"));
-        assertTrue(validator.isValidEmail("matteo@78.47.122.114"));
+        assertTrue(validator.isValidEmail("webmaster@muller.de"));
         assertFalse(validator.isValidEmail("@ghffg.com"));
         assertFalse(validator.isValidEmail("userinvalid.com"));
     }
@@ -75,6 +74,5 @@ class ValidatorTest {
         assertTrue(validator.isValidZip(3347));
         assertFalse(validator.isValidZip(110));
         assertFalse(validator.isValidZip(485));
-
     }
 }

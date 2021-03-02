@@ -10,9 +10,9 @@ public class Citizen {
     private final int age;
     private final String email;
     private final String medicalRecord;
-    private final Validator validator = new Validator();
 
     public Citizen(long id, String fullName, int zipCode, int age, String email, String medicalRecord) {
+        Validator validator = new Validator();
         if (!validator.isValidName(fullName)) {
             throw new IllegalArgumentException("Name cannot be empty or blank!");
         }
