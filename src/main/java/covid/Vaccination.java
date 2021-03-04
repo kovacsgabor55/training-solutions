@@ -3,14 +3,14 @@ package covid;
 import java.time.LocalDate;
 
 public class Vaccination {
-    private int vaccination_id;
-    private int citizen_id;
-    private LocalDate vaccination_date;
-    private VaccinationStatus status;
-    private String note;
-    private Vaccine vaccination_type;
+    private final int vaccination_id;
+    private final int citizen_id;
+    private final LocalDate vaccination_date;
+    private final VaccinationStatus status;
+    private final String note;
+    private final VaccineType vaccination_type;
 
-    public Vaccination(int vaccination_id, int citizen_id, LocalDate vaccination_date, VaccinationStatus status, String note, Vaccine vaccination_type) {
+    public Vaccination(int vaccination_id, int citizen_id, LocalDate vaccination_date, VaccinationStatus status, String note, VaccineType vaccination_type) {
         this.vaccination_id = vaccination_id;
         this.citizen_id = citizen_id;
         this.vaccination_date = vaccination_date;
@@ -39,7 +39,7 @@ public class Vaccination {
         return note;
     }
 
-    public Vaccine getVaccination_type() {
+    public VaccineType getVaccination_type() {
         return vaccination_type;
     }
 }

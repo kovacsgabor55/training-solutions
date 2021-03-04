@@ -18,11 +18,11 @@ public class FileManager {
             while ((line = reader.readLine()) != null) {
                 String[] data = line.split(";");
                 String name = data[0];
-                int zip = Integer.parseInt(data[1]);
+                int zipCode = Integer.parseInt(data[1]);
                 int age = Integer.parseInt(data[2]);
                 String email = data[3];
-                String mr = data[4];
-                result.add(new Citizen(name, zip, age, email, mr));
+                String medicalRecord = data[4];
+                result.add(new Citizen(name, zipCode, age, email, medicalRecord));
             }
         } catch (IOException e) {
             throw new IllegalStateException("File error", e);

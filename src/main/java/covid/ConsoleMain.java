@@ -13,6 +13,7 @@ public class ConsoleMain {
     private static final int EXIT_FAILURE = 0;  // Exception
     private static final int EXIT_ERROR = -1;   // Error
     private static final String MENU = "1. Registration\n2. Mass registration\n3. Generate\n4. Vaccination\n5. Vaccination failure\n6. Exit\nEnter your choice: ";
+    private static final String VACCINES = "1. AstraZeneca\n2. CureVac\n3. Janssen\n4. Moderna\n5. Pfizer-BioNtech\n6. Sinopharm\n7. Szputynik\nEnter your choice: ";
     private static final Scanner scanner = new Scanner(System.in);
     private Validator validator;
     private CitizenDAO citizenDAO;
@@ -92,6 +93,7 @@ public class ConsoleMain {
             System.exit(EXIT_FAILURE);
         } catch (Exception e) {
             System.err.println("Invalid file!");
+            e.printStackTrace();
             System.exit(EXIT_FAILURE);
         }
     }
@@ -115,21 +117,26 @@ public class ConsoleMain {
             System.err.println("Medical Record is invalid!");
             System.exit(EXIT_ERROR);
         }
-        Citizen citizen = citizenDAO.getCitizenByMedicalRecord(medicalRecord, 2, 15);
-        LocalDate date;
-        Vaccine type;
-        if (citizen.getNumberOfVaccination() == 0) {
-            date = setDate();
-            type = setVaccine();
-        } else {
-            System.out.println("Vaccination date: " + citizen.getLastVaccination().toString());
-            type = citizenDAO.getVaccination(citizen.getId(), citizen.getLastVaccination());
-            System.out.println("Vaccine type: " + type.getValue());
-            date = setDate();
+        try {
+            Citizen citizen = citizenDAO.getCitizenByMedicalRecord(medicalRecord, 2, 15);
+            LocalDate date;
+            VaccineType type;
+            if (citizen.getNumberOfVaccination() == 0) {
+                date = setDate();
+                type = setVaccine();
+            } else {
+                System.out.println("Vaccination date: " + citizen.getLastVaccination().toString());
+                type = citizenDAO.getVaccination(citizen.getId(), citizen.getLastVaccination());
+                System.out.println("Vaccine type: " + type.getValue());
+                date = setDate();
+            }
+
+            System.out.println("Notes:");
+            String note = scanner.nextLine();
+            citizenDAO.writeVaccination(medicalRecord, date, VaccinationStatus.SUCCESS, note, type);
+        } catch (IllegalArgumentException e) {
+            System.err.println("Nem létező személy vagy már megvolt a második oltása");
         }
-        System.out.println("Notes:");
-        String note = scanner.nextLine();
-        citizenDAO.writeVaccination(medicalRecord, date, VaccinationStatus.SUCCESS, note, type);
     }
 
     private void vaccinationFailure() {
@@ -142,7 +149,7 @@ public class ConsoleMain {
         LocalDate date = setDate();
         System.out.println("causes of failure notes:");
         String note = scanner.nextLine();
-        citizenDAO.writeVaccination(medicalRecord, date, VaccinationStatus.FAILURE, note, Vaccine.NONE);
+        citizenDAO.writeVaccination(medicalRecord, date, VaccinationStatus.FAILURE, note, VaccineType.NONE);
     }
 
     private void init() {
@@ -170,26 +177,27 @@ public class ConsoleMain {
         }
     }
 
-    private Vaccine setVaccine() {
+    private VaccineType setVaccine() {
+
         char command;
 
-        System.out.print(MENU);
+        System.out.print(VACCINES);
         command = scanner.nextLine().charAt(0);
         switch (command) {
             case '1':
-                return Vaccine.ASTRAZENECA;
+                return VaccineType.ASTRAZENECA;
             case '2':
-                return Vaccine.CUREVAC;
+                return VaccineType.CUREVAC;
             case '3':
-                return Vaccine.JANSSEN;
+                return VaccineType.JANSSEN;
             case '4':
-                return Vaccine.MODERNA;
+                return VaccineType.MODERNA;
             case '5':
-                return Vaccine.PFIZER_BIONTECH;
+                return VaccineType.PFIZER_BIONTECH;
             case '6':
-                return Vaccine.SINOPHARM;
+                return VaccineType.SINOPHARM;
             case '7':
-                return Vaccine.SPUTNIKV;
+                return VaccineType.SPUTNIKV;
             default:
                 System.err.print("wrong choice!!!");
         }
