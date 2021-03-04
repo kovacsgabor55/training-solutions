@@ -8,7 +8,7 @@ class CitizenTest {
 
     @Test
     void constructorWithIdTest() {
-        Citizen citizen = new Citizen(5L, "John Doe", 4521, 85, "john.doe@example.com", "123456788");
+        Citizen citizen = new Citizen(5, "John Doe", 4521, 85, "john.doe@example.com", "123456788");
         assertEquals(5L, citizen.getId());
         assertEquals("John Doe", citizen.getFullName());
         assertEquals(4521, citizen.getZipCode());

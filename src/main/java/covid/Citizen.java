@@ -1,17 +1,28 @@
 package covid;
 
+import java.time.LocalDate;
 import java.util.Objects;
 
 public class Citizen {
 
-    private final long id;
+    private final int id;
     private final String fullName;
     private final int zipCode;
     private final int age;
     private final String email;
     private final String medicalRecord;
+    private final int numberOfVaccination;
+    private final LocalDate lastVaccination;
 
-    public Citizen(long id, String fullName, int zipCode, int age, String email, String medicalRecord) {
+    public Citizen(String fullName, int zipCode, int age, String email, String medicalRecord) {
+        this(0, fullName, zipCode, age, email, medicalRecord);
+    }
+
+    public Citizen(int id, String fullName, int zipCode, int age, String email, String medicalRecord) {
+        this(id, fullName, zipCode, age, email, medicalRecord, 0, null);
+    }
+
+    public Citizen(int id, String fullName, int zipCode, int age, String email, String medicalRecord, int numberOfVaccination, LocalDate lastVaccination) {
         Validator validator = new Validator();
         if (!validator.isValidName(fullName)) {
             throw new IllegalArgumentException("Name cannot be empty or blank!");
@@ -34,13 +45,11 @@ public class Citizen {
         this.age = age;
         this.email = email;
         this.medicalRecord = medicalRecord;
+        this.numberOfVaccination = numberOfVaccination;
+        this.lastVaccination = lastVaccination;
     }
 
-    public Citizen(String fullName, int zipCode, int age, String email, String medicalRecord) {
-        this(0L, fullName, zipCode, age, email, medicalRecord);
-    }
-
-    public long getId() {
+    public int getId() {
         return id;
     }
 
@@ -62,6 +71,14 @@ public class Citizen {
 
     public String getMedicalRecord() {
         return medicalRecord;
+    }
+
+    public int getNumberOfVaccination() {
+        return numberOfVaccination;
+    }
+
+    public LocalDate getLastVaccination() {
+        return lastVaccination;
     }
 
     @Override

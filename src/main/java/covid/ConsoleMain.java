@@ -1,11 +1,10 @@
 package covid;
 
-import org.flywaydb.core.Flyway;
-
 import javax.sql.DataSource;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Scanner;
 
@@ -18,6 +17,7 @@ public class ConsoleMain {
     private Validator validator;
     private CitizenDAO citizenDAO;
     private ZipCodeDAO zipCodeDAO;
+    private FileManager fileManager;
 
     public static void main(String[] args) {
         ConsoleMain main = new ConsoleMain();
@@ -85,7 +85,7 @@ public class ConsoleMain {
         System.out.println("Please enter your registration filename:");
         String fileName = scanner.nextLine();
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(ConsoleMain.class.getResourceAsStream(fileName)))) {
-            List<Citizen> citizens = citizenDAO.loadCitizenToFile(reader);
+            List<Citizen> citizens = fileManager.loadCitizenToFile(reader);
             citizenDAO.insertCitizens(citizens);
         } catch (IOException e) {
             System.err.println("Invalid filename!");
@@ -104,9 +104,8 @@ public class ConsoleMain {
             System.err.println("Invalid ZIP code!");
             System.exit(EXIT_ERROR);
         }
-        System.out.println("File name:");
-        String fileName = scanner.nextLine();
-        citizenDAO.generateCitizenVaccineWhitZipCode(zipCode, 16, 2, 15);
+        List<Citizen> input = citizenDAO.getAmountCitizenByZipCode(zipCode, 16, 2, 15);
+        fileManager.saveCitizenToFile(input, zipCode);
     }
 
     private void vaccination() {
@@ -116,10 +115,21 @@ public class ConsoleMain {
             System.err.println("Medical Record is invalid!");
             System.exit(EXIT_ERROR);
         }
-
-        System.out.println("Vaccination date (yyyy-mm-dd hh:mm) :");
-        String date = scanner.nextLine();
-
+        Citizen citizen = citizenDAO.getCitizenByMedicalRecord(medicalRecord, 2, 15);
+        LocalDate date;
+        Vaccine type;
+        if (citizen.getNumberOfVaccination() == 0) {
+            date = setDate();
+            type = setVaccine();
+        } else {
+            System.out.println("Vaccination date: " + citizen.getLastVaccination().toString());
+            type = citizenDAO.getVaccination(citizen.getId(), citizen.getLastVaccination());
+            System.out.println("Vaccine type: " + type.getValue());
+            date = setDate();
+        }
+        System.out.println("Notes:");
+        String note = scanner.nextLine();
+        citizenDAO.writeVaccination(medicalRecord, date, VaccinationStatus.SUCCESS, note, type);
     }
 
     private void vaccinationFailure() {
@@ -129,9 +139,10 @@ public class ConsoleMain {
             System.err.println("Medical Record is invalid!");
             System.exit(EXIT_ERROR);
         }
-
-        System.out.println("Note:");
+        LocalDate date = setDate();
+        System.out.println("causes of failure notes:");
         String note = scanner.nextLine();
+        citizenDAO.writeVaccination(medicalRecord, date, VaccinationStatus.FAILURE, note, Vaccine.NONE);
     }
 
     private void init() {
@@ -143,6 +154,45 @@ public class ConsoleMain {
 
         citizenDAO = new CitizenDAO(config);
         zipCodeDAO = new ZipCodeDAO(config);
+        fileManager = new FileManager();
         validator = new Validator();
+    }
+
+    private LocalDate setDate() {
+        System.out.println("Date: 1. now 2. other");
+        String choose = scanner.nextLine();
+        if (choose.equals("1")) {
+            return LocalDate.now();
+        } else {
+            System.out.println("Vaccination date (yyyy-mm-dd) :");
+            String datetxt = scanner.nextLine();
+            return LocalDate.parse(datetxt);
+        }
+    }
+
+    private Vaccine setVaccine() {
+        char command;
+
+        System.out.print(MENU);
+        command = scanner.nextLine().charAt(0);
+        switch (command) {
+            case '1':
+                return Vaccine.ASTRAZENECA;
+            case '2':
+                return Vaccine.CUREVAC;
+            case '3':
+                return Vaccine.JANSSEN;
+            case '4':
+                return Vaccine.MODERNA;
+            case '5':
+                return Vaccine.PFIZER_BIONTECH;
+            case '6':
+                return Vaccine.SINOPHARM;
+            case '7':
+                return Vaccine.SPUTNIKV;
+            default:
+                System.err.print("wrong choice!!!");
+        }
+        throw new IllegalStateException("wrong choice!");
     }
 }
