@@ -12,7 +12,7 @@ public class ConsoleMain {
     private static final int EXIT_SUCCESS = 0;  // Success
     private static final int EXIT_FAILURE = 0;  // Exception
     private static final int EXIT_ERROR = -1;   // Error
-    private static final String MENU = "1. Registration\n2. Mass registration\n3. Generate\n4. Vaccination\n5. Vaccination failure\n6. Exit\nEnter your choice: ";
+    private static final String MENU = "1. Registration\n2. Mass registration\n3. Generate\n4. Vaccination\n5. Vaccination failure\n6. Report\n7. Exit\nEnter your choice: ";
     private static final String VACCINES = "1. AstraZeneca\n2. CureVac\n3. Janssen\n4. Moderna\n5. Pfizer-BioNtech\n6. Sinopharm\n7. Szputynik\nEnter your choice: ";
     private static final Scanner scanner = new Scanner(System.in);
     private Validator validator;
@@ -34,7 +34,8 @@ public class ConsoleMain {
                 case '3' -> main.generation();
                 case '4' -> main.vaccination();
                 case '5' -> main.vaccinationFailure();
-                case '6' -> System.exit(EXIT_SUCCESS);
+                case '6' -> main.report();
+                case '7' -> System.exit(EXIT_SUCCESS);
                 default -> System.err.print("wrong choice!!!");
             }
         } while (command != 6);
@@ -152,6 +153,18 @@ public class ConsoleMain {
         citizenDAO.writeVaccination(medicalRecord, date, VaccinationStatus.FAILURE, note, VaccineType.NONE);
     }
 
+    private void report() {
+        System.out.println("Zip Code:");
+        int zipCode = scanner.nextInt();
+        scanner.nextLine();
+        if (!validator.isValidZip(zipCode)) {
+            System.err.println("Invalid ZIP code!");
+            System.exit(EXIT_ERROR);
+        }
+        System.out.println(zipCodeDAO.getCity(zipCode));
+        System.out.println(citizenDAO.report(zipCode));
+    }
+
     private void init() {
         DataSource config = new DatabaseConfig().getConfig();
 
@@ -178,9 +191,7 @@ public class ConsoleMain {
     }
 
     private VaccineType setVaccine() {
-
         char command;
-
         System.out.print(VACCINES);
         command = scanner.nextLine().charAt(0);
         switch (command) {

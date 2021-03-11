@@ -232,4 +232,29 @@ public class CitizenDAO {
             throw new IllegalArgumentException("Execute failed!", e);
         }
     }
+
+    private String getReportPrepareStatement(PreparedStatement stmt) {
+        StringBuilder sb = new StringBuilder();
+        try (ResultSet rs = stmt.executeQuery()) {
+            while (rs.next()) {
+                int numberOfVaccination = rs.getInt("number_of_vaccination");
+                int piece = rs.getInt("pieces");
+                sb.append("number_of_vaccination: ").append(numberOfVaccination).append("  pieces: ").append(piece).append("\n");
+            }
+            return sb.toString();
+        } catch (SQLException e) {
+            throw new IllegalArgumentException("Execute failed!", e);
+        }
+    }
+
+    public String report(int zipCode) {
+        try (Connection conn = dataSource.getConnection();
+             PreparedStatement stmt = conn.prepareStatement("SELECT `number_of_vaccination`, COUNT(`number_of_vaccination`) AS `pieces` FROM `citizens` WHERE `zip_code`=? GROUP BY `number_of_vaccination` ORDER BY `number_of_vaccination` ASC")) {
+            stmt.setInt(1, zipCode);
+            stmt.executeUpdate();
+            return getReportPrepareStatement(stmt);
+        } catch (SQLException e) {
+            throw new IllegalStateException("Cannot connect!", e);
+        }
+    }
 }
